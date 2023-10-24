@@ -10,7 +10,23 @@
 }
 
 .logo {
+  width: 256px;
   height: 60px;
+}
+
+.image {
+    margin-top: 5px;
+    width: 256px;
+    height: 60px;
+    background-image: url('../../assets/logo/db.svg');
+    background-repeat: no-repeat;
+}
+
+@media(max-width:768px) {
+    .image {
+        width: 100px;
+        background-image: url('../../assets/logo/db04.svg');
+    }
 }
 
 .loginBotoes {
@@ -19,7 +35,7 @@
 }
 
 .button {
-    /*width: 206px;*/
+    width: 206px;
     height: 40px;
     background-color: transparent;
     color: var(--primary-color);
@@ -27,4 +43,26 @@
     border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;
+}
+
+.menuHamburger {
+    display: none;
+}
+
+.desativado {
+    display: none;
+}
+
+@media(max-width:580px) {
+    .menuHamburger {
+        display: block;
+    }
+
+    .loginBotoes {
+        display: none;
+    }
+
+    .fechar {
+        display: none;
+    }
 }
