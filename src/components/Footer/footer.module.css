@@ -1,0 +1,28 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    height: 58px;
+}
+
+.copyright {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.lista {
+    display: flex;
+    
+    justify-content: space-around;
+    gap: 25px;
+}
+
+.lista li {
+    list-style: none;
+    width: 26px;
+    height: 24px;
+    
+}

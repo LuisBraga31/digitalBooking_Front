@@ -1,0 +1,28 @@
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2.5rem;
+    border-bottom: 1px solid #000;
+}
+
+.logo {
+  height: 60px;
+}
+
+.loginBotoes {
+    display: flex;
+    gap: 20px;
+}
+
+.button {
+    /*width: 206px;*/
+    height: 40px;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
