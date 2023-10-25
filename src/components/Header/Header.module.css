@@ -47,10 +47,7 @@
 
 .menuHamburger {
     display: none;
-}
-
-.desativado {
-    display: none;
+    cursor: pointer;
 }
 
 @media(max-width:580px) {
@@ -61,8 +58,82 @@
     .loginBotoes {
         display: none;
     }
-
-    .fechar {
-        display: none;
-    }
 }
+
+/* Menu Lateral */
+
+.desativado {
+    display: none;
+}
+
+.ativado {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.menuHeader {
+    height:175px;
+    background-color: var(--primary-color);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--white-color);
+}
+
+.closeButton {
+    cursor: pointer;
+}
+
+.menuTitle{
+    text-align: right;
+    color: var(--white-color);
+}
+
+.menuBody {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 500px;
+    justify-content: space-around;
+    padding: 10px 0px;
+}
+
+.menuButtons {
+    padding-top: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    width:100%;
+}
+
+.buttonItem {
+    width: 40%;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+}
+
+.linha {
+    display: flex;
+    align-items: center;
+}
+
+.lista {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+    color: var(--white-color);
+}
+
+.lista li {
+    list-style: none;
+    width: 26px;
+    height: 24px; 
+}
+
