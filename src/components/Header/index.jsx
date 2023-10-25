@@ -27,7 +27,7 @@ export default function Header() {
                 <IoMenu className={styles.menu} size={28} onClick={showMenu}/>
             </div>
 
-            <nav className={ menuLateral ? styles.ativado : styles.desativado}>
+            <nav className={ menuLateral ? `${styles.menuLateral} ${styles.ativo}` : styles.menuLateral}>
                 <div className={styles.menuHeader}>
                     <GrClose className={styles.closeButton} size={22} onClick={showMenu}/>
                     <h4 className={styles.menuTitle}> Menu </h4>
