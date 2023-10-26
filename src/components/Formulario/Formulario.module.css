@@ -1,15 +1,69 @@
 .container {
+    position: relative;    
+    background-color: #fcf5f5;    
+    width: 442px;
+    height: 707px;
+    top: 29px;
+    margin:auto;
+
+}
+
+.titulo{
+    padding-top: 20%;
+    top: 125px;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-align: center;
+}
+
+.form {
     max-width: 430px;
     display: flex;
+    flex-direction: column;    
+    justify-content: center;
     align-items: center;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.campoTexto {
+    display: flex;
     flex-direction: column;
 }
 
 .botao {
     width: 95%;
-    height: 50px;
-    background-color: #1DBEB4;
+    height: 40px;
+    background-color: var(--primary-color);
     border: none;
     border-radius: 5px;
     flex-shrink: 0;
+    box-shadow: #0000001F 0px 2px 5px;
+}
+
+
+label {
+    width: 218px;
+    height: 21px;
+    font-weight: 500;
+    size: 12px;
+    color: #383B58;
+    
+} 
+
+input {
+    width: 300px;
+    height: 40px;
+    top:  22px;
+    border: none;
+    color: #FFFFFF;
+    box-shadow: #00000026 0px 1px 2px;
+}
+
+p {
+    color: #383B58;  
+}
+
+a {
+   color: #4285F4;  
 }

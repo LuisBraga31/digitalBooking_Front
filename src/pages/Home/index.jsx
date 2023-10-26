@@ -11,7 +11,7 @@ export function Home() {
             <Header/>
             <Formulario />
                 <main className={styles.main}>
-                    HomePage
+                    {/* HomePage */}
                 </main>
             <Footer/>
         </>

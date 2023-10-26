@@ -8,6 +8,7 @@
     position: fixed;
     z-index: 99;
     background-color: var(--white-color);
+    position: relative;
 }
 
 .logo {
