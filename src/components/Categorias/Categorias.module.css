@@ -1,0 +1,44 @@
+.categorias {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-basis: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px 50px;
+}
+
+.categorias h2 {
+    font-size: 24px;
+    color: var(--third-color);
+}
+
+.blocos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.categoriaItem {
+    border-radius: 15px;
+    width: 310px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.categoriaItemDesc {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 0px 8px 8px;
+    color: var(--third-color);
+}
+
+.categoriaItemDesc h4 {
+    font-size: 20px;
+}
+
+.categoriaItemDesc p {
+    font-size: 14px;
+    opacity: 0.8;
+}
