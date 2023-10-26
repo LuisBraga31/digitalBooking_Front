@@ -6,14 +6,13 @@ import styles from './Home.module.css';
 
 export function Home() {
 
-    return(
+    return (
         <>
-            <Header/>
-            <Formulario />
-                <main className={styles.main}>
-                    {/* HomePage */}
-                </main>
-            <Footer/>
+            <Header />
+            <main className={styles.main}>
+                <Formulario />
+            </main>
+            <Footer />
         </>
     )
 }

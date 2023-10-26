@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./formulario.module.css";
+import styles from "./Formulario.module.css";
 
 export default function Formulario() {
   const [nome, setNome] = useState("");
@@ -62,7 +62,7 @@ export default function Formulario() {
           Criar conta
         </button>
 
-        <p>Já tem uma conta? <a href="https://www.google.com">Iniciar sessão</a></p>
+        <p className={styles.paragrafo}>Já tem uma conta? <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Iniciar sessão</a></p>
       </form>
     </div>
   );
