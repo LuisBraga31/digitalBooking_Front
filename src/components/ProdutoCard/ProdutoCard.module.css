@@ -1,0 +1,49 @@
+.card {
+    background-color: #fff;
+    display: flex;
+    gap: 5px;
+    width: 635px;
+    height: 283px;
+    color: var(--second-color);
+    border-radius: 15px;
+}
+
+.cardText {
+    padding: 8px 5px;
+}
+
+.cardCategory {
+    opacity: 0.8;
+    font-size: 14px;
+    padding-bottom: 1px;
+}
+
+.cardTitle {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.cardLocation {
+    padding-top: 20px;
+}
+
+.cardDescription {
+    padding: 70px 14px 10px 0px;
+
+    font-weight: 500;
+    text-align: justify;
+}
+
+.cardButton {
+    width: 100%;
+    padding: 10px 0px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}

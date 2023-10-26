@@ -1,4 +1,5 @@
 import Categorias from "../../components/Categorias";
+import Produtos from "../../components/Produtos";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
@@ -11,6 +12,7 @@ export function Home() {
             <Header />
             <main className={styles.main}>
                 <Categorias/>
+                <Produtos/>
             </main>
             <Footer />
         </>

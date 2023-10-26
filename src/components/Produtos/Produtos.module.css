@@ -1,0 +1,22 @@
+.produtos {
+    background-color: rgba(56, 59, 88, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    padding: 0px 50px;
+}
+
+.produtos h2 {
+    font-size: 24px;
+    color: var(--third-color);
+    padding-top: 24px;
+}
+
+.blocoProdutos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    justify-content: center;
+}

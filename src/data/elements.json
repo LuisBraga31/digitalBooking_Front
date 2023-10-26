@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "img": "/produtos/example.png",
+        "category": "Hotel",
+        "title": "Hermitage Hotel",
+        "location": "Rio de Janeiro",
+        "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
+    },
+    {
+        "id": 2,
+        "img": "/produtos/example2.png",
+        "category": "Apartamento",
+        "title": "Hotel Village",
+        "location": "Porto de Galinhas",
+        "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
+    },
+    {
+        "id": 3,
+        "img": "./produtos/example.png",
+        "category": "Cama",
+        "title": "Hotel Coroados",
+        "location": "Itajubá",
+        "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
+    },
+    {
+        "id": 4,
+        "img": "/produtos/example2.png",
+        "category": "Hostel",
+        "title": "Rhino Hotel",
+        "location": "Rio de Janeiro",
+        "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
+    },
+    {
+        "id": 5,
+        "img": "/produtos/example.png",
+        "category": "Hotel",
+        "title": "Hotel do Baiano",
+        "location": "Bahia",
+        "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
+    },
+    {
+        "id": 6,
+        "img": "/produtos/example2.png",
+        "category": "Apartamento",
+        "title": "Detona Hotel",
+        "location": "Bahia",
+        "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
+    },
+    {
+        "id": 7,
+        "img": "/produtos/example.png",
+        "category": "Cama",
+        "title": "Hotel Atlântico Tower",
+        "location": "Rio de Janeiro",
+        "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
+    },
+    {
+        "id": 8,
+        "img": "/produtos/example2.png",
+        "category": "Hostel",
+        "title": "Barenia Hotel",
+        "location": "Santos",
+        "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
+    }
+  ]
