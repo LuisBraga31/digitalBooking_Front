@@ -3,14 +3,25 @@
     flex-direction: column;
     gap: 10px;
     flex-basis: 100%;
-    justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     padding: 0px 50px;
+}
+
+@media (max-width: 768px) {
+    .blocos {
+        flex-direction: column;
+        
+    }
+    .categorias h2 {
+        width: 350px !important;
+        text-align: center;
+    }
 }
 
 .categorias h2 {
     font-size: 24px;
     color: var(--third-color);
+    width: 1300px;
 }
 
 .blocos {

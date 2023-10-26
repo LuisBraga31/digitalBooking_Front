@@ -8,6 +8,15 @@
     border-radius: 15px;
 }
 
+@media (max-width: 768px) {
+    .card {
+        width: 310px;
+        height: 595px;
+        flex-direction: column;
+    }
+
+}
+
 .cardText {
     padding: 8px 5px;
 }
