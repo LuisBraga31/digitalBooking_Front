@@ -62,7 +62,7 @@ export default function Formulario() {
           Criar conta
         </button>
 
-        <p className={styles.paragrafo}>Já tem uma conta? <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Iniciar sessão</a></p>
+        <p className={styles.paragrafo}>Já tem uma conta? <a href="./LoginForm" target="_blank" rel="noopener noreferrer">Iniciar sessão</a></p>
       </form>
     </div>
   );

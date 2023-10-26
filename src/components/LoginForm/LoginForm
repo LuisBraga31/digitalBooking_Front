@@ -1,18 +1,17 @@
 .container {
-    position: relative;    
+    position: relative;
     background-color: #fcf5f5;    
     height: 707px;
     top: 29px;
     margin:auto;
-
 }
 
-.titulo{
+h1 {
     padding-top: 20%;
     top: 125px;
     color: var(--primary-color);
     font-weight: 600;
-    text-align: center;
+    text-align: center; 
 }
 
 .form {

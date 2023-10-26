@@ -10,6 +10,10 @@ export function RouteList() {
 
                     <Route path="/" element={<Home/>} />
 
+                    <Route path="/Formulario" element={<Formulario/>} />
+
+                    <Route path="/LoginForm" element={<LoginForm/>} />
+
                 </Routes>
             
             </BrowserRouter>
