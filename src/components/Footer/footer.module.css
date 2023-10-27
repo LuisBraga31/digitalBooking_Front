@@ -6,6 +6,10 @@
     background-color: var(--primary-color);
     color: var(--white-color);
     height: 58px;
+    position: fixed;
+    z-index: 98;
+    width: 100%;
+    bottom: 0;
 }
 
 .copyright {
