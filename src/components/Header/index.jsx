@@ -19,8 +19,8 @@ export default function Header() {
             </div>
 
             <div className={styles.loginBotoes}>
-                <button className={styles.button}> Criar Conta </button>
-                <button className={styles.button}> Iniciar Sessão </button>
+                <Link to='/form'><button className={styles.button}> Criar Conta </button></Link>
+                <Link to='/login'><button className={styles.button}> Iniciar Sessão </button></Link>
             </div>
 
             <div className={styles.menuHamburger}>

@@ -12,8 +12,8 @@ export function RouteList() {
                 <Routes>
 
                     <Route path="/" element={<Home/>} />
-                    <Route path="/Form" element={<FormPage />} />
-                    <Route path="/Login" element={<LoginPage/>} />
+                    <Route path="/form" element={<FormPage />} />
+                    <Route path="/login" element={<LoginPage/>} />
 
                 </Routes>
             
