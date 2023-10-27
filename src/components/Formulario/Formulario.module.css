@@ -1,4 +1,4 @@
-container {
+.container {
     position: relative;        
     width: 100%;
 }
@@ -50,7 +50,7 @@ container {
 }
 
 
-label {
+.form label {
     width: 218px;
     height: 21px;
     font-weight: 500;
@@ -58,7 +58,7 @@ label {
     color: var(--gray-color);  
 } 
 
-input {
+.form input {
     width: 100%;
     height: 40px;
     border: none;
@@ -74,7 +74,7 @@ input {
     color: var(--gray-color);  
 }
 
-a {
+.form a {
    color: #4285F4;  
    text-decoration: none;
 }

@@ -1,13 +1,9 @@
 .container {
-    position: relative;
-    background-color: #fcf5f5;    
-    height: 707px;
-    top: 29px;
-    margin:auto;
+    position: relative;        
+    width: 100%;
 }
 
-h1 {
-    /* padding-top: 20%; */
+.container h1 {
     top: 125px;
     color: var(--primary-color);
     font-weight: 600;
@@ -15,7 +11,7 @@ h1 {
 }
 
 .form {
-    max-width: 430px;
+    max-width: 100%;
     display: flex;
     flex-direction: column;    
     justify-content: center;
@@ -30,16 +26,17 @@ h1 {
 }
 
 .botao {
-    width: 95%;
+    width: 20%;
     height: 40px;
     background-color: var(--primary-color);
     border: none;
     border-radius: 5px;
     flex-shrink: 0;
-    box-shadow: #0000001F 0px 2px 5px;
+    box-shadow: #C4C4C4 2px 2px 5px;
     color: var(--white-color);
     font-size: 16px;
     font-weight: 700;
+    margin-top: 40px;
 }
 
 .botao:hover {
@@ -47,7 +44,7 @@ h1 {
 }
 
 
-label {
+.form label {
     width: 218px;
     height: 21px;
     font-weight: 500;
@@ -56,20 +53,20 @@ label {
     
 } 
 
-/* input {
+.form input {
     width: 300px; 
     height: 40px;
     top:  22px;
     border: none;
     color: #FFFFFF;
     box-shadow: #00000026 0px 1px 2px;
-} */
+} 
 
-p {
+.form p {
     color: #383B58;  
 }
 
-a {
+.form a {
    color: #4285F4;  
 }
 
