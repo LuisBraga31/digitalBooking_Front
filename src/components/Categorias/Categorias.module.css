@@ -7,17 +7,6 @@
     padding: 0px 50px;
 }
 
-@media (max-width: 768px) {
-    .blocos {
-        flex-direction: column;
-        
-    }
-    .categorias h2 {
-        width: 350px !important;
-        text-align: center;
-    }
-}
-
 .categorias h2 {
     font-size: 24px;
     color: var(--third-color);
@@ -52,4 +41,21 @@
 .categoriaItemDesc p {
     font-size: 14px;
     opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .blocos {
+        flex-wrap: wrap;
+        
+    }
+    .categorias h2 {
+        width: 635px !important;
+        text-align: left;
+    }
+}
+
+@media (max-width: 735px) {
+    .categorias h2 {
+        width: 345px !important;
+    }
 }

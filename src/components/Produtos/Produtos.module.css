@@ -6,7 +6,7 @@
     gap: 10px;
     padding: 20px;
     margin-top: 20px;
-    padding: 0px 50px;
+    padding: 0px 50px 15px 50px;
 }
 
 .produtos h2 {
@@ -29,7 +29,15 @@
         grid-template-columns: 1fr;
     }
     .produtos h2 {
-        width: 350px !important;
-        text-align: center;
+        width: 635px !important;
+        text-align: left;
     }
+}
+
+@media (max-width: 700px) {
+    .produtos h2 {
+        width: 365px !important;
+        text-align: left;
+    }
+
 }
