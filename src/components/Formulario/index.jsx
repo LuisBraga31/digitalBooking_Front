@@ -14,8 +14,10 @@ export default function Formulario() {
     <div className={styles.container}>
 
       <h1 className={styles.titulo}>Criar conta</h1>
-      
+
       <form className={styles.form} onSubmit={handleForm}>
+
+        <div className={styles.test}> 
 
         <div className={styles.campoTexto}>
           <label htmlFor="">Nome</label>
@@ -26,19 +28,21 @@ export default function Formulario() {
           />
         </div>
 
-        <div className={styles.campoTexto}>
-          <label htmlFor="">Sobrenome</label>
-          <input
-            type="text"
-            value={sobrenome}
-            onChange={(e) => setSobrenome(e.target.value)}
-          />
+          <div className={styles.campoTexto}>
+            <label htmlFor="">Sobrenome</label>
+            <input
+              type="text"
+              value={sobrenome}
+              onChange={(e) => setSobrenome(e.target.value)}
+            />
+          </div>
+
         </div>
 
         <div className={styles.campoTexto}>
           <label htmlFor="">E-mail</label>
           <input
-            type="text"
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -47,7 +51,7 @@ export default function Formulario() {
         <div className={styles.campoTexto}>
           <label htmlFor="">Senha</label>
           <input
-            type="text"
+            type="password"
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
           />
@@ -55,14 +59,16 @@ export default function Formulario() {
 
         <div className={styles.campoTexto}>
           <label htmlFor="">Confirmar senha</label>
-          <input type="text" />
+          <input 
+            type="password" 
+          />
         </div>
 
         <button className={styles.botao} type="submit">
           Criar conta
         </button>
 
-        <p className={styles.paragrafo}>Já tem uma conta? <a href="./LoginForm" target="_blank" rel="noopener noreferrer">Iniciar sessão</a></p>
+        <p className={styles.paragrafo}>Já tem uma conta? <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Iniciar sessão</a></p>
       </form>
     </div>
   );

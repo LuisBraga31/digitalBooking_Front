@@ -7,7 +7,7 @@
 }
 
 h1 {
-    padding-top: 20%;
+    /* padding-top: 20%; */
     top: 125px;
     color: var(--primary-color);
     font-weight: 600;
@@ -56,14 +56,14 @@ label {
     
 } 
 
-input {
-    width: 300px;
+/* input {
+    width: 300px; 
     height: 40px;
     top:  22px;
     border: none;
     color: #FFFFFF;
     box-shadow: #00000026 0px 1px 2px;
-}
+} */
 
 p {
     color: #383B58;  
