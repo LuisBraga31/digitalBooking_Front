@@ -13,7 +13,6 @@ export default function LoginForm() {
         e.preventDefault();
         alert('Bem-vindo: ${userName}');
     };    
-
     
     return (
         <div className={styles.container}>
