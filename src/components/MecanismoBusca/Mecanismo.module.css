@@ -16,8 +16,24 @@
     gap: 8px;
 }
 
+.buscaSelect {
+    width: 28vw;
+    font-weight: 500;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    appearance: none;
+    color: var(--third-color);
+}
+
+.buscaSelect option {
+    color: var(--third-color);
+    font-weight: 700;
+}
+
 .buscaInput {
-    width: 400px;
+    width: 28vw;
     font-weight: 500;
     padding: 10px 10px;
     border: none;
@@ -35,4 +51,26 @@
     font-size: 14px;
     font-weight: 700;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+@media (max-width: 450px) {
+    .mecanismo h1 {
+        text-align: center;
+        font-size: 28px;
+    }
+
+    .formBusca {
+        width: 100%;
+        flex-direction: column;
+    }
+    .buscaSelect {
+        width: 100%;
+    }
+    .buscaInput {
+        width: 100%;
+    }
+    .buscaButton {
+        width: 100%;
+    }
+
 }
