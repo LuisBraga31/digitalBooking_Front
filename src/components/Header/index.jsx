@@ -34,9 +34,9 @@ export default function Header() {
                 </div>
                 <div className={styles.menuBody}>
                     <div className={styles.menuButtons}>
-                        <button className={styles.buttonItem}> Criar Conta </button>
+                        <Link to="/form "> <button className={styles.buttonItem}> Criar Conta </button> </Link>
                         <hr color="black" width="90%" size="1" className={styles.linha}/>
-                        <button className={styles.buttonItem}>  Iniciar Sessão </button>
+                        <Link to="/login"> <button className={styles.buttonItem}>  Iniciar Sessão </button> </Link>
                     </div>
                     <div>
                         <ul className={styles.lista}>
