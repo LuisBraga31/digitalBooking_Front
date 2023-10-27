@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import styles from "./LoginForm.module.css";
 
-export default function LoginForm() {
+export default function Login() {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
 

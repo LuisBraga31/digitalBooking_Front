@@ -1,6 +1,6 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import LoginForm from "../../components/LoginForm";
+import Login from "../../components/Login";
 
 
 import styles from './LoginPage.module.css';
@@ -11,7 +11,7 @@ export function LoginPage() {
         <>
             <Header />
             <main className={styles.main}>
-                <LoginForm/>
+                <Login/>
             </main>
             <Footer />
         </>
