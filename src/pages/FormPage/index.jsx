@@ -1,9 +1,9 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Formulario from "../../components/Formulario"
-import styles from './Home.module.css';
+import styles from './FormPage.module.css';
 
-export function HomeForm() {
+export function FormPage() {
 
     return (
         <>
