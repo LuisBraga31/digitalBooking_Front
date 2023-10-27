@@ -4,6 +4,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
 import styles from './Home.module.css';
+import MecanismoBusca from "../../components/MecanismoBusca";
 
 export function Home() {
 
@@ -11,6 +12,7 @@ export function Home() {
         <>
             <Header />
             <main className={styles.main}>
+                <MecanismoBusca/>
                 <Categorias/>
                 <Produtos/>
             </main>
