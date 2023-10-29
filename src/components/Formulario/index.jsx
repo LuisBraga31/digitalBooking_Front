@@ -1,7 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import styles from "./Formulario.module.css";
 
 export default function Formulario() {
+
+  const navigate = useNavigate();
+  const data = localStorage.getItem("registros");
+  const [listaRegistro, setListaRegistro] = useState(data ? JSON.parse(data) : []);
 
   const [errorForm, setErrorForm] = useState(false);
   
@@ -18,7 +24,11 @@ export default function Formulario() {
     e.preventDefault()
 
     if (validForm()) {
-      setErrorForm(false); 
+      setErrorForm(false);
+      const novoRegistro = [...listaRegistro, formData];
+      setListaRegistro(novoRegistro);
+      localStorage.setItem('registros', JSON.stringify(novoRegistro));
+      navigate('/');
     } else {
       setErrorForm(true); 
     }
