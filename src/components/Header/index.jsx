@@ -51,18 +51,43 @@ export default function Header() {
             </div>
 
             <nav className={ menuLateral ? `${styles.menuLateral} ${styles.ativo}` : styles.menuLateral}>
+                
                 <div className={styles.menuHeader}>
                     <GrClose className={styles.closeButton} size={22} onClick={showMenu}/>
-                    <h4 className={styles.menuTitle}> Menu </h4>
+                    
+                    { login ? (
+                        <h4 className={styles.menuHeaderTitle}> Menu </h4>
+                    ) : (
+                        <div className={styles.menuHeaderLogado}>
+                            <div className={styles.menuAvatar}> DB </div>
+                            <div className={styles.menuText}> 
+                                <p> Olá, </p>
+                                <strong> Deborah Borges </strong>
+                            </div>  
+                        </div>
+                    )}
+                    
                 </div>
+
                 <div className={styles.menuBody}>
+                    
+                    { login ? (
+                    
                     <div className={styles.menuButtons}>
                         <Link to="/form "> <button className={styles.buttonItem}> Criar Conta </button> </Link>
                         <hr color="black" width="90%" size="1" className={styles.linha}/>
                         <Link to="/login"> <button className={styles.buttonItem}>  Iniciar Sessão </button> </Link>
                     </div>
+                    
+                    ) : (
+                    <div className={styles.menuBodyLogado}> 
+                        <p> Deseja <span onClick={logout}> encerrar a sessão </span> ? </p>
+                        <hr color="black" width="100%" size="1" />
+                    </div>
+                    )}
+
                     <div>
-                        <ul className={styles.lista}>
+                        <ul className={styles.menuFooterLista}>
                             <li>
                                 <FaFacebook size={24}/>
                             </li>

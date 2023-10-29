@@ -1,3 +1,4 @@
+/* HEADER  - Logo */
 .header {
     width: 100%;
     display: flex;
@@ -24,14 +25,15 @@
     background-repeat: no-repeat;
 }
 
-
-
+/* Imagem no Tablet */
 @media(max-width:768px) {
     .image {
         width: 100px;
         background-image: url('../../assets/logo/db04.svg');
     }
 }
+
+/* HEADER  - com Botões */
 
 .loginBotoes {
     display: flex;
@@ -47,7 +49,11 @@
     border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
 }
+
+/* HEADER  - com Logout */
 
 .loginArea {
     display: flex;
@@ -87,6 +93,8 @@
     cursor: pointer;  
 }
 
+/* MENU Hamburger */
+
 .menuHamburger {
     display: none;
     cursor: pointer;
@@ -95,8 +103,6 @@
 nav {
     display: none;
 }
-
-/* Menu Hamburger */
 
 @media(max-width:580px) {
     .menuHamburger {
@@ -130,12 +136,12 @@ nav {
 
 }
 
-/* Menu Lateral */
+/* MENU Lateral - Header */
 
 .menuHeader {
     height:175px;
     background-color: var(--primary-color);
-    padding: 15px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -146,10 +152,40 @@ nav {
     cursor: pointer;
 }
 
-.menuTitle{
+.menuHeaderTitle {
     text-align: right;
     color: var(--white-color);
 }
+
+.menuHeaderLogado {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.menuAvatar {
+    color: var(--second-color);
+    background-color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 10px;   
+}
+
+.menuText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #fff;
+}
+
+.menuText strong {
+    font-weight: 700;
+    color: var(--second-color);
+}
+
+/* MENU Lateral - Body */
 
 .menuBody {
     height: 72%;
@@ -158,7 +194,6 @@ nav {
     flex-direction: column;
     justify-content: space-between;
     padding: 10px 10px;
-
 }
 
 .menuButtons {
@@ -169,6 +204,28 @@ nav {
     flex-direction: column;
     gap: 20px;
     width:100%;
+}
+
+.menuBodyLogado {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: end;
+    gap: 2px;
+    padding-bottom: 10px;
+}
+
+.menuBodyLogado p {
+    color: var(--second-color);
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.menuBodyLogado span{
+    color: var(--primary-color);
+    cursor: pointer;
 }
 
 .buttonItem {
@@ -183,14 +240,16 @@ nav {
     align-items: center;
 }
 
-.lista {
+/* MENU Lateral - Footer */
+
+.menuFooterLista {
     display: flex;
     justify-content: space-around;
     gap: 25px;
     color: var(--third-color);
 }
 
-.lista li {
+.menuFooterLista li {
     list-style: none;
     width: 26px;
     height: 24px; 
