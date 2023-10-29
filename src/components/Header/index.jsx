@@ -8,9 +8,17 @@ import styles from './Header.module.css';
 
 export default function Header() {
 
+    const loginData = localStorage.getItem("isLogin");
+
+    const [login, setLogin] = useState(loginData ? JSON.parse(loginData) : true);
     const [menuLateral, setMenuLateral] = useState(false);
 
     const showMenu = () => setMenuLateral(!menuLateral);
+
+    const logout = () => {
+        setLogin(true);
+        localStorage.removeItem('isLogin');
+    }
 
     return (
         <header className={styles.header}>
@@ -18,10 +26,25 @@ export default function Header() {
                <Link to='/'> <div className={styles.image}> </div> </Link> 
             </div>
 
+            { login ? (
+            
             <div className={styles.loginBotoes}>
                 <Link to='/form'><button className={styles.button}> Criar Conta </button></Link>
                 <Link to='/login'><button className={styles.button}> Iniciar Sessão </button></Link>
             </div>
+
+            ) : (
+            <div className={styles.loginArea}>
+                <div className={styles.loginAvatar}> DB </div>
+                <div className={styles.loginText}> 
+                    <p> Olá, </p>
+                    <strong> Deborah Borges </strong>
+                </div>
+                <button className={styles.buttonLogout} onClick={logout}> Logout </button>
+            </div>
+            )
+
+            }
 
             <div className={styles.menuHamburger}>
                 <IoMenu className={styles.menu} size={28} onClick={showMenu}/>

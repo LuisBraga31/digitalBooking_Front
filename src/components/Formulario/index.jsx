@@ -17,16 +17,16 @@ export default function Formulario() {
 
       <form className={styles.form} onSubmit={handleForm}>
 
-        <div className={styles.test}> 
+        <div className={styles.divInputs}>
 
-        <div className={styles.campoTexto}>
-          <label htmlFor="">Nome</label>
-          <input
-            type="text"
-            value={nome}
-            onChange={(e) => setNome(e.target.value)}
-          />
-        </div>
+          <div className={styles.campoTexto}>
+            <label htmlFor="">Nome</label>
+            <input
+              type="text"
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
+            />
+          </div>
 
           <div className={styles.campoTexto}>
             <label htmlFor="">Sobrenome</label>
@@ -59,8 +59,8 @@ export default function Formulario() {
 
         <div className={styles.campoTexto}>
           <label htmlFor="">Confirmar senha</label>
-          <input 
-            type="password" 
+          <input
+            type="password"
           />
         </div>
 
@@ -68,7 +68,7 @@ export default function Formulario() {
           Criar conta
         </button>
 
-        <p className={styles.paragrafo}>Já tem uma conta? <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Iniciar sessão</a></p>
+        <p className={styles.paragrafo}>Já tem uma conta? <a href="./login" >Iniciar sessão</a></p>
       </form>
     </div>
   );

@@ -11,7 +11,7 @@
     text-align: center;
 }
 
-.test {
+.divInputs {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -57,7 +57,7 @@
     height: 21px;
     font-weight: 500;
     font-size: 12px;
-    color: var(--gray-color);  
+    color: var(--second-color);  
 } 
 
 .form input {
@@ -73,7 +73,7 @@
     margin-top: -12px;
     font-size: 12px;
     font-weight: 500;
-    color: var(--gray-color);  
+    color: var(--second-color);  
 }
 
 .form a {
@@ -92,14 +92,14 @@
         margin-bottom: 0px;
     }
 
-    .test {
+    .divInputs {
         display: flex;
         flex-direction: row;
         width: 74%;
         justify-content: center;
     }
 
-    .test input {
+    .divInputs input {
         width: 100%;
     }
 

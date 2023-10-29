@@ -1,22 +1,25 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import styles from "./LoginForm.module.css";
 
 export default function Login() {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
-
+    const navigate = useNavigate();
     const onChangeUserName = (e) => setUserName(e.target.value);
     const onChangePassword = (e) => setPassword(e.target.value);
 
     const onSubmitForm = (e) => {
         e.preventDefault();
-        alert('Bem-vindo: ${userName}');
+        alert(`Bem-vindo: ${userName}`);
+        localStorage.setItem('isLogin', false);
+        navigate('/');
     };    
     
     return (
         <div className={styles.container}>
-            <h1>Login</h1>
+            <h1>Iniciar Sessão</h1>
 
             <form className={styles.form} onSubmit={onSubmitForm}>
 
@@ -39,9 +42,9 @@ export default function Login() {
                 </div>
                     
 
-            <button className={styles.botao} type="submit">Enviar</button>
+            <button className={styles.botao} type="submit">Entrar</button>
 
-            <p>Ainda não tem conta? <a href="./Formulario">Registre-se</a></p>
+            <p>Ainda não tem conta? <a href="./form">Registre-se</a></p>
 
             </form>
         </div>
