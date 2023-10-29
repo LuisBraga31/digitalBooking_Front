@@ -69,6 +69,11 @@
     padding-left: 10px
 }
 
+.error input {
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
 .paragrafo {
     margin-top: -12px;
     font-size: 12px;
@@ -79,6 +84,11 @@
 .form a {
    color: #4285F4;  
    text-decoration: none;
+}
+
+.error span {
+    color: red;
+    font-size: 10px;
 }
 
 @media (min-width: 768px) {

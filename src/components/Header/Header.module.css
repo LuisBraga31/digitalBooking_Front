@@ -1,15 +1,15 @@
 /* HEADER  - Logo */
 .header {
     width: 100%;
+    height: 93px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 2.5rem;
-    border-bottom: 1px solid #000;
     position: fixed;
     z-index: 99;
-    background-color: var(--white-color);
     position: relative;
+    box-shadow: #C4C4C4 2px 2px 5px;
 }
 
 .logo {

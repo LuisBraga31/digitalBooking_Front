@@ -4,17 +4,22 @@ import { useNavigate } from "react-router-dom";
 import styles from "./LoginForm.module.css";
 
 export default function Login() {
-    const [userName, setUserName] = useState("");
+    const [userEmail, setUserEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
-    const onChangeUserName = (e) => setUserName(e.target.value);
+    const onChangeUserEmail = (e) => setUserEmail(e.target.value);
     const onChangePassword = (e) => setPassword(e.target.value);
 
     const onSubmitForm = (e) => {
         e.preventDefault();
-        alert(`Bem-vindo: ${userName}`);
         localStorage.setItem('isLogin', false);
+
         navigate('/');
+
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+        
+
     };    
     
     return (
@@ -26,15 +31,17 @@ export default function Login() {
                 <div className={styles.campoTexto}>
                     <label htmlFor="">E-mail</label>
                     <input
-                    type="text"
-                    value={userName}
-                    onChange={onChangeUserName}
+                    name="email"
+                    type="email"
+                    value={userEmail}
+                    onChange={onChangeUserEmail}
                     />
                 </div>
 
                 <div className={styles.campoTexto}>
                     <label htmlFor="">Senha</label>
                     <input
+                    name="password"
                     type="password"
                     value={password}
                     onChange={onChangePassword}

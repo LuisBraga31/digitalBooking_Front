@@ -56,7 +56,7 @@ export default function Header() {
                     <GrClose className={styles.closeButton} size={22} onClick={showMenu}/>
                     
                     { login ? (
-                        <h4 className={styles.menuHeaderTitle}> Menu </h4>
+                        <h4 className={styles.menuHeaderTitle}> MENU </h4>
                     ) : (
                         <div className={styles.menuHeaderLogado}>
                             <div className={styles.menuAvatar}> DB </div>
