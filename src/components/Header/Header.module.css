@@ -233,6 +233,11 @@ nav {
     background-color: transparent;
     border: none;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.buttonItem:hover {
+    transform: scale(1.05);
 }
 
 .linha {

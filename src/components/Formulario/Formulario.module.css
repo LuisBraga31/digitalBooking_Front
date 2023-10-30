@@ -49,6 +49,11 @@
     font-size: 16px;
     font-weight: 700;
     margin-top: 10px;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background-color: #1e968e;
 }
 
 
