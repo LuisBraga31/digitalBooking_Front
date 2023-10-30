@@ -22,15 +22,24 @@ export default function Login() {
 
         const registros = JSON.parse(localStorage.getItem('registros'));
         
-        const encontrarUsuario = registros.find(
-            registro => registro.email === data.email && registro.senha === data.password
-        );
+        const existeRegistro = !!localStorage.getItem('registros');
+        
+        if(existeRegistro) {
+            
+            const encontrarUsuario = registros.find(
+                registro => registro.email === data.email && registro.senha === data.password
+            );
 
-        if(encontrarUsuario) {
-            alert('Login efetuado com sucesso!');
-            localStorage.setItem('isLogin', false);
-            localStorage.setItem('usuarioLogado', JSON.stringify(encontrarUsuario));
-            navigate('/');
+            if(encontrarUsuario) {
+                alert('Login efetuado com sucesso!');
+                localStorage.setItem('isLogin', false);
+                localStorage.setItem('usuarioLogado', JSON.stringify(encontrarUsuario));
+                navigate('/');
+            } else {
+                alert("Por favor, tente novamente, suas credenciais são inválidas");
+                setErrorForm(true)
+            }
+
         } else {
             alert("Por favor, tente novamente, suas credenciais são inválidas");
             setErrorForm(true)
