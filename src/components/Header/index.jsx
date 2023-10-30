@@ -9,6 +9,7 @@ import styles from './Header.module.css';
 export default function Header() {
 
     const loginData = localStorage.getItem("isLogin");
+    const usuarioData = JSON.parse(localStorage.getItem("usuarioLogado"));
 
     const [login, setLogin] = useState(loginData ? JSON.parse(loginData) : true);
     const [menuLateral, setMenuLateral] = useState(false);
@@ -18,6 +19,7 @@ export default function Header() {
     const logout = () => {
         setLogin(true);
         localStorage.removeItem('isLogin');
+        localStorage.removeItem('usuarioLogado');
     }
 
     return (
@@ -35,10 +37,10 @@ export default function Header() {
 
             ) : (
             <div className={styles.loginArea}>
-                <div className={styles.loginAvatar}> DB </div>
+                <div className={styles.loginAvatar}> {usuarioData.nome.charAt(0).toUpperCase()}{usuarioData.sobrenome.charAt(0).toUpperCase()} </div>
                 <div className={styles.loginText}> 
                     <p> Olá, </p>
-                    <strong> Deborah Borges </strong>
+                    <strong> {usuarioData.nome} {usuarioData.sobrenome} </strong>
                 </div>
                 <button className={styles.buttonLogout} onClick={logout}> Logout </button>
             </div>
@@ -59,10 +61,10 @@ export default function Header() {
                         <h4 className={styles.menuHeaderTitle}> MENU </h4>
                     ) : (
                         <div className={styles.menuHeaderLogado}>
-                            <div className={styles.menuAvatar}> DB </div>
+                            <div className={styles.menuAvatar}> {usuarioData.nome.charAt(0).toUpperCase()}{usuarioData.sobrenome.charAt(0).toUpperCase()} </div>
                             <div className={styles.menuText}> 
                                 <p> Olá, </p>
-                                <strong> Deborah Borges </strong>
+                                <strong> {usuarioData.nome} {usuarioData.sobrenome} </strong>
                             </div>  
                         </div>
                     )}

@@ -24,11 +24,15 @@ export default function Formulario() {
     e.preventDefault()
 
     if (validForm()) {
+      
       setErrorForm(false);
       const novoRegistro = [...listaRegistro, formData];
       setListaRegistro(novoRegistro);
+      
       localStorage.setItem('registros', JSON.stringify(novoRegistro));
+      alert('Cadastro realizado com sucesso!');
       navigate('/');
+
     } else {
       setErrorForm(true); 
     }
