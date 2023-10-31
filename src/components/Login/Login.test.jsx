@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
+import { expect, vi } from "vitest";
 import Login from ".";
 
 describe('Teste do componente Login', () => {
@@ -31,6 +33,13 @@ describe('Teste do componente Login', () => {
     const botao = screen.getByRole('button', { name: /Entrar/i });
     expect(botao).toBeInTheDocument();
   });
-test('deve chamar a função onClick quando o botão Entrar for clicado', () => {
+test('deve chamar a função onClick quando o botão Entrar for clicado', async () => {
+  userEvent.click(screen.getByRole('button', { name: /Entrar/i }));
+  window.alert = vi.fn();
+  await userEvent.click(screen.getByRole('button', { name: /Entrar/i })); 
+
+  expect(window.alert).toHaveBeenCalledWith('Por favor, tente novamente, suas credenciais são inválidas');
+
+ 
 });
 });
