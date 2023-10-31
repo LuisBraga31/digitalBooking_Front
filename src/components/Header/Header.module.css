@@ -8,7 +8,7 @@
     padding: 0.5rem 2.5rem;
     position: fixed;
     z-index: 99;
-    position: relative;
+    background-color: #fff;
     box-shadow: #C4C4C4 2px 2px 5px;
 }
 
