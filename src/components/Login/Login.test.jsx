@@ -34,7 +34,6 @@ describe('Teste do componente Login', () => {
     expect(botao).toBeInTheDocument();
   });
 test('deve chamar a função onClick quando o botão Entrar for clicado', async () => {
-  userEvent.click(screen.getByRole('button', { name: /Entrar/i }));
   window.alert = vi.fn();
   await userEvent.click(screen.getByRole('button', { name: /Entrar/i })); 
 
