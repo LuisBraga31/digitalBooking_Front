@@ -24,6 +24,16 @@
     align-self: center;
 }
 
+@media (max-width: 1300px) {
+    .blocoProdutos {
+        grid-template-columns: 1fr;
+    }
+    .produtos h2 {
+        width: 635px !important;
+        text-align: left;
+    }
+}
+
 @media (max-width: 768px) {
     .blocoProdutos {
         grid-template-columns: 1fr;
