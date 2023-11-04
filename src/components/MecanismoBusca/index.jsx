@@ -9,11 +9,15 @@ export default function MecanismoBusca() {
     setSelectedValue(event.target.value); 
   };
 
+  const handleSearchForm = (e) => {
+    e.preventDefault();
+  }
+
   return (
     <div className={styles.mecanismo}>
         <h1> Buscar ofertas em hotéis, casas e muito mais </h1>
         
-        <form className={styles.formBusca}>
+        <form className={styles.formBusca} onSubmit={handleSearchForm}>
             <select value={selectedValue} onChange={selectChange} className={styles.buscaSelect} type="text">
               <option value="" disabled hidden> Onde Vamos ?</option>
               <option value="opcao1"> Rio de Janeiro - Brasil </option>
