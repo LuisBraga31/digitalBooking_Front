@@ -26,14 +26,13 @@ export default function Login() {
         
         if(existeRegistro) {
             
-            const encontrarUsuario = registros.find(
+            const usuarioEncontrado = registros.find(
                 registro => registro.email === data.email && registro.senha === data.password
             );
 
-            if(encontrarUsuario) {
+            if(usuarioEncontrado) {
                 alert('Login efetuado com sucesso!');
-                localStorage.setItem('isLogin', false);
-                localStorage.setItem('usuarioLogado', JSON.stringify(encontrarUsuario));
+                localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
                 navigate('/');
             } else {
                 alert("Por favor, tente novamente, suas credenciais são inválidas");

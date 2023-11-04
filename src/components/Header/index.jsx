@@ -8,10 +8,9 @@ import styles from './Header.module.css';
 
 export default function Header() {
 
-    const loginData = localStorage.getItem("isLogin");
     const usuarioData = JSON.parse(localStorage.getItem("usuarioLogado"));
 
-    const [login, setLogin] = useState(loginData ? JSON.parse(loginData) : true);
+    const [login, setLogin] = useState(usuarioData ? false : true);
     const [menuLateral, setMenuLateral] = useState(false);
 
     const showMenu = () => setMenuLateral(!menuLateral);
