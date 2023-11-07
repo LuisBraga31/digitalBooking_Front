@@ -1,10 +1,11 @@
-import { useParams } from 'react-router-dom'
-import styles from './DetalheProduto.module.css'
-import { DetalheProdutoHeader } from '../DetalheProdutoHeader';
-import elementos from '../../data/elements.json'
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom'
+
+import styles from './DetalheProduto.module.css'
+import elementos from '../../data/elements.json'
+
+import { DetalheProdutoHeader } from '../DetalheProdutoHeader';
 import { DetalheProdutoImagens } from '../DetalheProdutoImagens';
-import { DetalheProdutoLocalizacao } from '../DetalheProdutoLocalizacao';
 
 export function DetalheProduto() {
 
@@ -24,7 +25,6 @@ export function DetalheProduto() {
     return(
         <div className={styles.container}>
             <DetalheProdutoHeader produto={produto}/>
-            <DetalheProdutoLocalizacao produto={produto}/>
             <DetalheProdutoImagens produto={produto}/>
         </div>
     )
