@@ -7,11 +7,13 @@ export function DetalheProdutoLocalizacao({produto}) {
         <div className={styles.container}>
 
             <div>
-                
+                <p className={styles.localizacao}>
+                    {produto.location}
+                </p>
             </div>
 
-            <div className={styles.classificacao}>
-
+            <div>
+                <p className={styles.classificacao}>Muito bom <strong>8</strong></p>
             </div>
 
         </div>

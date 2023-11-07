@@ -4,7 +4,7 @@
         "img": "/produtos/example.png",
         "category": "Hotel",
         "title": "Hermitage Hotel",
-        "location": "Rio de Janeiro",
+        "location": "Rio de Janeiro, Rio de Janeiro, Brasil",
         "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
     },
     {
@@ -12,7 +12,7 @@
         "img": "/produtos/example2.png",
         "category": "Apartamento",
         "title": "Hotel Village",
-        "location": "Porto de Galinhas",
+        "location": "Porto de Galinhas, Pernambuco, Brasil",
         "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
     },
     {
@@ -20,7 +20,7 @@
         "img": "./produtos/example.png",
         "category": "Cama",
         "title": "Hotel Coroados",
-        "location": "Itajubá",
+        "location": "Itajubá, Minas Gerais, Brasil",
         "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
     },
     {
@@ -28,7 +28,7 @@
         "img": "/produtos/example2.png",
         "category": "Hostel",
         "title": "Rhino Hotel",
-        "location": "Rio de Janeiro",
+        "location": "Alvarenga, Minas Gerais, Brasil",
         "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
     },
     {
@@ -36,7 +36,7 @@
         "img": "/produtos/example.png",
         "category": "Hotel",
         "title": "Hotel do Baiano",
-        "location": "Bahia",
+        "location": "Salvador, Bahia, Brasil",
         "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
     },
     {
@@ -44,7 +44,7 @@
         "img": "/produtos/example2.png",
         "category": "Apartamento",
         "title": "Detona Hotel",
-        "location": "Bahia",
+        "location": "Salvador, Bahia, Brasil",
         "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
     },
     {
@@ -52,7 +52,7 @@
         "img": "/produtos/example.png",
         "category": "Cama",
         "title": "Hotel Atlântico Tower",
-        "location": "Rio de Janeiro",
+        "location": "Volta Redonda, Rio de Janeiro, Brasil",
         "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
     },
     {
@@ -60,7 +60,7 @@
         "img": "/produtos/example2.png",
         "category": "Hostel",
         "title": "Barenia Hotel",
-        "location": "Santos",
+        "location": "Santos, São Paulo, Brasil",
         "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
     }
   ]

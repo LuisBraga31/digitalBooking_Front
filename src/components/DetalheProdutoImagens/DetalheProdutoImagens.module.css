@@ -1,3 +1,42 @@
 .container {
-    
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.icons {
+    width: 1280px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--second-color);
+    cursor: pointer;
+}
+
+.images {
+    display: flex;
+    gap: 10px;
+}
+
+.otherImages {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
+    align-self: center;
+}
+
+.verMais {
+    position: absolute;
+    bottom: 3%;
+    right: 2%;
+    background-color: transparent;
+    color: var(--white-pure);
+    border: none;
+    border-bottom: 2px solid var(--white-pure);
+    cursor: pointer;
+    padding: 0px 5px;
 }

@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
 import styles from './DetalheProdutoHeader.module.css';
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 export function DetalheProdutoHeader( { produto }) {    
 
@@ -7,11 +9,13 @@ export function DetalheProdutoHeader( { produto }) {
         <div className={styles.header}>
             
             <div className={styles.headerConteudo}>
-                <h4> {produto.category} </h4>
+                <span> {produto.category} </span>
                 <h2> {produto.title} </h2>
             </div>
 
-            <button className={styles.headerButton}> {'<<<'} </button>
+            <Link to='/' className={styles.headerButton}> 
+               <AiOutlineArrowLeft size={32}/> 
+            </Link>
             
             
         </div>

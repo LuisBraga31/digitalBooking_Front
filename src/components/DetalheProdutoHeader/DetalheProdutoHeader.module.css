@@ -2,13 +2,30 @@
     background-color: var( --third-color);
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 12px 45px;
 }
 
 .headerConteudo {
     color: var(--white-pure);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.headerConteudo span{
+    font-size: 14px;
+}
+
+.headerConteudo h2{
+    font-size: 24px;
 }
 
 .headerButton {
+    display: flex;
+    align-items: center;
+    color: var(--white-pure);
+
+    border: none;
+    cursor: pointer;
 
 }
