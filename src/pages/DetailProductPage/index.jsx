@@ -1,3 +1,4 @@
+import { DetalheProduto } from "../../components/DetalheProduto";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
@@ -8,7 +9,7 @@ export function DetailProductPage() {
         <>
             <Header/>
             <main className={styles.main}>
-
+                <DetalheProduto/>
             </main>
             <Footer/>
         </>

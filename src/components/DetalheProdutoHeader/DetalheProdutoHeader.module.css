@@ -1,0 +1,14 @@
+.header {
+    background-color: var( --third-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.headerConteudo {
+    color: var(--white-pure);
+}
+
+.headerButton {
+
+}
