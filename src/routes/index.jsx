@@ -3,6 +3,7 @@ import { Home } from "../pages/Home";
 
 import { FormPage } from "../pages/FormPage";
 import { LoginPage } from "../pages/LoginPage";
+import { DetailProductPage } from "../pages/DetailProductPage";
 
 export function RouteList() {
 
@@ -14,6 +15,7 @@ export function RouteList() {
                     <Route path="/" element={<Home/>} />
                     <Route path="/form" element={<FormPage />} />
                     <Route path="/login" element={<LoginPage/>} />
+                    <Route path="/producto/:id" element={<DetailProductPage />} />
 
                 </Routes>
             
