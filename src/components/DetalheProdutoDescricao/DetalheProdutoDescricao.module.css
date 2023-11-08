@@ -1,0 +1,28 @@
+.containerDescricao {
+    background-color: var(--white-pure);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: var(--gray-color);
+}
+
+.titleHeader, .title {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 20px;
+}
+
+.text {
+    
+}
+
+.title {
+    width: 100%;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.containerGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+}

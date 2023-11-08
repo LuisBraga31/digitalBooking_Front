@@ -17,7 +17,6 @@ export default function Header() {
 
     const logout = () => {
         setLogin(true);
-        localStorage.removeItem('isLogin');
         localStorage.removeItem('usuarioLogado');
     }
 

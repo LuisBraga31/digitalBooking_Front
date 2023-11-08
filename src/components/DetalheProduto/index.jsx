@@ -6,6 +6,10 @@ import elementos from '../../data/elements.json'
 
 import { DetalheProdutoHeader } from '../DetalheProdutoHeader';
 import { DetalheProdutoImagens } from '../DetalheProdutoImagens';
+import { DetalheProdutoDescricao } from '../DetalheProdutoDescricao';
+import { DetalheProdutoCalendario } from '../DetalheProdutoCalendario';
+import { DetalheProdutoLocalizacao } from '../DetalheProdutoLocalizacao';
+import { DetalheProdutoInfo } from '../DetalheProdutoInfo';
 
 export function DetalheProduto() {
 
@@ -26,6 +30,10 @@ export function DetalheProduto() {
         <div className={styles.container}>
             <DetalheProdutoHeader produto={produto}/>
             <DetalheProdutoImagens produto={produto}/>
+            <DetalheProdutoDescricao produto={produto}/>
+            <DetalheProdutoCalendario/>
+            <DetalheProdutoLocalizacao produto={produto}/>
+            <DetalheProdutoInfo/>
         </div>
     )
 }
