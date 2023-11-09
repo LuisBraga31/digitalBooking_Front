@@ -9,7 +9,7 @@ export function DetalheProdutoHeader( { produto }) {
 
     return(
         <>
-            <div className={styles.header}>
+            <div className={styles.headerDetail}>
                 
                 <div className={styles.headerConteudo}>
                     <span> {produto.category} </span>

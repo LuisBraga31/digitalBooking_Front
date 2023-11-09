@@ -1,5 +1,5 @@
 /* HEADER */
-.header {
+.headerDetail {
     background-color: var( --third-color);
     display: flex;
     justify-content: space-between;

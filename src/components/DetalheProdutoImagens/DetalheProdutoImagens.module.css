@@ -40,3 +40,13 @@
     cursor: pointer;
     padding: 0px 5px;
 }
+
+@media (max-width: 768px) {
+    .images {
+        width: 100%;
+        flex-direction: column;
+    }
+    .otherImages {
+        display: none;
+    }
+}
