@@ -43,6 +43,12 @@
     font-size: 14px;
 }
 
+.locationHeader {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 .localizacao {
     font-weight: 500;
 }

@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
 import styles from './DetalheProdutoHeader.module.css';
+
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import map from '../../assets/icons/map.png';
 
 export function DetalheProdutoHeader( { produto }) {    
 
@@ -22,7 +24,8 @@ export function DetalheProdutoHeader( { produto }) {
             
             <div className={styles.container}>
 
-                <div>
+                <div className={styles.locationHeader}>
+                    <img src={map} alt="" />
                     <p className={styles.localizacao}>
                         {produto.location}
                     </p>

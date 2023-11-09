@@ -1,4 +1,10 @@
 /* eslint-disable react/prop-types */
+import { BsCarFrontFill } from "react-icons/bs";
+import { PiTelevisionSimpleBold } from "react-icons/pi";
+import { MdPets } from "react-icons/md";
+import { FaSwimmer, FaWifi, FaSink } from "react-icons/fa";
+import { IoIosSnow } from "react-icons/io";
+
 import styles from './DetalheProdutoDescricao.module.css';
 
 export function DetalheProdutoDescricao({ produto }) {
@@ -21,13 +27,34 @@ export function DetalheProdutoDescricao({ produto }) {
             <h2 className={styles.title}>O que esse lugar oferece?</h2>
 
             <div className={styles.containerGrid}>
-                <div className={styles.cozinha}>Cozinha</div>
-                <div className={styles.televisor}>Televisor</div>
-                <div className={styles.ar}>Ar Condicionado</div>
-                <div className={styles.pets}>Aceito Pets</div>
-                <div className={styles.estacionamento}>Estacionamento gratuito</div>
-                <div className={styles.piscina}>Piscina</div>
-                <div className={styles.wifi}>Wifi</div>
+                <div className={styles.grid_item}>
+                    <FaSink />
+                    <p> Cozinha </p>
+                </div>
+                <div className={styles.grid_item}>
+                    <PiTelevisionSimpleBold />
+                    <p> Televisão </p>
+                </div>
+                <div className={styles.grid_item}>
+                    <IoIosSnow />
+                    <p> Ar Condicionado </p>
+                </div>
+                <div className={styles.grid_item}>
+                    <MdPets />
+                    <p> Aceito Pets </p>
+                </div>
+                <div className={styles.grid_item}>
+                    <BsCarFrontFill />
+                    <p> Estacionamento gratuito </p>
+                </div>
+                <div className={styles.grid_item}>
+                    <FaSwimmer />
+                    <p> Piscina </p>
+                </div>
+                <div className={styles.grid_item}>
+                    <FaWifi />
+                    <p> Wifi </p>
+                </div>
 
             </div>
 
