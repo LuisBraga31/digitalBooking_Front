@@ -31,8 +31,8 @@ export function DetalheProdutoHeader( { produto }) {
                     </p>
                 </div>
     
-                <div>
-                    <p className={styles.classificacao}>Muito bom <strong>8</strong></p>
+                <div className={styles.classifacaoHeader}>
+                    <p className={styles.classificacao}> Muito Bom <strong>8</strong></p>
                 </div>
     
             </div>

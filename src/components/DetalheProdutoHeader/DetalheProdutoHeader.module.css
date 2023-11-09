@@ -54,15 +54,17 @@
 }
 
 .classificacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     font-weight: 700;
 }
 
 .classificacao strong {
-    width: 34px;
-    height: 34px;
     background-color: var(--third-color);
     border-radius: 13px;
-    padding: 9px 12px;
+    padding: 4px 8px;
     font-size: 20px;
     text-align: center;
     font-weight: 700;
