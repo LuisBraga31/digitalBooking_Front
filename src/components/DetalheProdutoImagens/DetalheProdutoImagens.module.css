@@ -50,3 +50,13 @@
         display: none;
     }
 }
+
+@media (max-width: 638px) {
+    .imagePrincipal img{
+        width: 405px;
+    }
+    .container {
+        padding: 30px 10px;
+    }
+
+}
