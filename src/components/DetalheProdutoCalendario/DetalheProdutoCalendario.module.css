@@ -1,0 +1,53 @@
+.containerCalendario {
+    margin-top: 40px;
+    background-color: var(--lightgray-color);
+    color: var(--second-color);
+    padding: 10px 40px 20px 40px;
+}
+
+.dataTitle {
+   font-size: 24px; 
+   font-weight: 700;
+}
+
+.sectionReserva {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.calendario {
+    padding: 25px;
+}
+
+.reserva {
+    padding: 30px;
+    border-radius: 5px;
+    background-color: var(--white-pure);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.reserva p {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--darkgray-color);
+}
+
+.reserva button {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    border: none;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    color: var(--white-pure);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.reserva button:hover {
+    opacity: 0.8;
+}
