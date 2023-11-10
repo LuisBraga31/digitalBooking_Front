@@ -28,3 +28,9 @@
 .react-calendar__viewContainer {
     gap: 15px;
 }
+
+@media (max-width: 768px) {
+    .react-calendar  {
+        width: 80vw;
+    }
+}

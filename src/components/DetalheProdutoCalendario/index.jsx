@@ -27,9 +27,17 @@ export function DetalheProdutoCalendario() {
         <div className={styles.sectionReserva}>
           <div className={styles.calendario}>
             <Calendar
+              className={styles.calendarOrigin}
               value={activeStartDate}
               onChange={handleDateChange}
               showDoubleView
+              tileDisabled={desabilitarDatas}
+              showNavigation={true}
+            />
+            <Calendar
+              className={styles.calendarMobile}
+              value={activeStartDate}
+              onChange={handleDateChange}
               tileDisabled={desabilitarDatas}
               showNavigation={true}
             />

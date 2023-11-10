@@ -20,6 +20,14 @@
     padding: 25px;
 }
 
+.calendarOrigin {
+    display: block;
+}
+
+.calendarMobile {
+    display: none;
+}
+
 .reserva {
     padding: 30px;
     border-radius: 5px;
@@ -50,4 +58,28 @@
 
 .reserva button:hover {
     opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+
+    .sectionReserva {
+        gap: 50px;
+    }
+
+    .sectionReserva {
+        flex-direction: column;
+    }
+    .reserva {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 610px) {
+    .calendarOrigin {
+        display: none;
+    }
+    
+    .calendarMobile {
+        display: block;
+    }
 }
