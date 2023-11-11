@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 
@@ -27,7 +28,7 @@ export function DetalheProduto() {
     }, []);
 
     return(
-        <div className={styles.container}>
+        <div className={styles.detalheProduto}>
             <DetalheProdutoHeader produto={produto}/>
             <DetalheProdutoImagens produto={produto}/>
             <DetalheProdutoDescricao produto={produto}/>

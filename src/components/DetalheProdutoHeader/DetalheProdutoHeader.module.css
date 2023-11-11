@@ -1,5 +1,4 @@
-/* HEADER */
-.headerDetail {
+.headerContainer {
     background-color: var( --third-color);
     display: flex;
     justify-content: space-between;
@@ -13,11 +12,11 @@
     gap: 2px;
 }
 
-.headerConteudo span{
+.headerConteudo > span{
     font-size: 14px;
 }
 
-.headerConteudo h2{
+.headerConteudo > h2{
     font-size: 24px;
 }
 
@@ -25,14 +24,12 @@
     display: flex;
     align-items: center;
     color: var(--white-pure);
-
     border: none;
     cursor: pointer;
-
 }
 
-/* CONTAINER */
-.container {
+
+.locationContainer {
     background-color: #E5E5E5;
     display: flex;
     justify-content: space-between;
@@ -53,6 +50,11 @@
     font-weight: 500;
 }
 
+.locationClassificacao {
+    display: flex;
+    align-items: center;
+}
+
 .classificacao {
     display: flex;
     justify-content: center;
@@ -69,4 +71,31 @@
     text-align: center;
     font-weight: 700;
     color: var(--white-pure);
+}
+
+@media(max-width: 480px) {
+    
+    .locationHeader img {
+        width: 14px;
+    }
+    
+    .localizacao {
+        font-size: 12px;
+    }
+    .classificacao {
+        font-size: 12px;
+        gap: 5px;
+    }
+
+    .classificacao strong {
+        border-radius: 15px;
+        font-size: 14px;
+    }
+
+    .locationContainer {
+        gap: 10px;
+        padding: 12px 25px;
+    }
+
+
 }

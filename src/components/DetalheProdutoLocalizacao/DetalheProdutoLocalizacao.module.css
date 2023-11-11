@@ -1,8 +1,8 @@
-.containerLocal {
+.localContainer {
     margin: 40px 0px;
 }
 
-.title {
+.localTitle {
     width: 100%;
     border-bottom: 1px solid var(--primary-color);
     color: var(--gray-color);
@@ -11,14 +11,14 @@
     padding: 20px 20px 20px 40px;
 }
 
-.locationTitle {
+.localInfo {
     padding: 20px 0px 20px 40px;
     color: #4F4F50;
     font-size: 16px;
     font-weight: 700;
 }
 
-.mapArea {
+.localMap {
     display: flex;
     align-items: center;
     justify-content: center;

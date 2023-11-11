@@ -9,7 +9,7 @@ export function DetalheProdutoHeader( { produto }) {
 
     return(
         <>
-            <div className={styles.headerDetail}>
+            <div className={styles.headerContainer}>
                 
                 <div className={styles.headerConteudo}>
                     <span> {produto.category} </span>
@@ -17,12 +17,12 @@ export function DetalheProdutoHeader( { produto }) {
                 </div>
 
                 <Link to='/' className={styles.headerButton}> 
-                <AiOutlineArrowLeft size={32}/> 
+                    <AiOutlineArrowLeft size={32}/> 
                 </Link>
                 
             </div>
             
-            <div className={styles.container}>
+            <div className={styles.locationContainer}>
 
                 <div className={styles.locationHeader}>
                     <img src={map} alt="" />
@@ -31,7 +31,7 @@ export function DetalheProdutoHeader( { produto }) {
                     </p>
                 </div>
     
-                <div className={styles.classifacaoHeader}>
+                <div className={styles.locationClassificacao}>
                     <p className={styles.classificacao}> Muito Bom <strong>8</strong></p>
                 </div>
     

@@ -1,5 +1,6 @@
 .containerInfo {
     display: flex;
+    flex-direction: column;
     background-color: #FFFFFF;
     
     height: 367px;

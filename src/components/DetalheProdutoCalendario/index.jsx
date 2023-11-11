@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+
 import styles from './DetalheProdutoCalendario.module.css';
+import "react-calendar/dist/Calendar.css";
 import './calendario.css';
 
 export function DetalheProdutoCalendario() {
@@ -21,13 +22,14 @@ export function DetalheProdutoCalendario() {
     
     
     return (
-      <div className={styles.containerCalendario}>
-        <h1 className={styles.dataTitle}> Datas Disponíveis</h1>
+      <div className={styles.calendarioContainer}>
+        <h1 className={styles.calendarioTitle}> Datas Disponíveis</h1>
 
-        <div className={styles.sectionReserva}>
+        <div className={styles.calendarioSection}>
+          
           <div className={styles.calendario}>
             <Calendar
-              className={styles.calendarOrigin}
+              className={styles.calendarDesktop}
               value={activeStartDate}
               onChange={handleDateChange}
               showDoubleView
@@ -47,6 +49,7 @@ export function DetalheProdutoCalendario() {
             <p>Adicione as datas da sia viagem para obter preços exatos.</p>
             <button>Iniciar reserva</button>
           </div>
+          
         </div>
       </div>
     );

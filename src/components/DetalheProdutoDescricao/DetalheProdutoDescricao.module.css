@@ -1,4 +1,4 @@
-.containerDescricao {
+.descricaoContainer {
     background-color: var(--white-pure);
     display: flex;
     flex-direction: column;
@@ -6,48 +6,48 @@
     color: var(--gray-color);
 }
 
-.titleHeader, .title {
+.descricaoTitle, .ofertasTitle {
     font-size: 24px;
     font-weight: 700;
     padding: 20px 0px 20px 40px;
 }
 
-.text {
+.descricaoText {
     padding: 0 40px 20px 40px;
     text-align: justify;
 }
 
-.title {
+.ofertasTitle {
     width: 100%;
     border-bottom: 1px solid var(--primary-color);
 }
 
-.containerGrid {
+.ofertasGrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 30px;
     padding: 20px 0px 20px 40px;
 }
 
-.grid_item {
+.ofertaItem {
     display: flex;
+    align-items: center;
     gap: 10px;
     color: var(--primary-color);
 }
 
-.grid_item p {
+.ofertaItem p {
     color: var(--third-color);
     font-weight: 500;
     font-size: 14px;
 }
 
 @media (max-width: 768px) {
-    .containerDescricao {
-
+    .descricaoContainer {
         width: 100%; 
     }
 
-    .containerGrid {
+    .ofertasGrid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 30px;

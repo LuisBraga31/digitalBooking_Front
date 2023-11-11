@@ -6,19 +6,23 @@ import 'leaflet/dist/leaflet.css';
 
 export function DetalheProdutoLocalizacao( {produto} ) {
     return (
-      <div className={styles.containerLocal}>
-        <h1 className={styles.title}> Onde você vai estar? </h1>
+      <div className={styles.localContainer}>
+        
+        <h1 className={styles.localTitle}> Onde você vai estar? </h1>
 
-        <p className={styles.locationTitle}> {produto.location} </p>
+        <p className={styles.localInfo}> {produto.location} </p>
 
-        <div className={styles.mapArea}>
+        <div className={styles.localMap}>
+          
           <MapContainer className={styles.map} center={[-22.9031, -43.255]} zoom={15}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Marker position={[-22.9031, -43.255]}>
-              <Popup> Sua Localização </Popup>
+              <Popup> {produto.title} </Popup>
             </Marker>
           </MapContainer>
+
         </div>
+
       </div>
     );
 }

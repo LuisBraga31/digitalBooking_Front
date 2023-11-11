@@ -29,6 +29,16 @@
     gap: 15px;
 }
 
+.react-calendar__navigation__label {
+    font-weight: bold;
+    padding: 5px 0px;
+}
+
+.react-calendar__navigation {
+    display: flex;
+    align-items: center;
+}
+
 @media (max-width: 768px) {
     .react-calendar  {
         width: 80vw;
