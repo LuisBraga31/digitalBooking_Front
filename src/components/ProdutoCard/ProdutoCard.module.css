@@ -28,9 +28,16 @@
 }
 
 .cardDescription {
-    padding: 70px 14px 10px 0px;
+    padding: 70px 14px 0px 0px;
     font-weight: 500;
     text-align: justify;
+    height: 130px;
+    margin-bottom: 5px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .cardButton {
@@ -60,8 +67,9 @@
     }
 
     .cardDescription {
-        padding: 40px 14px 10px 0px;
-
+        padding: 40px 14px 0px 0px;
+        height: 80px;
+        -webkit-line-clamp: 2; 
     }
 
 }

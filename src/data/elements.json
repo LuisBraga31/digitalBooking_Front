@@ -5,7 +5,9 @@
         "category": "Hotel",
         "title": "Hermitage Hotel",
         "location": "Rio de Janeiro, Rio de Janeiro, Brasil",
-        "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
+        "lat": "-22.9031",
+        "long": "-43.2095",
+        "description": "Desfrute de uma experiência única no coração do Rio de Janeiro, onde o charme urbano encontra a beleza natural. Nosso hotel oferece vistas deslumbrantes para a icônica Praia de Copacabana, combinadas com a hospitalidade calorosa do Brasil. Quartos modernos e aconchegantes proporcionam o refúgio perfeito após um dia explorando as maravilhas da cidade. Delicie-se com pratos autênticos em nosso restaurante à beira-mar e mergulhe na cultura vibrante que permeia cada rua e esquina do Rio."
     },
     {
         "id": 2,
@@ -13,7 +15,9 @@
         "category": "Apartamento",
         "title": "Hotel Village",
         "location": "Porto de Galinhas, Pernambuco, Brasil",
-        "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
+        "lat": "-8.50111", 
+        "long": "-35.0",
+        "description": "Bem-vindo ao paraíso tropical de Porto de Galinhas, onde praias de areias brancas e águas cristalinas convidam a momentos de relaxamento. Nosso hotel à beira-mar oferece acomodações confortáveis e elegantes, proporcionando uma fusão harmoniosa com a natureza exuberante que cerca a região. Mergulhe nas piscinas naturais, saboreie pratos da culinária regional em nosso restaurante premiado e deixe-se envolver pela atmosfera descontraída e acolhedora de Porto de Galinhas."
     },
     {
         "id": 3,
@@ -21,7 +25,9 @@
         "category": "Cama",
         "title": "Hotel Coroados",
         "location": "Itajubá, Minas Gerais, Brasil",
-        "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
+        "lat": "-22.4294",
+        "long": "-45.457",
+        "description": "Seja bem-vindo a Itajubá, uma encantadora cidade em Minas Gerais, onde a tradição e a modernidade se encontram. Nosso hotel oferece uma estadia acolhedora, com quartos bem equipados e uma atmosfera que reflete a hospitalidade mineira. Explore as charmosas ruas do centro histórico, descubra a rica cultura local e desfrute de momentos relaxantes em nosso jardim tranquilo. Itajubá convida você a experimentar o melhor de Minas Gerais em um ambiente único e acolhedor."
     },
     {
         "id": 4,
@@ -29,7 +35,9 @@
         "category": "Hostel",
         "title": "Rhino Hotel",
         "location": "Alvarenga, Minas Gerais, Brasil",
-        "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
+        "lat": "-19.4194",
+        "long": "-41.7392",
+        "description": "Em Alvarenga, a simplicidade se transforma em beleza. Nosso hotel oferece uma escapada tranquila no coração de Minas Gerais, onde a natureza exuberante se torna o cenário perfeito para momentos de paz. Os quartos confortáveis proporcionam vistas panorâmicas das montanhas, enquanto nossas trilhas oferecem a oportunidade de explorar as belezas naturais da região. Desconecte-se do mundo exterior e conecte-se com a serenidade que Alvarenga tem a oferecer."
     },
     {
         "id": 5,
@@ -37,15 +45,19 @@
         "category": "Hotel",
         "title": "Hotel do Baiano",
         "location": "Salvador, Bahia, Brasil",
-        "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
+        "lat": "-12.9714",
+        "long": "-38.5014",
+        "description": "Em Salvador, mergulhe na rica herança cultural e histórica da Bahia. Nosso hotel, situado no coração da cidade, oferece acomodações elegantes e uma experiência imersiva na vibrante cultura afro-brasileira. Deixe-se levar pelos ritmos envolventes do Pelourinho, saboreie a culinária baiana em nosso restaurante premiado e descubra os encantos que fazem de Salvador um destino único e inesquecível."
     },
     {
         "id": 6,
         "img": "/produtos/example2.png",
         "category": "Apartamento",
         "title": "Detona Hotel",
-        "location": "Salvador, Bahia, Brasil",
-        "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
+        "location": "Rio de Janeiro, Rio de Janeiro, Brasil",
+        "lat": "-22.9031",
+        "long": "-43.2095",
+        "description": "Desperte seus sentidos no Rio de Janeiro, onde praias douradas abraçam a cidade e montanhas imponentes se misturam ao horizonte. Nosso hotel, aninhado entre a efervescência cultural e as águas serenas, oferece a você uma estadia única. Quartos com vista para o mar e serviços atenciosos criam um ambiente acolhedor, enquanto a atmosfera vibrante da cidade convida à exploração. Saboreie a culinária local em nosso restaurante à beira-mar, relaxe nas praias icônicas e mergulhe na alegria carioca que torna cada visita uma celebração da vida. "
     },
     {
         "id": 7,
@@ -53,7 +65,9 @@
         "category": "Cama",
         "title": "Hotel Atlântico Tower",
         "location": "Volta Redonda, Rio de Janeiro, Brasil",
-        "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
+        "lat": "-22.5207",
+        "long": "-44.0994",
+        "description": "Seja recebido com hospitalidade calorosa em Volta Redonda, uma cidade dinâmica no estado do Rio de Janeiro. Nosso hotel oferece uma estadia confortável e conveniente, ideal para viajantes a negócios e lazer. Quartos modernos, instalações bem equipadas e uma localização estratégica tornam a sua visita a Volta Redonda uma experiência agradável. Explore as atrações locais, desfrute da gastronomia regional e relaxe em nosso ambiente acolhedor."
     },
     {
         "id": 8,
@@ -61,6 +75,8 @@
         "category": "Hostel",
         "title": "Barenia Hotel",
         "location": "Santos, São Paulo, Brasil",
-        "description": "Modi iste. Voluptate ipsam for nesciunt error vel officia. Cupidatat vitae nostrud so velit inventore."
+        "lat": "-23.9535",
+        "long": "-46.3328",
+        "description": "Descubra a beleza costeira de Santos, uma cidade encantadora no estado de SP. Nosso hotel, estrategicamente localizado, oferece vistas deslumbrantes para o mar e acesso fácil às principais atrações. Quartos confortáveis, serviços atenciosos e uma atmosfera tranquila garantem uma estadia relaxante. Explore as praias, o charmoso centro histórico e aproveite a rica cena gastronômica local durante sua visita a Santos."
     }
   ]
