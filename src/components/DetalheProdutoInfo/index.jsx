@@ -5,29 +5,27 @@ export function DetalheProdutoInfo() {
     return(
         <div className={styles.containerInfo}>
             
-            <h1 className={styles.tituloInfo}>O que você precisa saber:</h1>
+            <h2 className={styles.tituloInfo}>O que você precisa saber:</h2>
             
-            <div className={styles.blocos}>
+            <div className={styles.bloco}>
                 
                 <div className={styles.blocoInfo}>
                     <h3 className={styles.subtituloInfo}>Regras da casa</h3>
-                    <p className={styles.info}>Check-out: 10:00</p>
-                    <p className={styles.info}>Não é permitido festas</p>
-                    <p className={styles.info}>Não fumar</p>
+                    <p>Check-out: 10:00</p>
+                    <p>Não é permitido festas</p>
+                    <p>Não fumar</p>
                 </div>
 
                 <div className={styles.blocoInfo}>
                     <h3 className={styles.subtitulo}>Saúde e segurança</h3>
-                    <p className={styles.info}>Check-out: 10:00</p>
-                    <p className={styles.info}>Não é permitido festas</p>
-                    <p className={styles.info}>Não fumar</p>
+                    <p>Diretrizes de distanciamento social e outras regulamentações relacionadas ao coronavírus se aplicam</p>
+                    <p>Detector de fumaça</p>
+                    <p>Depósito de segurança</p>
                 </div>
 
                 <div className={styles.blocoInfo}>
                     <h3 className={styles.subtitulo}>Política de cancelamento</h3>
-                    <p className={styles.info}>Check-out: 10:00</p>
-                    <p className={styles.info}>Não é permitido festas</p>
-                    <p className={styles.info}>Não fumar</p>
+                    <p>Adicione as datas da viagem para obter detalhes de cancelamento para esta estadia.</p>
                 </div>
 
             </div>
