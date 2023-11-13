@@ -1,20 +1,10 @@
+/* Desativando botões de passar o ano*/
 .react-calendar__navigation__next2-button {
     display: none;
 }
 
 .react-calendar__navigation__prev2-button {
     display: none;
-}
-
-.react-calendar__navigation__arrow {
-    background-color: #1DBEB4 !important;
-    border-radius: 45px;
-    font-size: 24px;
-    height: 30px;
-}
-
-.react-calendar__navigation__arrow:hover {
-    opacity: 0.7;
 }
 
 .react-calendar {
@@ -25,18 +15,53 @@
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
-.react-calendar__viewContainer {
-    gap: 15px;
+.react-calendar__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.react-calendar__navigation__arrow {
+    background-color: #1DBEB4 !important;
+    border-radius: 45px;
+    font-size: 24px;
+    padding: 1px 12px; 
+    min-width: 0 !important;
+}
+
+.react-calendar__navigation__arrow:hover {
+    opacity: 0.7;
 }
 
 .react-calendar__navigation__label {
     font-weight: bold;
     padding: 5px 0px;
+    flex-grow: 0 !important;
 }
 
-.react-calendar__navigation {
-    display: flex;
-    align-items: center;
+.react-calendar__navigation__label__labelText {
+    text-transform: capitalize;
+}
+
+.react-calendar__viewContainer {
+    gap: 15px;
+}
+
+.react-calendar__tile {
+    color: var(--second-color);
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.react-calendar__tile:disabled {
+    color: var(--lightgray-color2);
+    font-weight: 700;
+    text-decoration: line-through;
+}
+
+
+.react-calendar__month-view__weekdays__weekday abbr{
+    text-decoration: none !important; 
 }
 
 @media (max-width: 768px) {
@@ -44,3 +69,6 @@
         width: 80vw;
     }
 }
+
+
+
