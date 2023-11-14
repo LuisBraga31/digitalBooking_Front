@@ -4,38 +4,27 @@
     background-color: #FFFFFF;
     color: var(--gray-color);
     height: 367px;
-    top: 2119px;
-    left: -23px;     
+    margin-bottom: 40px;
 }
 
 .tituloInfo {
-
     height: 28px;
     size: 24px;
     line-height: 28.13px; 
     border-bottom: 1px solid var(--primary-color); 
-    padding: 20px 0px 50px 40px;
-    
+    padding: 20px 0px 50px 40px;  
 }
 
 .bloco {
     display: flex;
     flex-direction: row;
-    padding: 40px 0px 0px 0px;
     
-
-
+    padding: 40px 0px 0px 0px;
 }
 
 .blocoInfo {
     padding: 0px 0px 0px 40px;
     margin-right: 100px;  
-
-}
-
-.subTituloInfo {
-    size: 20px;
-    width: 138px;
 }
 
 .blocoInfo p {
@@ -44,7 +33,8 @@
     font-size: 14px;
     padding: 20px 0px 0px 0px;
     size: 14px;
-    width: 227.78px;
+    width: 245px;
+    text-align: justify;
 }
 
 
