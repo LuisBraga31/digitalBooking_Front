@@ -54,6 +54,11 @@
     cursor: pointer;
 }
 
+.cardButton:hover {
+    transition: 0.3s;
+    opacity: 0.7;
+}
+
 @media (max-width: 700px) {
     .card {
         width: 380px;

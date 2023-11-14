@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
+import { useEffect, useState } from 'react';
+import locationIcon from '../../assets/icons/locationIcon.png';
 import styles from './DetalheProdutoLocalizacao.module.css';
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { useEffect, useState } from 'react';
 
 export function DetalheProdutoLocalizacao( {produto} ) {
 
@@ -14,6 +15,12 @@ export function DetalheProdutoLocalizacao( {produto} ) {
       setLat(produto.lat)
       setLong(produto.long)
     }, [produto]);
+
+    const customIcon = L.icon({
+      iconUrl: locationIcon,
+      iconSize: [25, 41], 
+      iconAnchor: [12, 41], 
+    });
 
     return (
       <div className={styles.localContainer}>
@@ -28,8 +35,8 @@ export function DetalheProdutoLocalizacao( {produto} ) {
             lat ? (
               <MapContainer className={styles.map} center={lat ? [lat, long] : [0,0] } zoom={13}>
               <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-              <Marker position={[lat, long]}>
-                <Popup> {produto.title} </Popup>
+              <Marker position={[lat, long]} icon={customIcon}>
+                <Popup> <h3 style={{ color: 'darkblue' }}>{produto.title}</h3></Popup>
               </Marker>
             </MapContainer>
             ) : (

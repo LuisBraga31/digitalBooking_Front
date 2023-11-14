@@ -59,9 +59,12 @@
     text-decoration: line-through;
 }
 
-
 .react-calendar__month-view__weekdays__weekday abbr{
     text-decoration: none !important; 
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+    color: var(--lightgray-color2);
 }
 
 @media (max-width: 768px) {
