@@ -80,7 +80,7 @@ export default function Formulario() {
 
         <div className={styles.divInputs}>
 
-          <div className={errorForm ? `${styles.campoTexto} ${styles.error}` : `${styles.campoTexto}`}>
+          <div className={formErrors.nome ? `${styles.campoTexto} ${styles.error}` : `${styles.campoTexto}`}>
             <label htmlFor="">Nome</label>
             <input
               name="nome"
@@ -91,7 +91,7 @@ export default function Formulario() {
             {formErrors.nome && <span>{formErrors.nome}</span>}
           </div>
 
-          <div className={errorForm ? `${styles.campoTexto} ${styles.error}` : `${styles.campoTexto}`}>
+          <div className={formErrors.sobrenome ? `${styles.campoTexto} ${styles.error}` : `${styles.campoTexto}`}>
             <label htmlFor="">Sobrenome</label>
             <input
               name="sobrenome"
@@ -104,7 +104,7 @@ export default function Formulario() {
 
         </div>
 
-        <div className={errorForm ? `${styles.campoTexto} ${styles.error}` : `${styles.campoTexto}`}>
+        <div className={formErrors.email ? `${styles.campoTexto} ${styles.error}` : `${styles.campoTexto}`}>
           <label htmlFor="">E-mail</label>
           <input
             name="email"
@@ -115,7 +115,7 @@ export default function Formulario() {
           {formErrors.email && <span>{formErrors.email}</span>}
         </div>
 
-        <div className={errorForm ? `${styles.campoTexto} ${styles.error}` : `${styles.campoTexto}`}>
+        <div className={formErrors.senha ? `${styles.campoTexto} ${styles.error}` : `${styles.campoTexto}`}>
           <label htmlFor="">Senha</label>
           <input
             name="senha"
@@ -126,7 +126,7 @@ export default function Formulario() {
           {formErrors.senha && <span>{formErrors.senha}</span>}
         </div>
 
-        <div className={errorForm ? `${styles.campoTexto} ${styles.error}` : `${styles.campoTexto}`}>
+        <div className={formErrors.senha ? `${styles.campoTexto} ${styles.error}` : `${styles.campoTexto}`}>
           <label htmlFor="">Confirmar senha</label>
           <input
             name="repetirSenha"

@@ -12,6 +12,9 @@
     align-items: flex-start;
     gap: 15px;
     color: var(--second-color);
+}
+
+.icons svg {
     cursor: pointer;
 }
 
@@ -104,6 +107,14 @@
 
     .container {
         padding: 30px 10px;
+    }
+
+}
+
+
+@media(max-width: 1240px) {
+    .images {
+        flex-direction: column;
     }
 
 }

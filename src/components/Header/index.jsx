@@ -1,13 +1,14 @@
 import { IoMenu } from "react-icons/io5";
 import { GrClose } from "react-icons/gr";
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from "react";
 
 import styles from './Header.module.css';
 
 export default function Header() {
-
+    
+    const location = useLocation();
     const usuarioData = JSON.parse(localStorage.getItem("usuarioLogado"));
 
     const [login, setLogin] = useState(usuarioData ? false : true);
@@ -29,8 +30,8 @@ export default function Header() {
             { login ? (
             
             <div className={styles.loginBotoes}>
-                <Link to='/form'><button className={styles.button}> Criar Conta </button></Link>
-                <Link to='/login'><button className={styles.button}> Iniciar Sessão </button></Link>
+                 {location.pathname !== '/form' && (<Link to='/form'><button className={styles.button}> Criar Conta </button></Link>)}
+                 {location.pathname !== '/login' && (<Link to='/login'><button className={styles.button}> Iniciar Sessão </button></Link>)}
             </div>
 
             ) : (
@@ -74,9 +75,9 @@ export default function Header() {
                     { login ? (
                     
                     <div className={styles.menuButtons}>
-                        <Link to="/form "> <button className={styles.buttonItem}> Criar Conta </button> </Link>
-                        <hr color="black" width="90%" size="1" className={styles.linha}/>
-                        <Link to="/login"> <button className={styles.buttonItem}>  Iniciar Sessão </button> </Link>
+                        {location.pathname !== '/form' && (<Link to="/form "> <button className={styles.buttonItem}> Criar Conta </button> </Link>)}
+                        {location.pathname == '/' && (<hr color="black" width="90%" size="1" className={styles.linha}/>)}
+                        {location.pathname !== '/login' && (<Link to="/login"> <button className={styles.buttonItem}>  Iniciar Sessão </button> </Link>)}
                     </div>
                     
                     ) : (
