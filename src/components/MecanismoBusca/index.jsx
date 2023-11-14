@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import produtos from '../../data/elements.json';
 import styles from './Mecanismo.module.css';
 
 export default function MecanismoBusca() {
 
-  const [selectedValue, setSelectedValue] = useState('')
+  const [selectedValue, setSelectedValue] = useState('');
+  const listaCidades = Array.from(new Set(produtos.map(item => item.location)));
+  console.log(selectedValue)
 
   const selectChange = (event) => {
     setSelectedValue(event.target.value); 
@@ -20,9 +23,10 @@ export default function MecanismoBusca() {
         <form className={styles.formBusca} onSubmit={handleSearchForm}>
             <select value={selectedValue} onChange={selectChange} className={styles.buscaSelect} type="text">
               <option value="" disabled hidden> Onde Vamos ?</option>
-              <option value="opcao1"> Rio de Janeiro - Brasil </option>
-              <option value="opcao2"> Porto de Galinhas - Brasil </option>
-              <option value="opcao3"> Santos - Brasil </option>
+              {listaCidades.map(item => (
+                <option key={item} value={item}> {item} </option>
+              ))}
+
             </select>
             <input className={styles.buscaInput} type="text" placeholder="Check in - Check out"/>
             <button className={styles.buscaButton} type="submit"> Buscar </button>
