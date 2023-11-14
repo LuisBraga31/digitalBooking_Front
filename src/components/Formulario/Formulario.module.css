@@ -54,7 +54,7 @@
 }
 
 .botao:hover {
-    background-color: #1e968e;
+    background-color: var(--green-hover);
 }
 
 
@@ -75,7 +75,7 @@
 }
 
 .error input {
-    border: 2px solid red;
+    border: 2px solid var( --red-pure);
     background-color: rgba(255, 0, 0, 0.1);
 }
 
@@ -87,12 +87,12 @@
 }
 
 .form a {
-   color: #4285F4;  
+   color: var(--blue-link);  
    text-decoration: none;
 }
 
 .error span {
-    color: red;
+    color: var(--red-pure);
     font-size: 10px;
 }
 

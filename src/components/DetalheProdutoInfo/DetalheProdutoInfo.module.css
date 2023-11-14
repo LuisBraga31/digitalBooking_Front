@@ -1,7 +1,7 @@
 .containerInfo {
     display: flex;
     flex-direction: column;
-    background-color: #FFFFFF;
+    background-color: var(--white-pure);
     color: var(--gray-color);
     height: 367px;
     margin-bottom: 40px;

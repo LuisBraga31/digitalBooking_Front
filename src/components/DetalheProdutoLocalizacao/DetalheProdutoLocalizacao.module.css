@@ -13,7 +13,7 @@
 
 .localInfo {
     padding: 20px 0px 20px 40px;
-    color: #4F4F50;
+    color: var(--darkgray-color);
     font-size: 16px;
     font-weight: 700;
 }
@@ -25,7 +25,7 @@
 }
 
 .map {
-    border: 1px solid #000;
+    border: 1px solid var(--black-pure);
     height: 500px;
     width: 90%;
     z-index: 1;

@@ -1,10 +1,10 @@
 .card {
-    background-color: #fff;
+    background-color: var(--white-pure);
+    color: var(--second-color);
     display: flex;
     gap: 5px;
     width: 635px;
     height: 283px;
-    color: var(--second-color);
     border-radius: 15px;
 }
 
@@ -44,7 +44,7 @@
     width: 100%;
     padding: 10px 0px;
     background-color: var(--primary-color);
-    color: #fff;
+    color: var(--white-pure);
     border: none;
     border-radius: 5px;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
@@ -56,7 +56,7 @@
 
 .cardButton:hover {
     transition: 0.3s;
-    opacity: 0.7;
+    background-color: var(--green-hover);
 }
 
 @media (max-width: 700px) {

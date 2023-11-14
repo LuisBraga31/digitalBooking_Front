@@ -11,11 +11,19 @@
   --primary-color: #1DBEB4;
   --second-color: #383B58;
   --third-color:  #545776;
+  --third-color-op3: #545776e3;
+  
   --white-color: #F3F1ED;
   --gray-color: #383B58;
+
   --white-pure: #FFF;
+  --black-pure: #000;
+  --red-pure: #FF0000;
+
   --lightgray-color: RGBA(56,59,88,0.1);
   --lightgray-color2: RGBA(56,59,88,0.5);
   --darkgray-color: #4F4F50;
-}
 
+  --blue-link: #4285F4;
+  --green-hover: #1e968e;
+}

@@ -1,5 +1,5 @@
 .modal {
-    background-color: #545776e3;
+    background-color: var(--third-color-op3);
     position: fixed;
     top: 0;
     bottom: 0;
