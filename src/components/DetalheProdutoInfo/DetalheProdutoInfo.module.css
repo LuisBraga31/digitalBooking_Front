@@ -18,8 +18,9 @@
 .bloco {
     display: flex;
     flex-direction: row;
-    
-    padding: 40px 0px 0px 0px;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px 0px 120px 0px;
 }
 
 .blocoInfo {
@@ -37,6 +38,16 @@
     text-align: justify;
 }
 
+@media(max-width: 768px) {
+    .blocoInfo  {
+        margin: 0;
+    }
+}
 
+@media(max-width: 608px) {
+    .blocoInfo p {
+        width: 265px;
+    }
+}
 
 

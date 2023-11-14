@@ -25,7 +25,7 @@ export function DetalheProdutoInfo() {
 
                 <div className={styles.blocoInfo}>
                     <h3 >Política de cancelamento</h3>
-                    <p>Adicione as datas da viagem para obter detalhes de cancelamento para esta estadia.</p>
+                    <p>Adicione as datas da viagem para obter detalhes de cancelamento para esta estadia</p>
                 </div>
 
             </div>
