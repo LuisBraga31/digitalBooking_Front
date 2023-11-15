@@ -94,7 +94,11 @@
     color: var(--white-color);
 }
 
-.darkMode .calendarDesktop, .calendarMobile {
+.darkMode .calendarDesktop {
+    background-color: var(--dark-color)!important;
+}
+
+.darkMode .calendarMobile {
     background-color: var(--dark-color)!important;
 }
 
