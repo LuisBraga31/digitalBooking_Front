@@ -63,8 +63,8 @@
     text-decoration: none !important; 
 }
 
-.react-calendar__month-view__days__day--neighboringMonth {
-    color: var(--lightgray-color2);
+.react-calendar__month-view__days__day--neighboringMonth abbr{
+    opacity: 0.5;
 }
 
 @media (max-width: 768px) {
@@ -72,6 +72,3 @@
         width: 80vw;
     }
 }
-
-
-
