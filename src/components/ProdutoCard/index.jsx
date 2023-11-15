@@ -2,9 +2,15 @@
 import { Link } from 'react-router-dom';
 import styles from './ProdutoCard.module.css';
 
+import { useContext } from 'react';
+import { TemaContext } from "../../contexts/globalContext";
+
 export default function ProdutoCard( { id, img, category, title, location, description}) {
+
+  const { tema } = useContext(TemaContext);
+
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${tema ? '' : styles.darkMode}`}>
         
         <div className={styles.cardImage}> 
             <img src={img} alt="" />
@@ -19,7 +25,7 @@ export default function ProdutoCard( { id, img, category, title, location, descr
             <button className={styles.cardButton} > Ver mais </button>
             </Link>
             
-            
+  
         </div>
         
     

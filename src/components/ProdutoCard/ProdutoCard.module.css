@@ -78,3 +78,8 @@
     }
 
 }
+
+.darkMode {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}

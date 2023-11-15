@@ -51,3 +51,11 @@
     }
 
 }
+
+.darkMode {
+    background-color: var(--dark-color2);
+}
+
+.darkMode h2 {
+    color: var(--white-color);
+}

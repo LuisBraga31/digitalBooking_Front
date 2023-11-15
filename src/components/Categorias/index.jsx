@@ -5,9 +5,15 @@ import CamaImage from '../../assets/categorias/cama.png';
 import HotelImage from '../../assets/categorias/hotel.png';
 import HostelImage from '../../assets/categorias/hostel.png';
 
+import { useContext } from 'react';
+import { TemaContext } from "../../contexts/globalContext";
+
 export default function Categorias() {
+
+    const { tema } = useContext(TemaContext);
+
   return (
-    <div className={styles.categorias}>
+    <div className={`${styles.categorias } ${tema ? '' : styles.darkMode}`}>
         
         <h2> Buscar por tipo de acomodação </h2>
         

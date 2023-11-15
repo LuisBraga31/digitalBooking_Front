@@ -2,11 +2,15 @@ import { useState } from 'react';
 import produtos from '../../data/elements.json';
 import styles from './Mecanismo.module.css';
 
+import { useContext } from 'react';
+import { TemaContext } from "../../contexts/globalContext";
+
 export default function MecanismoBusca() {
+
+  const { tema } = useContext(TemaContext);
 
   const [selectedValue, setSelectedValue] = useState('');
   const listaCidades = Array.from(new Set(produtos.map(item => item.location)));
-  console.log(selectedValue)
 
   const selectChange = (event) => {
     setSelectedValue(event.target.value); 
@@ -17,7 +21,7 @@ export default function MecanismoBusca() {
   }
 
   return (
-    <div className={styles.mecanismo}>
+    <div className={`${styles.mecanismo} ${tema ? '' : styles.darkMode}`}>
         <h1> Buscar ofertas em hotéis, casas e muito mais </h1>
         
         <form className={styles.formBusca} onSubmit={handleSearchForm}>

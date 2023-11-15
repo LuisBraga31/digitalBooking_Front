@@ -23,7 +23,6 @@
     }
 }
 
-
 .blocos {
     display: flex;
     align-items: center;
@@ -71,4 +70,16 @@
     .categorias h2 {
         width: 345px !important;
     }
+}
+
+
+.darkMode h2 {
+    color: var(--white-color);
+}
+.darkMode .categoriaItemDesc {
+    color: var(--white-color);
+}
+
+.darkMode .categoriaItem{
+    background-color: var(--dark-color2);
 }

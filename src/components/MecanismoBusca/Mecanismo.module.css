@@ -87,3 +87,7 @@
     }
 
 }
+
+.darkMode {
+    background-color: var(--dark-color2);
+}
