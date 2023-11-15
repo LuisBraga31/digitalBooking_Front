@@ -2,6 +2,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 83.5vh;
+    min-height: 95.5vh;
     padding-top: 93px;
+}
+
+.darkMode {
+    background-color: var(--dark-color);
 }

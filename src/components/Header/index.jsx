@@ -2,11 +2,14 @@ import { IoMenu } from "react-icons/io5";
 import { GrClose } from "react-icons/gr";
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { Link, useLocation } from 'react-router-dom';
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import styles from './Header.module.css';
+import { TemaContext } from "../../contexts/globalContext";
 
 export default function Header() {
+
+    const { tema, mudarTema } = useContext(TemaContext);
     
     const location = useLocation();
     const usuarioData = JSON.parse(localStorage.getItem("usuarioLogado"));
@@ -22,7 +25,7 @@ export default function Header() {
     }
 
     return (
-        <header className={styles.header}>
+        <header className={`${styles.header} ${tema ? '' : styles.darkMode}`}>
             <div className={styles.logo}>
                <Link to='/'> <div className={styles.image}> </div> </Link> 
             </div>
@@ -32,6 +35,7 @@ export default function Header() {
             <div className={styles.loginBotoes}>
                  {location.pathname !== '/form' && (<Link to='/form'><button className={styles.button}> Criar Conta </button></Link>)}
                  {location.pathname !== '/login' && (<Link to='/login'><button className={styles.button}> Iniciar Sessão </button></Link>)}
+                 <button onClick={mudarTema}> Mudar Tema </button>
             </div>
 
             ) : (

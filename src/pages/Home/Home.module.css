@@ -2,3 +2,7 @@
     min-height: 83.5vh;
     padding-top: 93px;
 }
+
+.darkMode {
+    background-color: var(--dark-color);
+}

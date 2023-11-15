@@ -12,6 +12,11 @@
     box-shadow: #C4C4C4 2px 2px 5px;
 }
 
+.darkMode {
+    background-color: var(--dark-color);
+    box-shadow: #000 2px 2px 5px;
+}
+
 .logo {
   width: 256px;
   height: 60px;

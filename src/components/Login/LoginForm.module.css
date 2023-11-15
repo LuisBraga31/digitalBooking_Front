@@ -47,6 +47,18 @@
     padding-left: 12px;
 }
 
+.darkMode label{
+    color: var(--white-pure);
+}
+
+.darkMode input {
+    border-radius: 5px;
+}
+
+.darkMode .botao {
+    box-shadow: none; 
+}
+
 .botao {
     width: 70%;
     height: 40px;
@@ -68,6 +80,10 @@
 
 .form p {
     color: var(--second-color); 
+}
+
+.darkMode p {
+    color: var(--white-color) ;
 }
 
 .form a {
@@ -98,20 +114,4 @@
     .botao {
         width: 28%;
     }
-
-    /*
-  
-
-    .test input {
-        width: 100%;
-    }
-
-    input {
-        width: 100%;
-    }
-
-   
-}
-    */
-    
 }

@@ -66,6 +66,22 @@
     color: var(--second-color);  
 } 
 
+.darkMode label{
+    color: var(--white-pure);
+}
+
+.darkMode input {
+    border-radius: 5px;
+}
+
+.darkMode .botao {
+    box-shadow: none; 
+}
+
+.darkMode p {
+    color: var(--white-color);
+}
+
 .form input {
     width: 100%;
     height: 40px;

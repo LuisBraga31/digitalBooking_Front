@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import styles from "./LoginForm.module.css";
+import { TemaContext } from "../../contexts/globalContext";
 
 export default function Login() {
+
+    const { tema } = useContext(TemaContext);
+
     const [userEmail, setUserEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -51,7 +55,7 @@ export default function Login() {
         <div className={styles.container}>
             <h1>Iniciar Sessão</h1>
 
-            <form className={styles.form} onSubmit={onSubmitForm}>
+            <form className={`${styles.form} ${tema ? '' : styles.darkMode}`} onSubmit={onSubmitForm}>
 
                 <div className={errorForm ? `${styles.campoTexto} ${styles.error}` : `${styles.campoTexto}`}>
                     <label htmlFor="">E-mail</label>

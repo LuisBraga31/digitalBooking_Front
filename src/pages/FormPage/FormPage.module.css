@@ -1,8 +1,12 @@
 .main {
-    min-height: 83.5vh;
+    min-height: 95.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding-top: 50px;
+}
+
+.darkMode {
+    background-color: var(--dark-color);
 }

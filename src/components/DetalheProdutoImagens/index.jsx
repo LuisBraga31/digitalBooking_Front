@@ -72,7 +72,7 @@ export function DetalheProdutoImagens() {
             <img src={Image04} alt="" />
           </div>
         </div>
-      </Modal>
+      </Modal> 
 
     </div>
   );

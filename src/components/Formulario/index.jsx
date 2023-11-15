@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import styles from "./Formulario.module.css";
+import { TemaContext } from "../../contexts/globalContext";
 
 export default function Formulario() {
+
+  const { tema } = useContext(TemaContext);
 
   const navigate = useNavigate();
   const data = localStorage.getItem("registros");
@@ -76,7 +79,7 @@ export default function Formulario() {
 
       <h1 className={styles.titulo}>Criar conta</h1>
 
-      <form className={styles.form} onSubmit={handleForm}>
+      <form className={`${styles.form} ${tema ? '' : styles.darkMode}`} onSubmit={handleForm}>
 
         <div className={styles.divInputs}>
 
