@@ -94,7 +94,7 @@
     color: var(--white-color);
 }
 
-.darkMode .calendarDesktop {
+.darkMode .calendarDesktop, .calendarMobile {
     background-color: var(--dark-color)!important;
 }
 
@@ -102,10 +102,22 @@
     color: var(--white-color);
 }
 
+.darkMode .calendarMobile button{
+    color: var(--white-color);
+}
+
 .darkMode .calendarDesktop button:disabled{
     background-color: var(--dark-color2);
 }
 
+.darkMode .calendarMobile button:disabled{
+    background-color: var(--dark-color2);
+}
+
 .darkMode .calendarDesktop button:hover{
+    background-color: var(--dark-color2);
+}
+
+.darkMode .calendarMobile button:hover{
     background-color: var(--dark-color2);
 }

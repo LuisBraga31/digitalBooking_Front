@@ -82,6 +82,7 @@ export default function Header() {
                         {location.pathname !== '/form' && (<Link to="/form "> <button className={styles.buttonItem}> Criar Conta </button> </Link>)}
                         {location.pathname == '/' && (<hr color="black" width="90%" size="1" className={styles.linha}/>)}
                         {location.pathname !== '/login' && (<Link to="/login"> <button className={styles.buttonItem}>  Iniciar Sessão </button> </Link>)}
+                        <button onClick={mudarTema}> Mudar Tema </button>
                     </div>
                     
                     ) : (

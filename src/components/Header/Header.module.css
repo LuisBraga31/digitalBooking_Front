@@ -114,6 +114,10 @@
     cursor: pointer;
 }
 
+.darkMode .menu {
+    color: var(--white-color);
+}
+
 nav {
     display: none;
 }
