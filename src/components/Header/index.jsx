@@ -27,7 +27,7 @@ export default function Header() {
     return (
         <header className={`${styles.header} ${tema ? '' : styles.darkMode}`}>
             <div className={styles.logo}>
-               <Link to='/'> <div className={styles.image}> </div> </Link> 
+               <Link to='/'> <div className={`${styles.image} ${tema ? '' : styles.imageDark}`}> </div> </Link> 
             </div>
 
             { login ? (

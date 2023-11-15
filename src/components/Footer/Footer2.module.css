@@ -34,3 +34,7 @@
         display: none;
     }
 }
+
+.darkMode {
+    color: var(--dark-color2);
+}

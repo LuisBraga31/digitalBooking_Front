@@ -30,6 +30,10 @@
     background-repeat: no-repeat;
 }
 
+.imageDark {
+    background-image: url('../../assets/logo/db05.svg');
+}
+
 /* Imagem no Tablet */
 @media(max-width:768px) {
     .image {
@@ -56,6 +60,11 @@
     cursor: pointer;
     font-weight: 700;
     font-size: 16px;
+}
+
+.button:hover {
+    transition: 0.3s;
+    opacity: 0.5;
 }
 
 /* HEADER  - com Logout */
@@ -109,7 +118,7 @@ nav {
     display: none;
 }
 
-@media(max-width:580px) {
+@media(max-width:630px) {
     .menuHamburger {
         display: block;
     }
@@ -133,6 +142,10 @@ nav {
         transition: 850ms;
         background-color: var(--white-color);
     }
+
+    .darkMode .menuLateral {
+        background-color: var(--dark-color2);
+    }
     
     .ativo {
         right: 0;
@@ -151,6 +164,10 @@ nav {
     flex-direction: column;
     justify-content: space-between;
     color: var(--white-color);
+}
+
+.darkMode .menuHeader {
+    background-color: var(--dark-color);
 }
 
 .closeButton {
@@ -241,6 +258,10 @@ nav {
     cursor: pointer;
 }
 
+.darkMode .buttonItem {
+    color: var(--white-color);
+}
+
 .buttonItem:hover {
     transform: scale(1.05);
 }
@@ -257,6 +278,10 @@ nav {
     justify-content: space-around;
     gap: 25px;
     color: var(--third-color);
+}
+
+.darkMode .menuFooterLista {
+    color: var(--white-color);
 }
 
 .menuFooterLista li {
