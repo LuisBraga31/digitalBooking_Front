@@ -3,6 +3,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { useState, useContext } from "react";
 
 import { TemaContext } from "../../contexts/globalContext";
+import { Modal } from "../Modal";
 
 import styles from './DetalheProdutoImagens.module.css'
 
@@ -13,8 +14,9 @@ import Image03 from '../../assets/imagens/image04.png';
 import Image04 from '../../assets/imagens/image05.png';
 
 import { register } from 'swiper/element/bundle';
-import { Modal } from "../Modal";
 register();
+import 'swiper/element/css/autoplay';
+
 
 export function DetalheProdutoImagens() {
 
@@ -54,7 +56,9 @@ export function DetalheProdutoImagens() {
       </div>
 
       <div className={styles.carrosselSection}>
-        <swiper-container effect="coverflow" grabCursor centeredSlides slidesPerView="1" speed={300} className={styles.carousel}>
+        <swiper-container effect="coverflow" grabCursor centeredSlides slidesPerView="1" speed={300} loop 
+        autoplay-delay="3000" autoplay-disable-on-interaction="false"
+        className={styles.carousel}>
           {slides.map(item => (
 
             <swiper-slide key={item.id} className={styles.carouselItem}>
