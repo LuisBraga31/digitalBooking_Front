@@ -1,9 +1,14 @@
-import styles from './DetalheProdutoInfo.module.css'
+import styles from './DetalheProdutoInfo.module.css';
+
+import { useContext } from "react";
+import { TemaContext } from "../../contexts/globalContext";
 
 export function DetalheProdutoInfo() {
     
+    const { tema } = useContext(TemaContext);
+
     return(
-        <div className={styles.containerInfo}>
+        <div className={`${styles.containerInfo} ${tema ? '' : styles.darkMode}`}>
             
             <h2 className={styles.tituloInfo}>O que você precisa saber:</h2>
             

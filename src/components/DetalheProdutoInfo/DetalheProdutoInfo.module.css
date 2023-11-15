@@ -50,4 +50,11 @@
     }
 }
 
+.darkMode {
+    background-color: var(--dark-color2);
+    color: var(--white-color); 
+}
 
+.darkMode .blocoInfo p {
+    color: var(--white-pure); 
+}

@@ -5,11 +5,17 @@ import { MdPets } from "react-icons/md";
 import { FaSwimmer, FaWifi, FaSink } from "react-icons/fa";
 import { IoIosSnow } from "react-icons/io";
 
+import { useContext } from "react";
+import { TemaContext } from "../../contexts/globalContext";
+
 import styles from './DetalheProdutoDescricao.module.css';
 
 export function DetalheProdutoDescricao({ produto }) {
+
+    const { tema } = useContext(TemaContext);
+
     return (
-        <div className={styles.descricaoContainer}>
+        <div className={`${styles.descricaoContainer} ${tema ? '' : styles.darkMode}`}>
             
             <h1 className={styles.descricaoTitle}>
                 {produto.location}

@@ -80,3 +80,32 @@
         display: block;
     }
 }
+
+.darkMode {
+    background-color: var(--dark-color2);
+    color: var(--white-color);
+}
+
+.darkMode .reserva {
+    background-color: var(--dark-color);
+}
+
+.darkMode .reserva p{
+    color: var(--white-color);
+}
+
+.darkMode .calendarDesktop {
+    background-color: var(--dark-color)!important;
+}
+
+.darkMode .calendarDesktop button{
+    color: var(--white-color);
+}
+
+.darkMode .calendarDesktop button:disabled{
+    background-color: var(--dark-color2);
+}
+
+.darkMode .calendarDesktop button:hover{
+    background-color: var(--dark-color2);
+}

@@ -54,3 +54,12 @@
         padding: 20px 0px 20px 40px;
     }
 }
+
+.darkMode {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+.darkMode .ofertaItem p{
+    color: var(--white-color);
+}

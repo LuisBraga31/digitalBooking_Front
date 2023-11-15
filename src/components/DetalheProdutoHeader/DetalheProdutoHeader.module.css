@@ -97,5 +97,13 @@
         padding: 12px 25px;
     }
 
+}
 
+.darkModeHeader {
+    background-color: var(--dark-color2);
+}
+
+.darkModeLocation {
+    background-color: var(--dark-color3);
+    color: var(--white-color);
 }

@@ -3,10 +3,15 @@ import { useEffect, useState } from 'react';
 import locationIcon from '../../assets/icons/locationIcon.png';
 import styles from './DetalheProdutoLocalizacao.module.css';
 
+import { useContext } from "react";
+import { TemaContext } from "../../contexts/globalContext";
+
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 export function DetalheProdutoLocalizacao( {produto} ) {
+
+    const { tema } = useContext(TemaContext);
 
     const [lat, setLat] = useState(produto.lat);
     const [long, setLong] = useState(produto.long);
@@ -23,7 +28,7 @@ export function DetalheProdutoLocalizacao( {produto} ) {
     });
 
     return (
-      <div className={styles.localContainer}>
+      <div className={`${styles.localContainer} ${tema ? '' : styles.darkMode}`}>
         
         <h1 className={styles.localTitle}> Onde você vai estar? </h1>
 

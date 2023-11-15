@@ -30,3 +30,11 @@
     width: 90%;
     z-index: 1;
 }
+
+.darkMode .localTitle{
+    color: var(--white-color);
+}
+
+.darkMode .localInfo{
+    color: var(--white-color);
+}

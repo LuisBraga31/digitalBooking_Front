@@ -5,11 +5,16 @@ import styles from './DetalheProdutoHeader.module.css';
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import map from '../../assets/icons/map.png';
 
+import { useContext } from "react";
+import { TemaContext } from "../../contexts/globalContext";
+
 export function DetalheProdutoHeader( { produto }) {    
+
+    const { tema } = useContext(TemaContext);
 
     return(
         <>
-            <div className={styles.headerContainer}>
+            <div className={`${styles.headerContainer} ${tema ? '' : styles.darkModeHeader}`}>
                 
                 <div className={styles.headerConteudo}>
                     <span> {produto.category} </span>
@@ -22,7 +27,7 @@ export function DetalheProdutoHeader( { produto }) {
                 
             </div>
             
-            <div className={styles.locationContainer}>
+            <div className={`${styles.locationContainer} ${tema ? '' : styles.darkModeLocation}`}>
 
                 <div className={styles.locationHeader}>
                     <img src={map} alt="" />

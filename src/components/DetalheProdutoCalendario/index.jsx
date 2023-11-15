@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Calendar from "react-calendar";
+
+import { TemaContext } from "../../contexts/globalContext";
 
 import styles from './DetalheProdutoCalendario.module.css';
 import "react-calendar/dist/Calendar.css";
 import './calendario.css';
 
 export function DetalheProdutoCalendario() {
-    
+
+    const { tema } = useContext(TemaContext);
     const [activeStartDate, setActiveStartDate] = useState(new Date(2023, 10, 9));
 
     const handleDateChange = (date) => {
@@ -16,13 +19,11 @@ export function DetalheProdutoCalendario() {
     const desabilitarDatas = ({ date }) => {
         const dataAtual = new Date();
         const dataAnterior = date < dataAtual;
-        
         return dataAnterior;
     }
     
-    
     return (
-      <div className={styles.calendarioContainer}>
+      <div className={`${styles.calendarioContainer} ${tema ? '' : styles.darkMode}`}>
         <h1 className={styles.calendarioTitle}> Datas Disponíveis</h1>
 
         <div className={styles.calendarioSection}>

@@ -1,6 +1,8 @@
 import { BsShare } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+import { TemaContext } from "../../contexts/globalContext";
 
 import styles from './DetalheProdutoImagens.module.css'
 
@@ -15,7 +17,9 @@ import { Modal } from "../Modal";
 register();
 
 export function DetalheProdutoImagens() {
-  // estado para o Modal
+
+  const { tema } = useContext(TemaContext);
+
   const [openModal, setOpenModal] = useState(false)
 
   const slides = [
@@ -27,7 +31,7 @@ export function DetalheProdutoImagens() {
   ];
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${tema ? '' : styles.darkMode}`}>
       <div className={styles.icons}>
         <BsShare size={24} />
         <AiOutlineHeart size={28} />
