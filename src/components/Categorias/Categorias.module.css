@@ -6,6 +6,23 @@
     align-items: center;
 }
 
+.verTudoButton {
+    background-color: var(--primary-color);
+    color: var(--white-pure);
+    padding: 10px 60px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.verTudoButton:hover {
+    transition: 0.3s;
+    background-color: var(--green-hover);
+}
+
 .categorias h2 {
     font-size: 24px;
     color: var(--third-color);
@@ -36,6 +53,8 @@
     border-radius: 15px;
     width: 310px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+    overflow: hidden;
 }
 
 .categoriaItemDesc {
@@ -53,6 +72,10 @@
 .categoriaItemDesc p {
     font-size: 14px;
     opacity: 0.8;
+}
+
+.selected {
+    border: 3px solid var(--primary-color);
 }
 
 @media (max-width: 768px) {
