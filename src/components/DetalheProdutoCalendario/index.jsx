@@ -47,7 +47,7 @@ export function DetalheProdutoCalendario() {
           </div>
 
           <div className={styles.reserva}>
-            <p>Adicione as datas da sia viagem para obter preços exatos.</p>
+            <p>Adicione as datas da sua viagem para obter preços exatos.</p>
             <button>Iniciar reserva</button>
           </div>
           

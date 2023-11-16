@@ -4,11 +4,19 @@ import Header from "../../components/Header";
 
 import styles from './DetailProduct.module.css';
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { TemaContext } from "../../contexts/globalContext";
 
 
 export function DetailProductPage() {
+    
+    useEffect(() => {
+        window.scrollTo({
+          top: 0,
+          transitionDelay: 300,
+          behavior: "smooth"
+        });
+      }, []);
 
     const { tema } = useContext(TemaContext);
 
