@@ -72,6 +72,8 @@
 
 .darkMode input {
     border-radius: 5px;
+    background-color: var(--dark-color2);
+    color: var(--white-color);
 }
 
 .darkMode .botao {

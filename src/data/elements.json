@@ -78,5 +78,45 @@
         "lat": "-23.9535",
         "long": "-46.3328",
         "description": "Descubra a beleza costeira de Santos, uma cidade encantadora no estado de SP. Nosso hotel, estrategicamente localizado, oferece vistas deslumbrantes para o mar e acesso fácil às principais atrações. Quartos confortáveis, serviços atenciosos e uma atmosfera tranquila garantem uma estadia relaxante. Explore as praias, o charmoso centro histórico e aproveite a rica cena gastronômica local durante sua visita a Santos."
-    }
+    },
+    {
+        "id": 9,
+        "img": "/produtos/example.png",
+        "category": "Hotel",
+        "title": "Marina Bay Resort",
+        "location": "Florianópolis, Santa Catarina, Brasil",
+        "lat": "-27.5954",
+        "long": "-48.5480",
+        "description": "Desfrute de uma experiência luxuosa no coração de Florianópolis. O Marina Bay Resort oferece acomodações elegantes, vistas deslumbrantes para a cidade e comodidades de classe mundial. Relaxe na piscina de borda infinita, saboreie pratos requintados em nosso restaurante gourmet e explore as praias exuberantes da região. Uma estadia inesquecível aguarda por você."
+      },
+      {
+        "id": 10,
+        "img": "/produtos/example2.png",
+        "category": "Hostel",
+        "title": "Aventura Backpackers",
+        "location": "Rio de Janeiro, Rio de Janeiro, Brasil",
+        "lat": "-22.9083",
+        "long": "-43.1964",
+        "description": "Seja bem-vindo ao Aventura Backpackers, o hostel perfeito para os amantes da natureza no Rio de Janeiro. Oferecemos acomodações confortáveis, um ambiente descontraído e ótimas opções de passeios pela região. Descubra as belezas naturais da cidade maravilhosa, como as praias icônicas e os pontos turísticos famosos. Faça novos amigos e viva uma aventura única conosco."
+      },
+      {
+        "id": 11,
+        "img": "/produtos/example.png",
+        "category": "Apartamento",
+        "title": "Skyline Residence",
+        "location": "Rio de Janeiro, Rio de Janeiro, Brasil",
+        "lat": "-22.9083",
+        "long": "-43.1964",
+        "description": "Experimente o conforto moderno no coração do Rio de Janeiro. O Skyline Residence oferece apartamentos espaçosos, decoração contemporânea e vistas deslumbrantes da cidade. Aproveite a conveniência de estar perto das principais atrações, restaurantes e shoppings. Seja para uma estadia curta ou prolongada, nosso residencial proporciona a você uma experiência memorável na cidade maravilhosa."
+      },
+      {
+        "id": 12,
+        "img": "/produtos/example2.png",
+        "category": "Hotel",
+        "title": "Vila do Sossego",
+        "location": "Santos, São Paulo, Brasil",
+        "lat": "-23.9671",
+        "long": "-46.3289",
+        "description": "Venha relaxar na charmosa Vila do Sossego em Santos. Oferecemos aconchegantes quartos privativos, café da manhã delicioso e um ambiente tranquilo. Desfrute das belezas da cidade litorânea, explore as praias e aproveite as delícias culinárias locais. Sinta-se em casa em nosso hotel acolhedor, onde o sossego é a principal atração."
+      }
   ]
