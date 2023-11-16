@@ -1,6 +1,7 @@
 import { IoMenu } from "react-icons/io5";
 import { GrClose } from "react-icons/gr";
-import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaSun } from "react-icons/fa";
+import { GiMoon } from "react-icons/gi";
 import { Link, useLocation } from 'react-router-dom';
 import { useContext, useState } from "react";
 
@@ -35,7 +36,10 @@ export default function Header() {
             <div className={styles.loginBotoes}>
                  {location.pathname !== '/form' && (<Link to='/form'><button className={styles.button}> Criar Conta </button></Link>)}
                  {location.pathname !== '/login' && (<Link to='/login'><button className={styles.button}> Iniciar Sessão </button></Link>)}
-                 <button onClick={mudarTema}> Mudar Tema </button>
+                 
+                 <button className={styles.btn} onClick={mudarTema}> 
+                    {tema ? ( <FaSun className={styles.sun} size={20}/> ) : ( <GiMoon className={styles.moon} size={20}/>)}
+                 </button>
             </div>
 
             ) : (
@@ -46,6 +50,9 @@ export default function Header() {
                     <strong> {usuarioData.nome} {usuarioData.sobrenome} </strong>
                 </div>
                 <button className={styles.buttonLogout} onClick={logout}> Logout </button>
+                <button className={styles.btn} onClick={mudarTema}> 
+                    {tema ? ( <FaSun className={styles.sun} size={20}/> ) : ( <GiMoon className={styles.moon} size={20}/>)}
+                 </button>
             </div>
             )
 
@@ -82,13 +89,17 @@ export default function Header() {
                         {location.pathname !== '/form' && (<Link to="/form "> <button className={styles.buttonItem}> Criar Conta </button> </Link>)}
                         {location.pathname == '/' && (<hr color="black" width="90%" size="1" className={styles.linha}/>)}
                         {location.pathname !== '/login' && (<Link to="/login"> <button className={styles.buttonItem}>  Iniciar Sessão </button> </Link>)}
-                        <button onClick={mudarTema}> Mudar Tema </button>
+                        <button className={styles.btn} onClick={mudarTema}> 
+                            {tema ? ( <FaSun className={styles.sun} size={20}/> ) : ( <GiMoon className={styles.moon} size={20}/>)}
+                        </button>
                     </div>
                     
                     ) : (
-                    <div className={styles.menuBodyLogado}> 
+                    <div className={styles.menuBodyLogado}>
+                        <button className={`${styles.btn} ${styles.btnMobileLog}`} onClick={mudarTema}> 
+                            {tema ? ( <FaSun className={styles.sun} size={20}/> ) : ( <GiMoon className={styles.moon} size={20}/>)}
+                        </button> 
                         <p> Deseja <span onClick={logout}> encerrar a sessão </span> ? </p>
-                        <hr color="black" width="100%" size="1" />
                     </div>
                     )}
 

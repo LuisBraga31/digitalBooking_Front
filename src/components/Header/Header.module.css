@@ -34,6 +34,30 @@
     background-image: url('../../assets/logo/db05.svg');
 }
 
+.btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #12121296;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sun {
+    color: var(--yellow-sun);
+}
+
+.moon {
+    color: var(--blue-moon);
+}
+
+.darkMode .btn {
+    background-color: var(--white-color);
+}
+
 /* Imagem no Tablet */
 @media(max-width:768px) {
     .image {
@@ -238,12 +262,16 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: end;
+    justify-content: space-between;
     gap: 2px;
     padding-bottom: 10px;
 }
 
 .menuBodyLogado p {
+    width: 100%;
+    text-align: right;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--black-pure);
     color: var(--second-color);
     font-weight: 700;
     font-size: 12px;
@@ -294,3 +322,14 @@ nav {
     height: 24px; 
 }
 
+.darkMode .menuText strong {
+    color: var(--primary-color);
+}
+
+.darkMode .loginText {
+    color: var(--white-color);
+}
+
+.darkMode .menuBodyLogado p {
+    color: var(--white-color);
+}
