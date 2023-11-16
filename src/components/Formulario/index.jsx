@@ -129,7 +129,7 @@ export default function Formulario() {
           {formErrors.senha && <span>{formErrors.senha}</span>}
         </div>
 
-        <div className={formErrors.senha ? `${styles.campoTexto} ${styles.error}` : `${styles.campoTexto}`}>
+        <div className={formErrors.senha || formErrors.repetirSenha ? `${styles.campoTexto} ${styles.error}` : `${styles.campoTexto}`}>
           <label htmlFor="">Confirmar senha</label>
           <input
             name="repetirSenha"
