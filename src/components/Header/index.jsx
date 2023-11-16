@@ -2,7 +2,7 @@ import { IoMenu } from "react-icons/io5";
 import { GrClose } from "react-icons/gr";
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaSun } from "react-icons/fa";
 import { GiMoon } from "react-icons/gi";
-import { Link, useLocation } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useContext, useState } from "react";
 
 import styles from './Header.module.css';
@@ -13,6 +13,7 @@ export default function Header() {
     const { tema, mudarTema } = useContext(TemaContext);
     
     const location = useLocation();
+    const navigate = useNavigate();
     const usuarioData = JSON.parse(localStorage.getItem("usuarioLogado"));
 
     const [login, setLogin] = useState(usuarioData ? false : true);
@@ -23,6 +24,7 @@ export default function Header() {
     const logout = () => {
         setLogin(true);
         localStorage.removeItem('usuarioLogado');
+        navigate('/login');
     }
 
     return (

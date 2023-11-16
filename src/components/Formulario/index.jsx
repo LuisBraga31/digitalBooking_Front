@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import styles from "./Formulario.module.css";
 import { TemaContext } from "../../contexts/globalContext";
@@ -34,7 +34,7 @@ export default function Formulario() {
       
       localStorage.setItem('registros', JSON.stringify(novoRegistro));
       alert('Cadastro realizado com sucesso!');
-      navigate('/');
+      navigate('/login');
 
     } else {
       setErrorForm(true); 
@@ -144,7 +144,7 @@ export default function Formulario() {
           Criar conta
         </button>
 
-        <p className={styles.paragrafo}>Já tem uma conta? <a href="./login" >Iniciar sessão</a></p>
+        <p className={styles.paragrafo}>Já tem uma conta? <Link to='../login' >Iniciar sessão</Link></p>
       </form>
     </div>
   );

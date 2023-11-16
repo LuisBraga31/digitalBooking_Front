@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import styles from "./LoginForm.module.css";
 import { TemaContext } from "../../contexts/globalContext";
@@ -80,7 +80,7 @@ export default function Login() {
 
             <button className={styles.botao} type="submit">Entrar</button>
 
-            <p>Ainda não tem conta? <a href="./form">Registre-se</a></p>
+            <p>Ainda não tem conta? <Link to='../form'>Registre-se</Link></p>
 
             </form>
         </div>
