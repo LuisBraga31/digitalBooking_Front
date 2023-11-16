@@ -13,14 +13,15 @@ export function Home() {
     
     const { tema } = useContext(TemaContext);
     const [filterCategory, setFilterCategory] = useState("All");
+    const [filterLocation, setFilterLocation] = useState("All");
 
     return (
         <>
             <Header />
             <main className={`${styles.main} ${tema ? '' : styles.darkMode}`}>
-                <MecanismoBusca />
+                <MecanismoBusca setFilterLocation={setFilterLocation}/>
                 <Categorias setFilterCategory={setFilterCategory}/>
-                <Produtos filterCategory={filterCategory}/>
+                <Produtos filterCategory={filterCategory} filterLocation={filterLocation}/>
             </main>
             <Footer />
         </>

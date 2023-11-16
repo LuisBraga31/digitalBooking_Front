@@ -7,7 +7,7 @@ import ProdutoCard from '../ProdutoCard';
 import { useContext } from 'react';
 import { TemaContext } from "../../contexts/globalContext";
 
-export default function Produtos( { filterCategory } ) {
+export default function Produtos( { filterCategory, filterLocation } ) {
 
   const { tema } = useContext(TemaContext);
   
@@ -18,6 +18,7 @@ export default function Produtos( { filterCategory } ) {
         
         <div className={styles.blocoProdutos}>
         {produtos
+        .filter((item) => filterLocation === "All" ? true : filterLocation === item.location ? true : false)
         .filter((item) => filterCategory === "All" ? true : filterCategory === item.category ? true : false)
         .map(item => (
             <ProdutoCard key={item.id} {... item }/>

@@ -52,6 +52,8 @@
 }
 
 .darkMode input {
+    background-color: var(--dark-color2);
+    color: var(--white-color);
     border-radius: 5px;
 }
 
