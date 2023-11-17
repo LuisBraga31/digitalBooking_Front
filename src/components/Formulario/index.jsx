@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 import styles from "./Formulario.module.css";
 import { TemaContext } from "../../contexts/globalContext";
@@ -9,10 +10,9 @@ export default function Formulario() {
   const { tema } = useContext(TemaContext);
 
   const navigate = useNavigate();
+
   const data = localStorage.getItem("registros");
   const [listaRegistro, setListaRegistro] = useState(data ? JSON.parse(data) : []);
-
-  const [errorForm, setErrorForm] = useState(false);
   
   const [formErrors, setFormErrors] = useState({});
   const [formData, setFormData] = useState({
@@ -27,17 +27,24 @@ export default function Formulario() {
     e.preventDefault()
 
     if (validForm()) {
-      
-      setErrorForm(false);
       const novoRegistro = [...listaRegistro, formData];
       setListaRegistro(novoRegistro);
       
       localStorage.setItem('registros', JSON.stringify(novoRegistro));
-      alert('Cadastro realizado com sucesso!');
-      navigate('/login');
+      
+      Swal.fire({
+        title: "Cadastro realizado com sucesso!",
+        icon: "success"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate('/login');
+        } else {
+          navigate('/login');
+        }
+      });
 
     } else {
-      setErrorForm(true); 
+      return null
     }
   };
 

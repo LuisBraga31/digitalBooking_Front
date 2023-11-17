@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 import styles from "./LoginForm.module.css";
 import { TemaContext } from "../../contexts/globalContext";
@@ -35,17 +36,44 @@ export default function Login() {
             );
 
             if(usuarioEncontrado) {
-                alert('Login efetuado com sucesso!');
-                localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
-                navigate('/');
+                Swal.fire({
+                    title: "Login Efetuado com Sucesso!",
+                    icon: "success"
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                        localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
+                        navigate('/');
+                    } else {
+                        localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
+                        navigate('/');
+                    }
+                });
+
             } else {
-                alert("Por favor, tente novamente, suas credenciais são inválidas");
-                setErrorForm(true)
+                Swal.fire({
+                    title: "Por favor, tente novamente, suas credenciais são inválidas",
+                    icon: "error"
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                        setErrorForm(true)
+                    } else {
+                        setErrorForm(true)
+                    }
+                  });
+                
             }
 
         } else {
-            alert("Por favor, tente novamente, suas credenciais são inválidas");
-            setErrorForm(true)
+            Swal.fire({
+                title: "Por favor, tente novamente, suas credenciais são inválidas",
+                icon: "error"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    setErrorForm(true)
+                } else {
+                    setErrorForm(true)
+                }
+              });
         }
 
     };  

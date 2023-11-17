@@ -84,11 +84,15 @@
     cursor: pointer;
     font-weight: 700;
     font-size: 16px;
+    transition: all 300ms ease-in;
 }
 
 .button:hover {
-    transition: 0.3s;
-    opacity: 0.5;
+  background-color: var(--lightgray-color);
+}
+
+.darkMode .button:hover {
+    background-color: var(--lightgray-color2); 
 }
 
 /* HEADER  - com Logout */
