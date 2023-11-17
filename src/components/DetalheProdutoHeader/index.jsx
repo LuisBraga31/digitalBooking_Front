@@ -3,14 +3,28 @@ import { Link } from 'react-router-dom';
 import styles from './DetalheProdutoHeader.module.css';
 
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import { IoIosStar } from "react-icons/io";
 import map from '../../assets/icons/map.png';
 
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TemaContext } from "../../contexts/globalContext";
 
 export function DetalheProdutoHeader( { produto }) {    
 
     const { tema } = useContext(TemaContext);
+    const qtdEstrelas = new Array(produto.classificacao).fill(null);
+    const [avaliacao, setAvaliacao] = useState(null);
+    
+    useEffect( () => {
+        if(produto.classificacao === 5) {
+            setAvaliacao("Excelente");
+        } else if (produto.classificacao === 4) {
+            setAvaliacao("Muito Bom")
+        } else if (produto.classificacao <= 3) {
+            setAvaliacao("Ok");
+        }
+        
+    }, [produto])
 
     return(
         <>
@@ -37,7 +51,11 @@ export function DetalheProdutoHeader( { produto }) {
                 </div>
     
                 <div className={styles.locationClassificacao}>
-                    <p className={styles.classificacao}> Muito Bom <strong>8</strong></p>
+                    <div className={styles.classificaoResult}>
+                        <p> {avaliacao} </p>
+                        {qtdEstrelas.map((_, index) => ( <IoIosStar key={index} className={styles.star}/>  ))}
+                    </div>
+                    <p className={styles.classificacao}> {produto.classificacao} </p>
                 </div>
     
             </div>

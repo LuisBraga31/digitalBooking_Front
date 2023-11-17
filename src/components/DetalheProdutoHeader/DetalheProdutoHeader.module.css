@@ -53,24 +53,26 @@
 .locationClassificacao {
     display: flex;
     align-items: center;
+    gap: 15px;
+}
+
+.classificaoResult {
+    text-align: center;
+    font-weight: 700;
 }
 
 .classificacao {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    background-color: var(--third-color);
+    color: var(--white-pure);
+    border-radius: 25px;
+    padding: 4px 10px;
+    font-size: 20px;
     font-weight: 700;
+    margin-bottom: 3px;
 }
 
-.classificacao strong {
-    background-color: var(--third-color);
-    border-radius: 13px;
-    padding: 4px 8px;
-    font-size: 20px;
-    text-align: center;
-    font-weight: 700;
-    color: var(--white-pure);
+.star {
+    color: var(--primary-color);
 }
 
 @media(max-width: 480px) {
@@ -82,14 +84,13 @@
     .localizacao {
         font-size: 12px;
     }
-    .classificacao {
+
+    .locationClassificacao {
         font-size: 12px;
-        gap: 5px;
     }
 
-    .classificacao strong {
-        border-radius: 15px;
-        font-size: 14px;
+    .classificacao {
+        font-size: 16px;
     }
 
     .locationContainer {

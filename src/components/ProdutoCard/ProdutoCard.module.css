@@ -12,10 +12,20 @@
     padding: 8px 5px;
 }
 
+.cardCategoryStars {
+    display: flex;
+    justify-content: space-between;
+}
+
+.star {
+    color: var(--primary-color);
+}
+
 .cardCategory {
     opacity: 0.8;
     font-size: 14px;
     padding-bottom: 1px;
+    padding-right: 10px;
 }
 
 .cardTitle {
