@@ -38,6 +38,9 @@ export default function Login() {
             if(usuarioEncontrado) {
                 Swal.fire({
                     title: "Login Efetuado com Sucesso!",
+                    background: `${tema ? '#F3F1ED' : '#1f242d'}`,
+                    color: `${tema ? '#000' : '#FFF'}`,
+                    confirmButtonColor: '#1DBEB4',
                     icon: "success"
                   }).then((result) => {
                     if (result.isConfirmed) {
@@ -51,7 +54,10 @@ export default function Login() {
 
             } else {
                 Swal.fire({
-                    title: "Por favor, tente novamente, suas credenciais são inválidas",
+                    text: "Por favor, tente novamente, suas credenciais são inválidas!",
+                    background: `${tema ? '#F3F1ED' : '#1f242d'}`,
+                    color: `${tema ? '#000' : '#FFF'}`,
+                    confirmButtonColor: '#1DBEB4',
                     icon: "error"
                   }).then((result) => {
                     if (result.isConfirmed) {
@@ -65,7 +71,10 @@ export default function Login() {
 
         } else {
             Swal.fire({
-                title: "Por favor, tente novamente, suas credenciais são inválidas",
+                text: "Por favor, tente novamente, suas credenciais são inválidas!",
+                background: `${tema ? '#F3F1ED' : '#1f242d'}`,
+                color: `${tema ? '#000' : '#FFF'}`,
+                confirmButtonColor: '#1DBEB4',
                 icon: "error"
               }).then((result) => {
                 if (result.isConfirmed) {

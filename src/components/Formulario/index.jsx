@@ -34,6 +34,9 @@ export default function Formulario() {
       
       Swal.fire({
         title: "Cadastro realizado com sucesso!",
+        background: `${tema ? '#F3F1ED' : '#1f242d'}`,
+        color: `${tema ? '#000' : '#FFF'}`,
+        confirmButtonColor: '#1DBEB4',
         icon: "success"
       }).then((result) => {
         if (result.isConfirmed) {
