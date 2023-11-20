@@ -36,6 +36,11 @@
     color: var(--primary-color);
 }
 
+.ofertaItem img {
+    width: 16px;
+    height: 16px;
+}
+
 .ofertaItem p {
     color: var(--third-color);
     font-weight: 500;

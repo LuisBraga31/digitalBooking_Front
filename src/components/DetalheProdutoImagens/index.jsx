@@ -21,7 +21,6 @@ import 'swiper/element/css/autoplay';
 export function DetalheProdutoImagens() {
 
   const { tema } = useContext(TemaContext);
-
   const [openModal, setOpenModal] = useState(false)
 
   const slides = [

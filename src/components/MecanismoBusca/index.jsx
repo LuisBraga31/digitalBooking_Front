@@ -1,17 +1,17 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
-import produtos from '../../data/elements.json';
+import { useEffect, useState } from 'react';
 import styles from './Mecanismo.module.css';
 
 import { useContext } from 'react';
 import { TemaContext } from "../../contexts/globalContext";
+import { api } from '../../services/api';
 
 export default function MecanismoBusca( {setFilterLocation} ) {
 
   const { tema } = useContext(TemaContext);
 
   const [selectedValue, setSelectedValue] = useState('');
-  const listaCidades = Array.from(new Set(produtos.map(item => item.location)));
+  const [listaCidades, setListaCidades] = useState([{'id': 1, 'nome': 'Santos-SP'}, {'id': 2, 'nome': 'São Paulo-SP'}, {'id': 3, 'nome': 'Rio de Janeiro-RJ'}]);
 
   const selectChange = (event) => {
     setSelectedValue(event.target.value); 
@@ -22,6 +22,15 @@ export default function MecanismoBusca( {setFilterLocation} ) {
     setFilterLocation(selectedValue);
   }
 
+  // const getListaCidades = async() => {
+  //   const res = await api.get(`/v1/cidades?termo=`);
+  //   setListaCidades(res.data.cidades);
+  // }
+
+  // useEffect(() => {
+  //   getListaCidades();
+  // },[])
+
   return (
     <div className={`${styles.mecanismo} ${tema ? '' : styles.darkMode}`}>
         <h1> Buscar ofertas em hotéis, casas e muito mais </h1>
@@ -31,7 +40,7 @@ export default function MecanismoBusca( {setFilterLocation} ) {
               <option value="" disabled hidden> Onde Vamos ?</option>
               <option value="All"> Ver todas opções </option>
               {listaCidades.map(item => (
-                <option key={item} value={item}> {item} </option>
+                <option key={item.id} value={item.id}> {item.nome} </option>
               ))}
 
             </select>

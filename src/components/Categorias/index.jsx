@@ -9,11 +9,12 @@ import { TemaContext } from "../../contexts/globalContext";
 export default function Categorias( { setFilterCategory, categorias}) {
 
     const { tema } = useContext(TemaContext);
-    const [categoriaSelecionada, setCategoriaSelecionada] = useState(null);
+    const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
     
     const handleCategoriaClick = (categoria) => {
         setCategoriaSelecionada(categoria);
         setFilterCategory(categoria);
+        console.log(categoria)
     };
 
     const verTudo = () => {
@@ -28,20 +29,9 @@ export default function Categorias( { setFilterCategory, categorias}) {
         
         <div className={styles.blocos}>
             
-            {categorias
+            {/* {categorias
             .map(item => (
-                <div key={item.id} className={`${styles.categoriaItem} ${categoriaSelecionada === `${item.nome}` && styles.selected}`} onClick={() => handleCategoriaClick(`${item.nome}`)}> 
-                    <img src={item.urlImage} alt="" />
-                    <div className={styles.categoriaItemDesc}>
-                        <h4> {item.nome} </h4>
-                        <p> 807.105 hotéis </p>
-                    </div>
-                </div>
-            ))}
-            
-            {/* {categoriasData
-            .map(item => (
-                <div key={item.id} className={`${styles.categoriaItem} ${categoriaSelecionada === `${item.nome}` && styles.selected}`} onClick={() => handleCategoriaClick(`${item.nome}`)}> 
+                <div key={item.id} className={`${styles.categoriaItem} ${categoriaSelecionada === `${item.id}` && styles.selected}`} onClick={() => handleCategoriaClick(`${item.id}`)}> 
                     <img src={item.urlImage} alt="" />
                     <div className={styles.categoriaItemDesc}>
                         <h4> {item.nome} </h4>
@@ -49,6 +39,17 @@ export default function Categorias( { setFilterCategory, categorias}) {
                     </div>
                 </div>
             ))} */}
+            
+            {categoriasData
+            .map(item => (
+                <div key={item.id} className={`${styles.categoriaItem} ${categoriaSelecionada === `${item.id}` && styles.selected}`} onClick={() => handleCategoriaClick(`${item.id}`)}> 
+                    <img src={item.urlImage} alt="" />
+                    <div className={styles.categoriaItemDesc}>
+                        <h4> {item.nome} </h4>
+                        <p> 807.105 hotéis </p>
+                    </div>
+                </div>
+            ))}
 
         </div>
     

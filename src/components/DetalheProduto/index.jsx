@@ -11,14 +11,19 @@ import { DetalheProdutoDescricao } from '../DetalheProdutoDescricao';
 import { DetalheProdutoCalendario } from '../DetalheProdutoCalendario';
 import { DetalheProdutoLocalizacao } from '../DetalheProdutoLocalizacao';
 import { DetalheProdutoInfo } from '../DetalheProdutoInfo';
+import { api } from '../../services/api';
 
 export function DetalheProduto() {
 
     const [produto, setProduto] = useState([]);
     const produtoId = useParams();
 
+    // const getProduto = async() => {
+    //     const res = await api.get(`/v1/produtos/${produtoId.id}`);
+    //     setProduto(res.data);
+    // }
+
     const getProduto = () => {
-        
         const produtoEncontrado = elementos.find(item => item.id === parseInt(produtoId.id));
         setProduto(produtoEncontrado);
     }
@@ -31,9 +36,9 @@ export function DetalheProduto() {
         <div className={styles.detalheProduto}>
             <DetalheProdutoHeader produto={produto}/>
             <DetalheProdutoImagens produto={produto}/>
-            <DetalheProdutoDescricao produto={produto}/>
+            <DetalheProdutoDescricao {... produto} />
             <DetalheProdutoCalendario/>
-            <DetalheProdutoLocalizacao produto={produto}/>
+            <DetalheProdutoLocalizacao {... produto}/>
             <DetalheProdutoInfo/>
         </div>
     )
