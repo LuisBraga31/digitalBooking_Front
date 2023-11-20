@@ -1,15 +1,12 @@
 /* eslint-disable react/prop-types */
 import styles from './Categorias.module.css';
 
-import ApartamentoImage from '../../assets/categorias/apartamento.png';
-import CamaImage from '../../assets/categorias/cama.png';
-import HotelImage from '../../assets/categorias/hotel.png';
-import HostelImage from '../../assets/categorias/hostel.png';
+import categoriasData from '../../data/categorias.json';
 
 import { useContext, useState } from 'react';
 import { TemaContext } from "../../contexts/globalContext";
 
-export default function Categorias( { setFilterCategory}) {
+export default function Categorias( { setFilterCategory, categorias}) {
 
     const { tema } = useContext(TemaContext);
     const [categoriaSelecionada, setCategoriaSelecionada] = useState(null);
@@ -31,39 +28,27 @@ export default function Categorias( { setFilterCategory}) {
         
         <div className={styles.blocos}>
             
-            <div className={`${styles.categoriaItem} ${categoriaSelecionada === 'Hotel' && styles.selected}`} onClick={() => handleCategoriaClick('Hotel')}> 
-                <img src={HotelImage} alt="" />
-                <div className={styles.categoriaItemDesc}>
-                    <h4> Hotéis </h4>
-                    <p> 807.105 hotéis </p>
+            {categorias
+            .map(item => (
+                <div key={item.id} className={`${styles.categoriaItem} ${categoriaSelecionada === `${item.nome}` && styles.selected}`} onClick={() => handleCategoriaClick(`${item.nome}`)}> 
+                    <img src={item.urlImage} alt="" />
+                    <div className={styles.categoriaItemDesc}>
+                        <h4> {item.nome} </h4>
+                        <p> 807.105 hotéis </p>
+                    </div>
                 </div>
-            </div>
-
-            <div className={`${styles.categoriaItem} ${categoriaSelecionada === 'Hostel' && styles.selected}`} onClick={() => handleCategoriaClick('Hostel')}> 
-                <img src={HostelImage} alt="" />
-                <div className={styles.categoriaItemDesc}>
-                    <h4> Hostels </h4>
-                    <p> 807.105 hotéis </p>
+            ))}
+            
+            {/* {categoriasData
+            .map(item => (
+                <div key={item.id} className={`${styles.categoriaItem} ${categoriaSelecionada === `${item.nome}` && styles.selected}`} onClick={() => handleCategoriaClick(`${item.nome}`)}> 
+                    <img src={item.urlImage} alt="" />
+                    <div className={styles.categoriaItemDesc}>
+                        <h4> {item.nome} </h4>
+                        <p> 807.105 hotéis </p>
+                    </div>
                 </div>
-            </div>
-
-            <div className={`${styles.categoriaItem} ${categoriaSelecionada === 'Apartamento' && styles.selected}`} onClick={() => handleCategoriaClick('Apartamento')}> 
-                <img src={ApartamentoImage} alt="" />
-                <div className={styles.categoriaItemDesc}>
-                    <h4> Apartamentos </h4>
-                    <p> 807.105 hotéis </p>
-                </div>
-            </div>
-
-            <div className={`${styles.categoriaItem} ${categoriaSelecionada === 'Cama' && styles.selected}`} onClick={() => handleCategoriaClick('Cama')}> 
-                <img src={CamaImage} alt="" />
-                <div className={styles.categoriaItemDesc}>
-
-                    <h4> Cama e Café da Manhã </h4>
-                    <p> 807.105 hotéis </p>
-                </div>
-            </div>
-
+            ))} */}
 
         </div>
     

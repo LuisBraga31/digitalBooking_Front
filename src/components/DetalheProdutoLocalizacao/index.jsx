@@ -13,12 +13,12 @@ export function DetalheProdutoLocalizacao( {produto} ) {
 
     const { tema } = useContext(TemaContext);
 
-    const [lat, setLat] = useState(produto.lat);
-    const [long, setLong] = useState(produto.long);
+    const [lat, setLat] = useState(produto.latitude);
+    const [long, setLong] = useState(produto.longitude);
 
     useEffect (() => {
-      setLat(produto.lat)
-      setLong(produto.long)
+      setLat(produto.latitude)
+      setLong(produto.longitude)
     }, [produto]);
 
     const customIcon = L.icon({

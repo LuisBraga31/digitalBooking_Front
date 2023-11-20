@@ -58,6 +58,11 @@
     border: 3px solid transparent;
 }
 
+.categoriaItem img {
+    width: 310px;
+    height: 180px;
+}
+
 .categoriaItemDesc {
     display: flex;
     flex-direction: column;
@@ -72,6 +77,7 @@
 
 .categoriaItemDesc p {
     font-size: 14px;
+    text-align: justify;
     opacity: 0.8;
 }
 
