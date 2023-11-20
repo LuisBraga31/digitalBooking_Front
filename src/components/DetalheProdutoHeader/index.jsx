@@ -20,20 +20,20 @@ export function DetalheProdutoHeader( { produto }) {
     const [tipoCategoria, setTipoCategoria] = useState({'nome': 'Hotel'});
     const [tipoCidade, setTipoCidade] = useState({'nome': '... - Brasil'});
   
-    const getCategoria = async() => {
-      const res = await api.get(`/v1/categorias/${produto.categoriasId}`);
-      setTipoCategoria(res.data);
-    }
+    // const getCategoria = async() => {
+    //   const res = await api.get(`/v1/categorias/${produto.categoriasId}`);
+    //   setTipoCategoria(res.data);
+    // }
     
-    const getCidade = async() => {
-        // const res = await api.get(`/v1/cidades/${cidadesId}`);
-        // setTipoCidade(res.data);
-    }
+    // const getCidade = async() => {
+    //     // const res = await api.get(`/v1/cidades/${cidadesId}`);
+    //     // setTipoCidade(res.data);
+    // }
     
-    useEffect(() => {
-        getCategoria();
-        getCidade();
-    }, []);
+    // useEffect(() => {
+    //     getCategoria();
+    //     getCidade();
+    // }, []);
 
     return(
         <>

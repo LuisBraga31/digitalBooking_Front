@@ -11,7 +11,6 @@ import { TemaContext } from "../../contexts/globalContext";
 export default function Produtos( { filterCategory, filterLocation } ) {
 
   const { tema } = useContext(TemaContext);
-  console.log(filterLocation);
 
   return (
     <div className={`${styles.produtos} ${tema ? '' : styles.darkMode}`}>
