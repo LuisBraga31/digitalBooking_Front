@@ -23,6 +23,12 @@
     gap: 10px;
 }
 
+.imagePrincipal img {
+    width: 638px;
+    height: 385px;
+    border-radius: 10px;
+}
+
 .otherImages {
     position: relative;
     display: grid;
@@ -32,16 +38,23 @@
     align-self: center;
 }
 
+.otherImages img {
+    width: 314px;
+    height: 189px;
+    border-radius: 10px;
+}
+
 .verMais {
     position: absolute;
     bottom: 3%;
     right: 2%;
-    background-color: transparent;
+    background-color: var(--primary-color);
     color: var(--white-pure);
     border: none;
-    border-bottom: 2px solid var(--white-pure);
+    border-radius: 10px;
     cursor: pointer;
-    padding: 0px 5px;
+    padding: 2px 8px;
+    font-weight: bold;
 }
 
 .carrosselSection {
@@ -54,6 +67,7 @@
 
 .carouselImage {
     width: 100%;
+    height: 350px;
 }
 
 .carouselItem {

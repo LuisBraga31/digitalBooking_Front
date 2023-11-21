@@ -10,11 +10,24 @@ import { DetalheProdutoLocalizacao } from '../DetalheProdutoLocalizacao';
 import { DetalheProdutoInfo } from '../DetalheProdutoInfo';
 import { api } from '../../services/api';
 
+import ImagemPrincipal from '../../assets/imagens/image01.png';
+import Image01 from '../../assets/imagens/image02.png';
+import Image02 from '../../assets/imagens/image03.png';
+import Image03 from '../../assets/imagens/image04.png';
+import Image04 from '../../assets/imagens/image05.png';
+
 export function DetalheProduto( { produto }) {
     
     const [categoria, setCategoria] = useState({'nome': 'Hotel'});
-    const [cidade, setCidade] = useState({'nome': ' Brasil '});
+    const [cidade, setCidade] = useState({'nome': ' Cidade ', 'pais': 'Brasil'});
     const [caracteristicas, setCaracteristicas] = useState([]);
+    const [imagens, setImagens] = useState([  
+        { id: 1, url: ImagemPrincipal },
+        { id: 2, url: Image01 },
+        { id: 3, url: Image02 },
+        { id: 4, url: Image03 },
+        { id: 5, url: Image04 }]
+    );
   
     // const getCategoria = async() => {
     //     if(produto.categoriasId) {
@@ -40,10 +53,25 @@ export function DetalheProduto( { produto }) {
     //         setCaracteristicas(caracteristicasList);
     //     }
     //   };
+
+    // const getImagens = async () => {
+    //     if (produto.imagensId) {
+    //         const imagensList = [];
+    //         for (let i = 0; i < produto.imagensId.length; i++) {
+    //             const res = await api.get(`/v1/imagens/${produto.imagensId[i]}`);
+    //             imagensList.push(res.data);
+    //         }
+    //         setImagens(imagensList);
+    //     }
+    // };
     
     // useEffect(() => {
-    //     getCaracteristicas();      
+    //     getCaracteristicas();
     // }, [produto.caracteristicasProdutoId]);
+
+    // useEffect(() => {
+    //     getImagens();
+    // }, [produto.imagensId]);
     
     // useEffect(() => {
     //     getCategoria();
@@ -54,10 +82,10 @@ export function DetalheProduto( { produto }) {
     return(
         <div className={styles.detalheProduto}>
             <DetalheProdutoHeader {... produto} tipoCategoria={categoria} tipoCidade={cidade}/>
-            <DetalheProdutoImagens {... produto}/>
+            <DetalheProdutoImagens {... produto} imagens={imagens}/>
             <DetalheProdutoDescricao {... produto} caracteristicas={caracteristicas}/>
-            <DetalheProdutoCalendario/>
-            <DetalheProdutoLocalizacao {... produto}/>
+            <DetalheProdutoCalendario />
+            <DetalheProdutoLocalizacao {... produto} tipoCidade={cidade}/>
             <DetalheProdutoInfo/>
         </div>
     )

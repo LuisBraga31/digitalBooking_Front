@@ -35,7 +35,7 @@ export function DetalheProdutoHeader( { nome, tipoCategoria, tipoCidade }) {
                 <div className={styles.locationHeader}>
                     <img src={map} alt="" />
                     <p className={styles.localizacao}>
-                        {tipoCidade.nome}
+                        {tipoCidade.nome} - {tipoCidade.pais}
                     </p>
                 </div>
     

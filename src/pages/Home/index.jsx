@@ -3,7 +3,7 @@ import { TemaContext } from "../../contexts/globalContext";
 
 import styles from './Home.module.css';
 import produtos from '../../data/elements.json';
-import categoriasData from '../../data/categorias.json';
+import categorias from '../../data/categorias.json';
 
 import Header from "../../components/Header";
 import Categorias from "../../components/Categorias";
@@ -42,7 +42,7 @@ export function Home() {
             <Header />
             <main className={`${styles.main} ${tema ? '' : styles.darkMode}`}>
                 <MecanismoBusca setFilterLocation={setFilterLocation}/>
-                <Categorias setFilterCategory={setFilterCategory} categorias={categoriasData}/> 
+                <Categorias setFilterCategory={setFilterCategory} categorias={categorias}/> 
                 <Produtos filterCategory={filterCategory} filterLocation={filterLocation} produtos={produtos}/> 
             </main>
             <Footer />

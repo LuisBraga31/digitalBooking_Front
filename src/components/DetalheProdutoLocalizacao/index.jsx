@@ -8,7 +8,7 @@ import locationIcon from '../../assets/icons/locationIcon.png';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
-export function DetalheProdutoLocalizacao( {nome, latitude, longitude} ) {
+export function DetalheProdutoLocalizacao( { latitude, longitude, tipoCidade} ) {
 
     const { tema } = useContext(TemaContext);
 
@@ -31,7 +31,7 @@ export function DetalheProdutoLocalizacao( {nome, latitude, longitude} ) {
         
         <h1 className={styles.localTitle}> Onde você vai estar? </h1>
 
-        <p className={styles.localInfo}> ... - Brasil </p>
+        <p className={styles.localInfo}> {tipoCidade.nome} - {tipoCidade.pais} </p>
 
         <div className={styles.localMap}>
           
@@ -40,7 +40,7 @@ export function DetalheProdutoLocalizacao( {nome, latitude, longitude} ) {
               <MapContainer className={styles.map} center={lat ? [lat, long] : [0,0] } zoom={13}>
               <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
               <Marker position={[lat, long]} icon={customIcon}>
-                <Popup> <h3 style={{ color: 'darkblue' }}>{nome}</h3></Popup>
+                <Popup> <h3 style={{ color: 'darkblue' }}> Essa é a localização </h3></Popup>
               </Marker>
             </MapContainer>
             ) : (

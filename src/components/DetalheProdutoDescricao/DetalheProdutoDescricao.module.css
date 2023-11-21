@@ -37,8 +37,11 @@
 }
 
 .ofertaItem img {
-    width: 16px;
-    height: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--primary-color);
 }
 
 .ofertaItem p {
