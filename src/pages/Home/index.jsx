@@ -1,13 +1,16 @@
-import Categorias from "../../components/Categorias";
-import Produtos from "../../components/Produtos";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-
-import styles from './Home.module.css';
-import MecanismoBusca from "../../components/MecanismoBusca";
-
 import { useContext, useEffect, useState } from "react";
 import { TemaContext } from "../../contexts/globalContext";
+
+import styles from './Home.module.css';
+import produtos from '../../data/elements.json';
+import categoriasData from '../../data/categorias.json';
+
+import Header from "../../components/Header";
+import Categorias from "../../components/Categorias";
+import Produtos from "../../components/Produtos";
+import MecanismoBusca from "../../components/MecanismoBusca";
+import Footer from "../../components/Footer";
+
 import { api } from "../../services/api";
 
 export function Home() {
@@ -39,10 +42,8 @@ export function Home() {
             <Header />
             <main className={`${styles.main} ${tema ? '' : styles.darkMode}`}>
                 <MecanismoBusca setFilterLocation={setFilterLocation}/>
-                <Categorias setFilterCategory={setFilterCategory}/> 
-                <Produtos filterCategory={filterCategory} filterLocation={filterLocation}/> 
-                {/* <Categorias setFilterCategory={setFilterCategory} categorias={categorias}/>
-                <Produtos filterCategory={filterCategory} filterLocation={filterLocation} produtos={produtos}/> */}
+                <Categorias setFilterCategory={setFilterCategory} categorias={categoriasData}/> 
+                <Produtos filterCategory={filterCategory} filterLocation={filterLocation} produtos={produtos}/> 
             </main>
             <Footer />
         </>

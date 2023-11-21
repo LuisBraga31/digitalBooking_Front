@@ -15,6 +15,8 @@ module.exports = {
     "no-useless-constructor": "off",
     "no-new": "off" ,
     "no-unused-vars": "off",
+    "react/prop-types": "off",
+    "react-hooks/exhaustive-deps": "off",
     "no-undef": "off",
     'react-refresh/only-export-components': [
       'warn',

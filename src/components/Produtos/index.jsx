@@ -1,14 +1,11 @@
-/* eslint-disable react/prop-types */
-import styles from './Produtos.module.css';
-
-import produtos from '../../data/elements.json';
-import ProdutoCard from '../ProdutoCard';
-
 import { useContext } from 'react';
 import { TemaContext } from "../../contexts/globalContext";
 
-// export default function Produtos( { filterCategory, filterLocation, produtos } ) {
-export default function Produtos( { filterCategory, filterLocation } ) {
+import styles from './Produtos.module.css';
+
+import ProdutoCard from '../ProdutoCard';
+
+export default function Produtos( { filterCategory, filterLocation, produtos } ) {
 
   const { tema } = useContext(TemaContext);
 

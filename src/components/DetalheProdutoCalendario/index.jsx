@@ -1,11 +1,11 @@
 import { useState, useContext } from "react";
-import Calendar from "react-calendar";
-
 import { TemaContext } from "../../contexts/globalContext";
 
 import styles from './DetalheProdutoCalendario.module.css';
-import "react-calendar/dist/Calendar.css";
 import './calendario.css';
+
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 export function DetalheProdutoCalendario() {
 

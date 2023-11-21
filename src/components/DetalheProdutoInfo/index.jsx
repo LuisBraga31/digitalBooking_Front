@@ -1,7 +1,7 @@
-import styles from './DetalheProdutoInfo.module.css';
-
 import { useContext } from "react";
 import { TemaContext } from "../../contexts/globalContext";
+
+import styles from './DetalheProdutoInfo.module.css';
 
 export function DetalheProdutoInfo() {
     

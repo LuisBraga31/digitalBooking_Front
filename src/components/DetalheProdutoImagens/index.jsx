@@ -1,11 +1,11 @@
-import { BsShare } from "react-icons/bs";
-import { AiOutlineHeart } from "react-icons/ai";
 import { useState, useContext } from "react";
-
 import { TemaContext } from "../../contexts/globalContext";
 import { Modal } from "../Modal";
 
 import styles from './DetalheProdutoImagens.module.css'
+
+import { BsShare } from "react-icons/bs";
+import { AiOutlineHeart } from "react-icons/ai";
 
 import ImagemPrincipal from '../../assets/imagens/image01.png';
 import Image01 from '../../assets/imagens/image02.png';

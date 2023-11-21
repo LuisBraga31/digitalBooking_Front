@@ -1,39 +1,19 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/prop-types */
+import { useContext, useState } from "react";
 import { Link } from 'react-router-dom';
+import { TemaContext } from "../../contexts/globalContext";
+
 import styles from './DetalheProdutoHeader.module.css';
 
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { IoIosStar } from "react-icons/io";
 import map from '../../assets/icons/map.png';
 
-import { useContext, useEffect, useState } from "react";
-import { TemaContext } from "../../contexts/globalContext";
-import { api } from '../../services/api';
-
-export function DetalheProdutoHeader( { produto }) {    
+export function DetalheProdutoHeader( { nome, tipoCategoria, tipoCidade }) {    
 
     const { tema } = useContext(TemaContext);
+
     const qtdEstrelas = new Array(5).fill(null);
-    const [avaliacao, setAvaliacao] = useState("Excelente");
-    
-    const [tipoCategoria, setTipoCategoria] = useState({'nome': 'Hotel'});
-    const [tipoCidade, setTipoCidade] = useState({'nome': '... - Brasil'});
-  
-    // const getCategoria = async() => {
-    //   const res = await api.get(`/v1/categorias/${produto.categoriasId}`);
-    //   setTipoCategoria(res.data);
-    // }
-    
-    // const getCidade = async() => {
-    //     // const res = await api.get(`/v1/cidades/${cidadesId}`);
-    //     // setTipoCidade(res.data);
-    // }
-    
-    // useEffect(() => {
-    //     getCategoria();
-    //     getCidade();
-    // }, []);
+    const [avaliacao, setAvaliacao] = useState("Excelente");    
 
     return(
         <>
@@ -41,7 +21,7 @@ export function DetalheProdutoHeader( { produto }) {
                 
                 <div className={styles.headerConteudo}>
                     <span> {tipoCategoria.nome} </span>
-                    <h2> {produto.nome} </h2>
+                    <h2> {nome} </h2>
                 </div>
 
                 <Link to='/' className={styles.headerButton}> 

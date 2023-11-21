@@ -1,13 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/prop-types */
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { TemaContext } from "../../contexts/globalContext";
+
 import styles from './ProdutoCard.module.css';
 
 import { IoIosStar } from "react-icons/io";
-
-import { useContext, useEffect, useState } from 'react';
-import { TemaContext } from "../../contexts/globalContext";
-
 import { api } from "../../services/api";
 
 export default function ProdutoCard( { id, nome, descricao, categoriasId, cidadesId, imagensId}) {
@@ -15,8 +12,8 @@ export default function ProdutoCard( { id, nome, descricao, categoriasId, cidade
   const { tema } = useContext(TemaContext);
   const qtdEstrelas = new Array(5).fill(null);
 
-  const [tipoCategoria, setTipoCategoria] = useState({'nome': 'Hotel'});
-  const [tipoCidade, setTipoCidade] = useState({'nome': '... - Brasil'});
+  const [tipoCategoria, setTipoCategoria] = useState({'nome': 'CategoriaNome'});
+  const [tipoCidade, setTipoCidade] = useState({'nome': 'CidadeNome - Brasil'});
   const [imagem, setImagem] = useState({'url': '/produtos/example.png'});
 
   // const getCategoria = async() => {

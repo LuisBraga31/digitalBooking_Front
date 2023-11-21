@@ -1,35 +1,17 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/prop-types */
+import { useContext } from "react";
+import { TemaContext } from "../../contexts/globalContext";
+
 import { BsCarFrontFill } from "react-icons/bs";
 import { PiTelevisionSimpleBold } from "react-icons/pi";
 import { MdPets } from "react-icons/md";
 import { FaSwimmer, FaWifi, FaSink } from "react-icons/fa";
 import { IoIosSnow } from "react-icons/io";
 
-import { useContext, useEffect, useState } from "react";
-import { TemaContext } from "../../contexts/globalContext";
-
 import styles from './DetalheProdutoDescricao.module.css';
-import { api } from "../../services/api";
 
-export function DetalheProdutoDescricao({ nome, descricao, caracteristicasProdutoId }) {
+export function DetalheProdutoDescricao({ nome, descricao, caracteristicas }) {
 
     const { tema } = useContext(TemaContext);
-    // const [caracteristicas, setCaracteristicas] = useState([]);
-    
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         if (caracteristicasProdutoId) {
-    //             const caracteristicasList = [];
-    //             for (let i = 0; i < caracteristicasProdutoId.length; i++) {
-    //                 const res = await api.get(`/v1/caracteristicas/${caracteristicasProdutoId[i]}`);
-    //                 caracteristicasList.push(res.data);
-    //             }
-    //             setCaracteristicas(caracteristicasList);
-    //         }
-    //       };
-    //     fetchData();      
-    // }, [caracteristicasProdutoId]);
    
     return (
         <div className={`${styles.descricaoContainer} ${tema ? '' : styles.darkMode}`}>

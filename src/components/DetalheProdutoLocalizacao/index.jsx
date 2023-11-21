@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
-import { useEffect, useState } from 'react';
-import locationIcon from '../../assets/icons/locationIcon.png';
+import { useEffect, useState, useContext } from 'react';
+import { TemaContext } from "../../contexts/globalContext";
+
 import styles from './DetalheProdutoLocalizacao.module.css';
 
-import { useContext } from "react";
-import { TemaContext } from "../../contexts/globalContext";
+import locationIcon from '../../assets/icons/locationIcon.png';
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
