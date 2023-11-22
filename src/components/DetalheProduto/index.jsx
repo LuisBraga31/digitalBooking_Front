@@ -10,11 +10,7 @@ import { DetalheProdutoLocalizacao } from '../DetalheProdutoLocalizacao';
 import { DetalheProdutoInfo } from '../DetalheProdutoInfo';
 import { api } from '../../services/api';
 
-import ImagemPrincipal from '../../assets/imagens/image01.png';
-import Image01 from '../../assets/imagens/image02.png';
-import Image02 from '../../assets/imagens/image03.png';
-import Image03 from '../../assets/imagens/image04.png';
-import Image04 from '../../assets/imagens/image05.png';
+import Carregando from '../../assets/imagens/carregando.gif';
 
 export function DetalheProduto( { produto }) {
     
@@ -22,11 +18,11 @@ export function DetalheProduto( { produto }) {
     const [cidade, setCidade] = useState({'nome': ' Cidade ', 'pais': 'Brasil'});
     const [caracteristicas, setCaracteristicas] = useState([]);
     const [imagens, setImagens] = useState([  
-        { id: 1, url: ImagemPrincipal },
-        { id: 2, url: Image01 },
-        { id: 3, url: Image02 },
-        { id: 4, url: Image03 },
-        { id: 5, url: Image04 }]
+        { id: 1, url: Carregando },
+        { id: 2, url: Carregando },
+        { id: 3, url: Carregando },
+        { id: 4, url: Carregando },
+        { id: 5, url: Carregando }]
     );
   
     // const getCategoria = async() => {

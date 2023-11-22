@@ -14,7 +14,7 @@ export default function ProdutoCard( { id, nome, descricao, categoriasId, cidade
 
   const [tipoCategoria, setTipoCategoria] = useState({'nome': 'CategoriaNome'});
   const [tipoCidade, setTipoCidade] = useState({'nome': 'CidadeNome - Brasil'});
-  const [imagem, setImagem] = useState({'url': '/produtos/example.png'});
+  const [imagem, setImagem] = useState({'url': '/produtos/carregando.gif'});
 
   // const getCategoria = async() => {
   //   const res = await api.get(`/v1/categorias/${categoriasId}`);
