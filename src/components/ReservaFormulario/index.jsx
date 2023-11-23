@@ -29,7 +29,7 @@ export function ReservaFormulario() {
                 <div className={styles.input}>
                     
                     <div className={styles.inputItem}>
-                        <label htmlFor="">Nome</label>
+                        <label htmlFor="" >Nome</label>
                         <input type="text" placeholder='Deborah' disabled/>
                     </div>
 
@@ -45,7 +45,7 @@ export function ReservaFormulario() {
 
                     <div className={styles.inputItem}>
                         <label htmlFor="">Cidade</label>
-                        <input type="text" />
+                        <input type="text" className={styles.inputCidade} placeholder='Cidade'/>
                     </div>
 
                 </div>
@@ -53,12 +53,13 @@ export function ReservaFormulario() {
                 <div className={styles.calendarioForm}>
                     <h1 className={styles.calendarioFormTitle}> Selecione sua data de reserva </h1>
                     <Calendar
-                        className={styles.calendarDesktop}
+                        className={styles.calendarForm}
                         value={activeStartDate}
                         onChange={handleDateChange}
                         showDoubleView
                         tileDisabled={desabilitarDatas}
                         showNavigation={true}
+                        selectRange={true}
                     />
                 </div>
 

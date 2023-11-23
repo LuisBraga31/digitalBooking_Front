@@ -1,11 +1,12 @@
 .reservaForm {
-    width: 65%;
+
     /* height: 60vh; */
     background-color: var(--lightgray-color);
     padding-left: 20px;
 }
 
 .reservaFormLeft {
+    width: 65%;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -15,21 +16,26 @@
 /* INPUT DE INFOS */
 
 .titleReserva {
-    color: var(--second-color);
+    color: var(--third-color);
     font-size: 24px;
 }
 
 .input {
-    width: 100%;
+    width: 95%;
     background: var(--white-pure);
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     padding: 1rem;
-
+    align-items: center;
     border-radius: 5px; 
-    box-shadow: #C4C4C4 3px 5px 5px;  
+    box-shadow: #c4c4c4d2 3px 5px 5px;  
+}
+
+.inputItem {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .inputItem input {
@@ -37,7 +43,18 @@
     border: none;
     background-color: var(--lightgray-color);
     border-radius: 5px;
-    box-shadow: #00000026 2px 2px 2px
+    box-shadow: #00000026 2px 2px 2px;
+    padding: 1rem;
+}
+
+.inputItem label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--second-color);
+}
+
+.inputCidade {
+    background-color: var(--white-pure) !important;
 }
 
 /* CALENDARIO */
@@ -49,44 +66,64 @@
 }
 
 .calendarioFormTitle {
+    width: 100%;
     font-size: 24px; 
     font-weight: 700;
-    color: var(--second-color);
+    color: var(--third-color);
+}
+
+.calendarForm {
+    width: 57.8vw !important;
+    box-shadow: #C4C4C4 3px 5px 5px !important;
 }
 
 /* INPUT DE INFOS */
 
 .horaChegadaForm {
+    width: 95%;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    background-color: var(--white-pure);
-    border-radius: 5px;
-    padding: 25px;
 }
 
 .horaFormTitle {
     font-size: 24px; 
     font-weight: 700;
-    color: var(--second-color);
+    color: var(--third-color);
 }
 
 .horaFormBody {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    border-radius: 5px;
+    padding: 25px;
+    background-color: var(--white-pure);
+    box-shadow: #C4C4C4 3px 5px 5px !important;
 }
 
 .horaFormCheckText {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--third-color);
 }
 
 .horaFormLabel{
-
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--third-color);
+    padding-left: 5px;
 }
 
 .horaFormSelect {
-    width: 305px;
+    width: 55%;
     height: 40px;
+    outline: none;
+    border: 1.5px solid var(--lightgray-color);
+    background-color: var(--white-pure);
+    border-radius: 5px;
+    padding: 0 1rem;
 }

@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 95.5vh;
-    padding-top: 93px;
+    min-height: 100vh;
+    padding-top: 25px;
 }
 
 .darkMode {
