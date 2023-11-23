@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { TemaContext } from "../../contexts/globalContext";
-
+import { Link, useParams } from "react-router-dom";
 import './calendario.css';
 import styles from './DetalheProdutoCalendario.module.css';
 
@@ -10,6 +10,7 @@ import "react-calendar/dist/Calendar.css";
 export function DetalheProdutoCalendario() {
 
     const { tema } = useContext(TemaContext);
+    const produtoId = useParams();
     const [activeStartDate, setActiveStartDate] = useState(new Date(2023, 10, 9));
 
     const handleDateChange = (date) => {
@@ -48,7 +49,9 @@ export function DetalheProdutoCalendario() {
 
           <div className={styles.reserva}>
             <p>Adicione as datas da sua viagem para obter preços exatos.</p>
-            <button>Iniciar reserva</button>
+            <Link to={`/produto/${produtoId.id}/reserva`}>
+              <button>Iniciar reserva</button>
+            </Link>
           </div>
           
         </div>

@@ -55,7 +55,7 @@ export default function ProdutoCard( { id, nome, descricao, categoriasId, cidade
             <p className={styles.cardLocation}> {tipoCidade.nome} </p>
             <p className={styles.cardDescription}> {descricao} </p>
             
-            <Link to={`/producto/${id}`}>
+            <Link to={`/produto/${id}`}>
               <button className={styles.cardButton} > Ver mais </button>
             </Link>
             

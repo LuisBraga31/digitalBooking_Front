@@ -1,0 +1,92 @@
+.reservaForm {
+    width: 65%;
+    /* height: 60vh; */
+    background-color: var(--lightgray-color);
+    padding-left: 20px;
+}
+
+.reservaFormLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 20px;
+}
+
+/* INPUT DE INFOS */
+
+.titleReserva {
+    color: var(--second-color);
+    font-size: 24px;
+}
+
+.input {
+    width: 100%;
+    background: var(--white-pure);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+
+    border-radius: 5px; 
+    box-shadow: #C4C4C4 3px 5px 5px;  
+}
+
+.inputItem input {
+    height: 40px;
+    border: none;
+    background-color: var(--lightgray-color);
+    border-radius: 5px;
+    box-shadow: #00000026 2px 2px 2px
+}
+
+/* CALENDARIO */
+
+.calendarioForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.calendarioFormTitle {
+    font-size: 24px; 
+    font-weight: 700;
+    color: var(--second-color);
+}
+
+/* INPUT DE INFOS */
+
+.horaChegadaForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: var(--white-pure);
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.horaFormTitle {
+    font-size: 24px; 
+    font-weight: 700;
+    color: var(--second-color);
+}
+
+.horaFormBody {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.horaFormCheckText {
+    display: flex;
+    gap: 1rem;
+}
+
+.horaFormLabel{
+
+}
+
+.horaFormSelect {
+    width: 305px;
+    height: 40px;
+}

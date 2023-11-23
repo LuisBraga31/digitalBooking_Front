@@ -8,7 +8,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { IoIosStar } from "react-icons/io";
 import map from '../../assets/icons/map.png';
 
-export function DetalheProdutoHeader( { nome, tipoCategoria, tipoCidade }) {    
+export function DetalheProdutoHeader( { nome, tipoCategoria, tipoCidade, reservaPage }) {    
 
     const { tema } = useContext(TemaContext);
 
@@ -29,7 +29,7 @@ export function DetalheProdutoHeader( { nome, tipoCategoria, tipoCidade }) {
                 </Link>
                 
             </div>
-            
+            {reservaPage ? (
             <div className={`${styles.locationContainer} ${tema ? '' : styles.darkModeLocation}`}>
 
                 <div className={styles.locationHeader}>
@@ -48,6 +48,11 @@ export function DetalheProdutoHeader( { nome, tipoCategoria, tipoCidade }) {
                 </div>
     
             </div>
+            ) : (
+                <>
+                </>
+            )
+            }
         </>
         
     )

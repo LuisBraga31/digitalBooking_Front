@@ -77,7 +77,7 @@ export function DetalheProduto( { produto }) {
 
     return(
         <div className={styles.detalheProduto}>
-            <DetalheProdutoHeader {... produto} tipoCategoria={categoria} tipoCidade={cidade}/>
+            <DetalheProdutoHeader {... produto} tipoCategoria={categoria} tipoCidade={cidade} reservaPage={true}/>
             <DetalheProdutoImagens {... produto} imagens={imagens}/>
             <DetalheProdutoDescricao {... produto} caracteristicas={caracteristicas}/>
             <DetalheProdutoCalendario />
