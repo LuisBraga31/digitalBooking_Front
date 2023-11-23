@@ -21,7 +21,7 @@ export default function Categorias( {setFilterCategory, categorias}) {
   return (
     <div className={`${styles.categorias } ${tema ? '' : styles.darkMode}`}>
         
-        <h2> Buscar por tipo de acomodação </h2>
+        <h2> Selecione uma categoria </h2>
         
         <div className={styles.blocos}>
             {categorias
@@ -30,14 +30,14 @@ export default function Categorias( {setFilterCategory, categorias}) {
                     <img src={item.urlImage} alt="" />
                     <div className={styles.categoriaItemDesc}>
                         <h4> {item.nome} </h4>
-                        <p> 807.105 hotéis </p>
+                        <p> {item.descricao} </p>
                     </div>
                 </div>
             ))}
 
         </div>
     
-        <button className={styles.verTudoButton} onClick={verTudo}> Ver Tudo </button>
+        <button className={styles.verTudoButton} onClick={verTudo}> Exibir todas </button>
 
     </div>
   )

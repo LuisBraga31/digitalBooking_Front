@@ -12,7 +12,7 @@ export default function Produtos( { filterCategory, filterLocation, produtos } )
   return (
     <div className={`${styles.produtos} ${tema ? '' : styles.darkMode}`}>
         
-        <h2> Recomendações </h2>
+        <h2> Acomodações </h2>
         
         <div className={styles.blocoProdutos}>
           {produtos

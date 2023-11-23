@@ -37,7 +37,7 @@ export function DetalheProdutoLocalizacao( { latitude, longitude, tipoCidade} ) 
           
           {
             lat ? (
-              <MapContainer className={styles.map} center={lat ? [lat, long] : [0,0] } zoom={13}>
+              <MapContainer className={styles.map} center={lat ? [lat, long] : [0,0] } scrollWheelZoom={false} zoom={15}>
               <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
               <Marker position={[lat, long]} icon={customIcon}>
                 <Popup> <h3 style={{ color: 'darkblue' }}> Essa é a localização </h3></Popup>

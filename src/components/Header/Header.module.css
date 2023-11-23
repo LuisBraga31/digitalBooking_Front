@@ -74,13 +74,12 @@
 }
 
 .button {
-    width: 206px;
+    width: 140px;
     height: 40px;
-    background-color: transparent;
-    color: var(--primary-color);
+    color: var(--white-pure);
+    background-color: var(--primary-color);
     border: 1px solid var(--primary-color);
-    border-radius: 5px;
-    padding: 10px 15px;
+    border-radius: 3px;
     cursor: pointer;
     font-weight: 700;
     font-size: 16px;
@@ -88,11 +87,16 @@
 }
 
 .button:hover {
-  background-color: var(--lightgray-color);
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.darkMode .button {
+    color: var(--dark-color);
 }
 
 .darkMode .button:hover {
-    background-color: var(--lightgray-color2); 
+    color: var(--primary-color); 
 }
 
 /* HEADER  - com Logout */

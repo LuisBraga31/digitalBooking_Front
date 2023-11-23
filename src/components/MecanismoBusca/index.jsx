@@ -32,7 +32,7 @@ export default function MecanismoBusca( {setFilterLocation} ) {
 
   return (
     <div className={`${styles.mecanismo} ${tema ? '' : styles.darkMode}`}>
-        <h1> Buscar ofertas em hotéis, casas e muito mais </h1>
+        <h1> Veja hotéis, apartamentos e muito mais em nosso site </h1>
         
         <form className={styles.formBusca} onSubmit={handleSearchForm}>
             <select value={selectedValue} onChange={selectChange} className={styles.buscaSelect} type="text">

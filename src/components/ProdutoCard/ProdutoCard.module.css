@@ -6,6 +6,7 @@
     width: 635px;
     height: 283px;
     border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 2px 6px 16px;
 }
 
 .cardImage img {
