@@ -1,14 +1,17 @@
 import { useState } from 'react';
 
 import styles from './ReservaForm.module.css';
+import { IoIosStar } from "react-icons/io";
 import { FaRegCheckCircle } from "react-icons/fa";
+import map from '../../assets/icons/map.png';
 
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
-export function ReservaFormulario() {
+export function ReservaFormulario( {nome, tipoCategoria, tipoCidade, imagens}) {
 
     const [activeStartDate, setActiveStartDate] = useState(new Date(2023, 10, 23));
+    const qtdEstrelas = new Array(5).fill(null);
 
     const handleDateChange = (date) => {
         setActiveStartDate(date);
@@ -78,6 +81,8 @@ export function ReservaFormulario() {
                         
                         <select name="" id="" className={styles.horaFormSelect}> 
                             <option value="" disabled hidden selected> Selecione a sua hora de chegada </option>
+                            <option value=""> 12 horas </option>
+                            <option value=""> 15 horas </option>
                         </select>
                          
                     </div>
@@ -86,7 +91,31 @@ export function ReservaFormulario() {
             </div>
 
             <div className={styles.reservaFormRight}>
-                <div></div>
+                <div className={styles.reservaInfos}>
+                    <h1 className={styles.reservaTitle}> Detalhe da Reserva </h1>
+                    {imagens[0] && <img src={imagens[0].url} className={styles.imageReserva} alt="" />}
+                    <div className={styles.reservaHeaderInfo}>
+                        <span> {tipoCategoria.nome.toUpperCase()} </span>
+                        <h3> {nome} </h3>
+                        <div> {qtdEstrelas.map((_, index) => ( <IoIosStar key={index} className={styles.star} size={14}/>  ))}  </div>
+                        <div className={styles.reservaLocation}>
+                            <img src={map} alt=""/>
+                            <p className={styles.localizacao}> {tipoCidade.nome} - {tipoCidade.pais}</p>
+                        </div>
+                    </div>
+
+                    <div className={`${styles.check} ${styles.checkTop}`}>
+                        <p>Check in</p>
+                        <span>__/__/__</span>   
+                    </div>
+
+                    <div className={styles.check}>
+                        <p>Check out</p>
+                        <span>__/__/__</span>   
+                    </div>
+            
+                    <button className={styles.botaoReserva}>Confirmar Reserva</button>
+                </div>
             </div>
 
         </form>

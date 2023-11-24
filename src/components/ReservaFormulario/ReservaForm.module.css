@@ -1,5 +1,5 @@
 .reservaForm {
-
+    display: flex;
     /* height: 60vh; */
     background-color: var(--lightgray-color);
     padding-left: 20px;
@@ -73,7 +73,7 @@
 }
 
 .calendarForm {
-    width: 57.8vw !important;
+    width: 57vw !important;
     box-shadow: #C4C4C4 3px 5px 5px !important;
 }
 
@@ -126,4 +126,101 @@
     background-color: var(--white-pure);
     border-radius: 5px;
     padding: 0 1rem;
+}
+
+.reservaFormRight {
+    width: 35%;
+    margin: 75px 30px 0 0;
+}
+
+.reservaInfos {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--white-pure);
+    padding: 1rem; 
+    border-radius: 5px; 
+    box-shadow: #C4C4C4 3px 5px 5px !important;
+}
+
+.reservaTitle {
+    font-size: 28px; 
+    font-weight: 700;
+    color: var(--third-color);
+    padding-top: 5px;
+}
+
+.imageReserva {
+    width: 100%;
+}
+
+.reservaHeaderInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.reservaHeaderInfo span {
+    color: var(--lightgray-color2);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.reservaHeaderInfo h3 {
+    color: var(--second-color);
+    font-size: 24px;
+    font-weight: 700;
+}
+.star {
+    color: var(--primary-color);
+}
+
+.reservaLocation{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.reservaLocation img {
+    width: 15px;
+}
+
+.check {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--trace-gray-color);   
+}
+
+.checkTop {
+    border-top: 1px solid var(--trace-gray-color); 
+    padding-top: 24px;
+}
+
+.check p {
+    color: var(--second-color);
+    font-size: 20px;
+    font-weight: 700;
+    padding: 8px;
+}
+
+.check span {
+    font-size: 20px;
+}
+
+.botaoReserva {
+    height: 50px;
+    width: 100%;
+    color: var(--white-pure);
+    font-size: 16px;
+    font-weight: 700;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.botaoReserva:hover {
+    background-color: var(--green-hover);
 }
