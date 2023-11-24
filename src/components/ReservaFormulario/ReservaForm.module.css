@@ -224,3 +224,100 @@
 .botaoReserva:hover {
     background-color: var(--green-hover);
 }
+
+
+
+.darkMode {
+    background-color: var(--dark-color3);
+}
+
+.darkMode .horaFormBody {
+    background-color: var(--dark-color);
+    box-shadow: var(--dark-color3) 3px 5px 5px !important;    
+}
+
+.darkMode .horaFormBody label {
+    color: var(--white-pure);
+}
+
+.darkMode .horaFormBody select {
+    background-color: var(--dark-color2);
+    color: var(--white-pure);
+}
+
+.darkMode .horaFormCheckText svg {
+    color: var(--white-pure);
+}
+
+.darkMode .horaFormCheckText p {
+    color: var(--white-pure);
+}
+
+
+.darkMode .input{
+    background-color: var(--dark-color);
+    box-shadow: var(--dark-color3) 3px 5px 5px;  
+}
+
+.darkMode .reservaFormLeft h1 {
+    color: var(--white-pure);
+}
+
+.darkMode .input input {
+    background-color: var(--dark-color2);
+}
+
+.darkMode .input label {
+    color: var(--white-pure);
+}
+
+.darkMode .reservaInfos {
+    background-color: var(--dark-color);
+    color: var(--white-pure);
+    box-shadow: var(--dark-color3) 3px 5px 5px !important;   
+}
+
+.darkMode .reservaHeaderInfo span {
+    color: var(--white-pure);
+}
+
+.darkMode .reservaHeaderInfo h3 {
+    color: var(--white-pure);
+}
+
+.darkMode .check p {
+    color: var(--white-pure);
+}
+
+.darkMode .calendarForm {
+    background-color: var(--dark-color)!important;
+    box-shadow: var(--dark-color3) 3px 5px 5px !important;  
+}
+
+.darkMode .calendarMobile {
+    background-color: var(--dark-color)!important;
+}
+
+.darkMode .calendarForm button{
+    color: var(--white-color)!important;
+}
+
+.darkMode .calendarMobile button{
+    color: var(--white-color)!important;
+}
+
+.darkMode .calendarForm button:disabled{
+    background-color: var(--dark-color2)!important;
+}
+
+.darkMode .calendarMobile button:disabled{
+    background-color: var(--dark-color2)!important;
+}
+
+.darkMode .calendarForm button:hover{
+    background-color: var(--dark-color2)!important;
+}
+
+.darkMode .calendarMobile button:hover{
+    background-color: var(--dark-color2)!important;
+}

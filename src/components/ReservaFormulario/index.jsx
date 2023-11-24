@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 
 import styles from './ReservaForm.module.css';
 import { IoIosStar } from "react-icons/io";
@@ -7,8 +7,11 @@ import map from '../../assets/icons/map.png';
 
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import { TemaContext } from '../../contexts/globalContext';
 
 export function ReservaFormulario( {nome, tipoCategoria, tipoCidade, imagens}) {
+
+    const { tema } = useContext(TemaContext);
 
     const [activeStartDate, setActiveStartDate] = useState(new Date(2023, 10, 23));
     const qtdEstrelas = new Array(5).fill(null);
@@ -24,9 +27,9 @@ export function ReservaFormulario( {nome, tipoCategoria, tipoCidade, imagens}) {
     }
 
     return (
-        <form className={styles.reservaForm}>
+        <form className={`${styles.reservaForm} ${tema ? '' : styles.darkMode}`}>
 
-            <div className={styles.reservaFormLeft}>
+            <div className={`${styles.reservaFormLeft} ${tema ? '' : styles.darkMode}`}>
                 <h1 className={styles.titleReserva}>Complete seus dados</h1>
                 
                 <div className={styles.input}>
@@ -90,7 +93,7 @@ export function ReservaFormulario( {nome, tipoCategoria, tipoCidade, imagens}) {
 
             </div>
 
-            <div className={styles.reservaFormRight}>
+            <div className={`${styles.reservaFormRight} ${tema ? '' : styles.darkMode}`} >
                 <div className={styles.reservaInfos}>
                     <h1 className={styles.reservaTitle}> Detalhe da Reserva </h1>
                     {imagens[0] && <img src={imagens[0].url} className={styles.imageReserva} alt="" />}
