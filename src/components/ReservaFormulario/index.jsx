@@ -12,16 +12,34 @@ import { TemaContext } from '../../contexts/globalContext';
 export function ReservaFormulario( {nome, tipoCategoria, tipoCidade, imagens}) {
 
     const { tema } = useContext(TemaContext);
+
+    const [selectedHour, setSelectedHour] = useState('');
+    const [checkIn, setCheckIn] = useState('');
+    const [checkOut, setCheckOut] = useState('');
+
     const estaLogado = !!localStorage.getItem("usuarioLogado");
     const usuarioData = estaLogado ? JSON.parse(localStorage.getItem("usuarioLogado")) : {'nome': '', 'sobrenome': '', 'email': ''};
-    const [activeStartDate, setActiveStartDate] = useState(new Date(2023, 10, 23));
-    const qtdEstrelas = new Array(5).fill(null);
 
-    console.log(usuarioData);
+    const qtdEstrelas = new Array(5).fill(null);
+    const [ horariosArray ] = useState(Array.from({ length: 24 }, (_, i) => `${i.toString().padStart(2, '0')}:00`));
+
+    const selectHour = (event) => {
+        setSelectedHour(event.target.value); 
+      };
 
     const handleDateChange = (date) => {
-        setActiveStartDate(date);
+        setCheckIn(date[0]);
+        setCheckOut(date[1]);
     };
+
+    const handleReservaForm = (e) => {
+        e.preventDefault();
+        if (!checkIn && !checkOut) {
+            alert('Selecione um intervalo de datas válido.');
+            return;
+          }
+
+      }
 
     const desabilitarDatas = ({ date }) => {
         const dataAtual = new Date();
@@ -30,7 +48,7 @@ export function ReservaFormulario( {nome, tipoCategoria, tipoCidade, imagens}) {
     }
 
     return (
-        <form className={`${styles.reservaForm} ${tema ? '' : styles.darkMode}`}>
+        <form className={`${styles.reservaForm} ${tema ? '' : styles.darkMode}`} onSubmit={handleReservaForm}>
 
             <div className={`${styles.reservaFormLeft} ${tema ? '' : styles.darkMode}`}>
                 <h1 className={styles.titleReserva}>Complete seus dados</h1>
@@ -54,7 +72,7 @@ export function ReservaFormulario( {nome, tipoCategoria, tipoCidade, imagens}) {
 
                     <div className={styles.inputItem}>
                         <label htmlFor="">Cidade</label>
-                        <input type="text" className={styles.inputCidade} placeholder='Cidade'/>
+                        <input type="text" className={styles.inputCidade} placeholder='Cidade' required/>
                     </div>
 
                 </div>
@@ -63,7 +81,6 @@ export function ReservaFormulario( {nome, tipoCategoria, tipoCidade, imagens}) {
                     <h1 className={styles.calendarioFormTitle}> Selecione sua data de reserva </h1>
                     <Calendar
                         className={styles.calendarForm}
-                        value={activeStartDate}
                         onChange={handleDateChange}
                         showDoubleView
                         tileDisabled={desabilitarDatas}
@@ -83,12 +100,15 @@ export function ReservaFormulario( {nome, tipoCategoria, tipoCidade, imagens}) {
                             <p> Seu quarto estará pronto para check-in entre 10h00 e 23h00</p> 
                         </div>
                         
-                        <label className={styles.horaFormLabel}> Indique a sua hora prevista de chegada </label>
+                        <label htmlFor="hourOptions" className={styles.horaFormLabel}> Indique a sua hora prevista de chegada </label>
                         
-                        <select name="" id="" className={styles.horaFormSelect}> 
-                            <option value="" disabled hidden selected> Selecione a sua hora de chegada </option>
-                            <option value=""> 12 horas </option>
-                            <option value=""> 15 horas </option>
+                        <select id="hourOptions" value={selectedHour} onChange={selectHour} type="text" className={styles.horaFormSelect} required> 
+                            <option value="" disabled hidden> Selecione a sua hora de chegada </option>
+                            {horariosArray.map((horario, index) => (
+                                <option key={index} value={horario}>
+                                    {horario}
+                                </option>
+                            ))}
                         </select>
                          
                     </div>
@@ -112,12 +132,16 @@ export function ReservaFormulario( {nome, tipoCategoria, tipoCidade, imagens}) {
 
                     <div className={`${styles.check} ${styles.checkTop}`}>
                         <p>Check in</p>
-                        <span>__/__/__</span>   
+                        <span>
+                            {checkIn ? checkIn.getDate() : '__'} / {checkIn ? checkIn.getMonth() : '__'} / {checkIn ? checkIn.getFullYear() : '__'}
+                        </span>   
                     </div>
 
                     <div className={styles.check}>
                         <p>Check out</p>
-                        <span>__/__/__</span>   
+                        <span>
+                            {checkOut ? checkOut.getDate() : '__'} / {checkOut ? checkOut.getMonth() : '__'} / {checkOut ? checkOut.getFullYear() : '__'}
+                        </span>   
                     </div>
             
                     <button className={styles.botaoReserva}>Confirmar Reserva</button>
