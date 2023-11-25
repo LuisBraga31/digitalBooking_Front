@@ -225,14 +225,37 @@
     background-color: var(--green-hover);
 }
 
-
+/* Dark Mode */
 
 .darkMode {
+    background-color: var(--dark-color);
+    color: var(--white-pure);
+}
+
+.darkMode h1 {
+    color: var(--white-pure);
+}
+
+.darkMode .input {
+    background-color: var(--dark-color2);
+    box-shadow: var(--dark-color3) 3px 5px 5px;  
+}
+
+.darkMode .input label {
+    color: var(--white-pure);
+}
+
+.darkMode .input input {
     background-color: var(--dark-color3);
+    color: var(--white-pure);
+}
+
+.darkMode .input .inputCidade {
+    background-color: var(--dark-color) !important;
 }
 
 .darkMode .horaFormBody {
-    background-color: var(--dark-color);
+    background-color: var(--dark-color2);
     box-shadow: var(--dark-color3) 3px 5px 5px !important;    
 }
 
@@ -241,7 +264,7 @@
 }
 
 .darkMode .horaFormBody select {
-    background-color: var(--dark-color2);
+    background-color: var(--dark-color);
     color: var(--white-pure);
 }
 
@@ -253,26 +276,8 @@
     color: var(--white-pure);
 }
 
-
-.darkMode .input{
-    background-color: var(--dark-color);
-    box-shadow: var(--dark-color3) 3px 5px 5px;  
-}
-
-.darkMode .reservaFormLeft h1 {
-    color: var(--white-pure);
-}
-
-.darkMode .input input {
-    background-color: var(--dark-color2);
-}
-
-.darkMode .input label {
-    color: var(--white-pure);
-}
-
 .darkMode .reservaInfos {
-    background-color: var(--dark-color);
+    background-color: var(--dark-color2);
     color: var(--white-pure);
     box-shadow: var(--dark-color3) 3px 5px 5px !important;   
 }
@@ -290,7 +295,7 @@
 }
 
 .darkMode .calendarForm {
-    background-color: var(--dark-color)!important;
+    background-color: var(--dark-color2)!important;
     box-shadow: var(--dark-color3) 3px 5px 5px !important;  
 }
 
@@ -307,7 +312,7 @@
 }
 
 .darkMode .calendarForm button:disabled{
-    background-color: var(--dark-color2)!important;
+    background-color: var(--dark-color3)!important;
 }
 
 .darkMode .calendarMobile button:disabled{
@@ -315,7 +320,7 @@
 }
 
 .darkMode .calendarForm button:hover{
-    background-color: var(--dark-color2)!important;
+    background-color: var(--dark-color3)!important;
 }
 
 .darkMode .calendarMobile button:hover{
