@@ -12,9 +12,12 @@ import { TemaContext } from '../../contexts/globalContext';
 export function ReservaFormulario( {nome, tipoCategoria, tipoCidade, imagens}) {
 
     const { tema } = useContext(TemaContext);
-
+    const estaLogado = !!localStorage.getItem("usuarioLogado");
+    const usuarioData = estaLogado ? JSON.parse(localStorage.getItem("usuarioLogado")) : {'nome': '', 'sobrenome': '', 'email': ''};
     const [activeStartDate, setActiveStartDate] = useState(new Date(2023, 10, 23));
     const qtdEstrelas = new Array(5).fill(null);
+
+    console.log(usuarioData);
 
     const handleDateChange = (date) => {
         setActiveStartDate(date);
@@ -36,17 +39,17 @@ export function ReservaFormulario( {nome, tipoCategoria, tipoCidade, imagens}) {
                     
                     <div className={styles.inputItem}>
                         <label htmlFor="" >Nome</label>
-                        <input type="text" placeholder='Deborah' disabled/>
+                        <input type="text" placeholder={usuarioData.nome} disabled/>
                     </div>
 
                     <div className={styles.inputItem}>
                         <label htmlFor="">Sobrenome</label>
-                        <input type="text" placeholder='Borges' disabled/>
+                        <input type="text" placeholder={usuarioData.sobrenome} disabled/>
                     </div>
 
                     <div className={styles.inputItem}>
                         <label htmlFor="">E-mail</label>
-                        <input type="text" placeholder='deborah@gmail.com' disabled/>
+                        <input type="text" placeholder={usuarioData.email} disabled/>
                     </div>
 
                     <div className={styles.inputItem}>

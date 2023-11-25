@@ -14,31 +14,33 @@ import Swal from 'sweetalert2';
 export function ReservaPage() {
 
     const { tema } = useContext(TemaContext);
+    const navigate = useNavigate();
     const [produto, setProduto] = useState([]);
     const produtoId = useParams();
-    const navigate = useNavigate();
 
     const estaLogado = !!localStorage.getItem("usuarioLogado");
-
+    
     const verificarLogin = () => {
+        console.log(estaLogado)
         if(!estaLogado) {
             navigate('/login');
             Swal.fire({
-                icon: 'error',
-                title: 'Atenção:',
-                text: "Faça login na aplicação para acessar página de reserva",
-                confirmButtonColor: '#1DBEB4',
-              }).then((result) => {
-                if (result.isConfirmed) {
-                    navigate('/login');
-                } else {
-                    navigate('/login');
-                }
-            })
+              icon: 'error',
+              title: 'Atenção:',
+              text: "Faça login na aplicação para acessar página de reserva",
+              confirmButtonColor: '#1DBEB4',
+            }).then((result) => {
+              if (result.isConfirmed) {
+                  navigate('/login');
+              } else {
+                  navigate('/login');
+              }
+          })
+  
             
         }
-    }
-    
+      }
+
     const getProduto = () => {
         const produtoEncontrado = elementos.find(item => item.id === parseInt(produtoId.id));
         setProduto(produtoEncontrado);
