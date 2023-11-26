@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { TemaContext } from '../../contexts/globalContext';
 
 import styles from './ReservaForm.module.css';
+import './calendarioSelect.css';
 import { IoIosStar } from "react-icons/io";
 import { FaRegCheckCircle } from "react-icons/fa";
 import map from '../../assets/icons/map.png';

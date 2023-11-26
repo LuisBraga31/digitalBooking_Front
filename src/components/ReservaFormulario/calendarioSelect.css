@@ -1,0 +1,9 @@
+.react-calendar__tile--active {
+    background-color: var(--primary-color) !important;
+    border-radius: 25px !important;
+}
+
+.react-calendar__tile--hover {
+    background-color: var(--primary-color) !important;
+    border-radius: 25px !important;
+}
