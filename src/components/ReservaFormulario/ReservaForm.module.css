@@ -301,15 +301,16 @@
     box-shadow: var(--dark-color3) 3px 5px 5px !important;  
 }
 
-.darkMode .calendarMobile {
-    background-color: var(--dark-color)!important;
+.darkMode .calendarFormMobile {
+    background-color: var(--dark-color2)!important;
+    box-shadow: var(--dark-color3) 3px 5px 5px !important;  
 }
 
 .darkMode .calendarForm button{
     color: var(--white-color)!important;
 }
 
-.darkMode .calendarMobile button{
+.darkMode .calendarFormMobile button{
     color: var(--white-color)!important;
 }
 
@@ -317,14 +318,20 @@
     background-color: var(--dark-color3)!important;
 }
 
-.darkMode .calendarMobile button:disabled{
-    background-color: var(--dark-color2)!important;
+.darkMode .calendarFormMobile button:disabled{
+    background-color: var(--dark-color3)!important;
 }
 
 .darkMode .calendarForm button:hover{
     background-color: var(--dark-color3)!important;
 }
 
-.darkMode .calendarMobile button:hover{
-    background-color: var(--dark-color2)!important;
+.darkMode .calendarFormMobile button:hover{
+    background-color: var(--dark-color3)!important;
+}
+
+/* Responsivos */
+
+.calendarFormMobile {
+    display: none;
 }

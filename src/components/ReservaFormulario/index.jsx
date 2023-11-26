@@ -1,17 +1,20 @@
 import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { TemaContext } from '../../contexts/globalContext';
 
 import styles from './ReservaForm.module.css';
 import { IoIosStar } from "react-icons/io";
 import { FaRegCheckCircle } from "react-icons/fa";
 import map from '../../assets/icons/map.png';
 
+import Swal from 'sweetalert2';
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import { TemaContext } from '../../contexts/globalContext';
 
-export function ReservaFormulario( {nome, tipoCategoria, tipoCidade, imagens}) {
+export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens}) {
 
     const { tema } = useContext(TemaContext);
+    const navigate = useNavigate();
 
     const [selectedHour, setSelectedHour] = useState('');
     const [checkIn, setCheckIn] = useState('');
@@ -23,9 +26,15 @@ export function ReservaFormulario( {nome, tipoCategoria, tipoCidade, imagens}) {
     const qtdEstrelas = new Array(5).fill(null);
     const [ horariosArray ] = useState(Array.from({ length: 24 }, (_, i) => `${i.toString().padStart(2, '0')}:00`));
 
+    const desabilitarDatas = ({ date }) => {
+        const dataAtual = new Date();
+        const dataAnterior = date < dataAtual;
+        return dataAnterior;
+    }
+
     const selectHour = (event) => {
         setSelectedHour(event.target.value); 
-      };
+    };
 
     const handleDateChange = (date) => {
         setCheckIn(date[0]);
@@ -34,18 +43,37 @@ export function ReservaFormulario( {nome, tipoCategoria, tipoCidade, imagens}) {
 
     const handleReservaForm = (e) => {
         e.preventDefault();
+        
+        const infos = [ {
+            horaInicioReserva: selectedHour,
+            dataInicialReserva: checkIn,
+            dataFinalReseva: checkOut,
+            produtoId: id,
+            usuarioId: usuarioData.email
+        }];
+
         if (!checkIn && !checkOut) {
             alert('Selecione um intervalo de datas válido.');
             return;
-          }
+        } else {
+            console.log(infos);
+            Swal.fire({
+                icon: 'success',
+                title: 'Muito Obrigado!',
+                background: `${tema ? '#F3F1ED' : '#112'}`,
+                color: `#1DBEB4`,
+                html: `<span style='color: ${tema ? '#000' : '#FFF'} ;'>Sua reserva foi feita com sucesso!</span>`,
+                confirmButtonColor: '#1DBEB4',
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/');
+                } else {
+                    navigate('/');
+                }
+            })  
+        }
 
       }
-
-    const desabilitarDatas = ({ date }) => {
-        const dataAtual = new Date();
-        const dataAnterior = date < dataAtual;
-        return dataAnterior;
-    }
 
     return (
         <form className={`${styles.reservaForm} ${tema ? '' : styles.darkMode}`} onSubmit={handleReservaForm}>
@@ -83,6 +111,13 @@ export function ReservaFormulario( {nome, tipoCategoria, tipoCidade, imagens}) {
                         className={styles.calendarForm}
                         onChange={handleDateChange}
                         showDoubleView
+                        tileDisabled={desabilitarDatas}
+                        showNavigation={true}
+                        selectRange={true}
+                    />
+                    <Calendar
+                        className={styles.calendarFormMobile}
+                        onChange={handleDateChange}
                         tileDisabled={desabilitarDatas}
                         showNavigation={true}
                         selectRange={true}
