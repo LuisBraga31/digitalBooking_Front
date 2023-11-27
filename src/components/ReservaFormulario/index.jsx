@@ -45,7 +45,7 @@ export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens
     const handleReservaForm = (e) => {
         e.preventDefault();
         
-        const infos = [ {
+        const formInfoPost = [ {
             horaInicioReserva: selectedHour,
             dataInicialReserva: checkIn,
             dataFinalReseva: checkOut,
@@ -57,7 +57,7 @@ export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens
             alert('Selecione um intervalo de datas válido.');
             return;
         } else {
-            console.log(infos);
+            console.log(formInfoPost);
             Swal.fire({
                 icon: 'success',
                 title: 'Muito Obrigado!',
@@ -132,7 +132,7 @@ export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens
                     <div className={styles.horaFormBody}>
                         
                         <div className={styles.horaFormCheckText}> 
-                            <FaRegCheckCircle /> 
+                            <FaRegCheckCircle size={28}/> 
                             <p> Seu quarto estará pronto para check-in entre 10h00 e 23h00</p> 
                         </div>
                         
@@ -154,33 +154,47 @@ export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens
 
             <div className={`${styles.reservaFormRight} ${tema ? '' : styles.darkMode}`} >
                 <div className={styles.reservaInfos}>
+                    
                     <h1 className={styles.reservaTitle}> Detalhe da Reserva </h1>
-                    {imagens[0] && <img src={imagens[0].url} className={styles.imageReserva} alt="" />}
-                    <div className={styles.reservaHeaderInfo}>
-                        <span> {tipoCategoria.nome.toUpperCase()} </span>
-                        <h3> {nome} </h3>
-                        <div> {qtdEstrelas.map((_, index) => ( <IoIosStar key={index} className={styles.star} size={14}/>  ))}  </div>
-                        <div className={styles.reservaLocation}>
-                            <img src={map} alt=""/>
-                            <p className={styles.localizacao}> {tipoCidade.nome} - {tipoCidade.pais}</p>
+                    
+                    <div className={styles.reservaDetails}>
+                        
+                        <div className={styles.reservaDetailsImage}>
+                            {imagens[0] && <img src={imagens[0].url} className={styles.imageReserva} alt="" />}
                         </div>
-                    </div>
+                        
+                        <div className={styles.reservaDetailsBody}>
+                            
+                            <div className={styles.reservaHeaderInfo}>
+                                <span> {tipoCategoria.nome.toUpperCase()} </span>
+                                <h3> {nome} </h3>
+                                <div> {qtdEstrelas.map((_, index) => ( <IoIosStar key={index} className={styles.star} size={14}/>  ))}  </div>
+                                <div className={styles.reservaLocation}>
+                                    <img src={map} alt=""/>
+                                    <p className={styles.localizacao}> {tipoCidade.nome} - {tipoCidade.pais}</p>
+                                </div>
+                            </div>
 
-                    <div className={`${styles.check} ${styles.checkTop}`}>
-                        <p>Check in</p>
-                        <span>
-                            {checkIn ? checkIn.getDate() : '__'} / {checkIn ? checkIn.getMonth() : '__'} / {checkIn ? checkIn.getFullYear() : '__'}
-                        </span>   
-                    </div>
+                            <div className={`${styles.check} ${styles.checkTop}`}>
+                                <p>Check in</p>
+                                <span>
+                                    {checkIn ? checkIn.getDate() : '__'} / {checkIn ? checkIn.getMonth()+1 : '__'} / {checkIn ? checkIn.getFullYear() : '__'}
+                                </span>   
+                            </div>
 
-                    <div className={styles.check}>
-                        <p>Check out</p>
-                        <span>
-                            {checkOut ? checkOut.getDate() : '__'} / {checkOut ? checkOut.getMonth() : '__'} / {checkOut ? checkOut.getFullYear() : '__'}
-                        </span>   
+                            <div className={styles.check}>
+                                <p>Check out</p>
+                                <span>
+                                    {checkOut ? checkOut.getDate() : '__'} / {checkOut ? checkOut.getMonth()+1 : '__'} / {checkOut ? checkOut.getFullYear() : '__'}
+                                </span>   
+                            </div>
+
+                            <button className={styles.botaoReserva}>Confirmar Reserva</button>
+
+                        </div>
+
                     </div>
-            
-                    <button className={styles.botaoReserva}>Confirmar Reserva</button>
+                    
                 </div>
             </div>
 

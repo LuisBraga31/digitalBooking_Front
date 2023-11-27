@@ -11,11 +11,6 @@ export function DetalheProdutoCalendario() {
 
     const { tema } = useContext(TemaContext);
     const produtoId = useParams();
-    const [activeStartDate, setActiveStartDate] = useState(new Date(2023, 10, 9));
-
-    const handleDateChange = (date) => {
-      setActiveStartDate(date);
-    };
     
     const desabilitarDatas = ({ date }) => {
         const dataAtual = new Date();
@@ -32,16 +27,12 @@ export function DetalheProdutoCalendario() {
           <div className={styles.calendario}>
             <Calendar
               className={styles.calendarDesktop}
-              value={activeStartDate}
-              onChange={handleDateChange}
               showDoubleView
               tileDisabled={desabilitarDatas}
               showNavigation={true}
             />
             <Calendar
               className={styles.calendarMobile}
-              value={activeStartDate}
-              onChange={handleDateChange}
               tileDisabled={desabilitarDatas}
               showNavigation={true}
             />

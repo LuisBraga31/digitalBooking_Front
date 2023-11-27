@@ -7,3 +7,13 @@
     background-color: var(--primary-color) !important;
     border-radius: 25px !important;
 }
+
+.react-calendar__navigation__label {
+    width: 100%;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.react-calendar__navigation__label:hover {
+    background-color: transparent !important;
+}

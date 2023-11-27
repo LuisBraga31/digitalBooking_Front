@@ -1,6 +1,5 @@
 .reservaForm {
     display: flex;
-    /* height: 60vh; */
     background-color: var(--lightgray-color);
     padding-left: 20px;
 }
@@ -149,6 +148,18 @@
     font-weight: 700;
     color: var(--third-color);
     padding-top: 5px;
+}
+
+.reservaDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.reservaDetailsBody {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .imageReserva {
@@ -334,4 +345,88 @@
 
 .calendarFormMobile {
     display: none;
+}
+
+@media (max-width: 768px) {
+    .reservaForm {
+        flex-direction: column;
+    }
+
+    .reservaFormLeft {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .input {
+        width: 100%;
+        gap: 1.5em;
+        padding: 2rem;
+    }
+
+    .reservaFormRight {
+        width: 95%;
+        padding-bottom: 20px;
+    }
+    
+    .calendarForm {
+        width: 100% !important;
+    }
+
+    .horaChegadaForm {
+        width: 100%;
+    }
+
+    .reservaDetails {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .imageReserva {
+        width: 300px;
+        height: 300px;
+    }
+
+    .reservaDetailsBody {
+        width: 95%;
+
+    }
+
+}
+
+@media (max-width: 580px) {
+
+    .input {
+        grid-template-columns: 1fr;
+    }
+
+    .reservaFormLeft {
+        padding: 0;
+        padding-top: 30px;
+    }
+
+    .calendarForm {
+        display: none;
+    }
+
+    .calendarFormMobile {
+        display: block;
+        width: 95% !important;
+    }
+
+    .horaChegadaForm {
+        width: 95%;
+    }
+
+    .input {
+        width: 95%;
+    }
+
+    .horaFormSelect {
+        width: 100%;
+    }
+
+    .reservaDetails {
+        flex-direction: column;
+    }
+
 }
