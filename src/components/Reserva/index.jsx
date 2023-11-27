@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { DetalheProdutoHeader } from "../DetalheProdutoHeader";
 import { DetalheProdutoInfo } from "../DetalheProdutoInfo";
 import { ReservaFormulario } from "../ReservaFormulario";
 
 import Carregando from '../../assets/imagens/carregando.gif';
+import { api } from "../../services/api";
 
 export function Reserva( { produto } ) {
 

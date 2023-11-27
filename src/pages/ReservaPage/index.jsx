@@ -10,6 +10,7 @@ import { TemaContext } from "../../contexts/globalContext";
 import { Reserva } from "../../components/Reserva";
 
 import Swal from 'sweetalert2';
+import { api } from "../../services/api";
 
 export function ReservaPage() {
 
@@ -45,6 +46,11 @@ export function ReservaPage() {
         const produtoEncontrado = elementos.find(item => item.id === parseInt(produtoId.id));
         setProduto(produtoEncontrado);
     }
+
+    // const getProduto = async() => {
+    //     const res = await api.get(`/v1/produtos/${produtoId.id}`);
+    //     setProduto(res.data);
+    // }
 
     useEffect(() => {
         getProduto();
