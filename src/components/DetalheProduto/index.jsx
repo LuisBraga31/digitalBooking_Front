@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import styles from './DetalheProduto.module.css'
+import caracteristicas from '../../data/caracteristicas.json';
 
 import { DetalheProdutoHeader } from '../DetalheProdutoHeader';
 import { DetalheProdutoImagens } from '../DetalheProdutoImagens';
@@ -16,7 +17,6 @@ export function DetalheProduto( { produto }) {
     
     const [categoria, setCategoria] = useState({'nome': 'Hotel'});
     const [cidade, setCidade] = useState({'nome': ' Cidade ', 'pais': 'Brasil'});
-    const [caracteristicas, setCaracteristicas] = useState([]);
     const [imagens, setImagens] = useState([  
         { id: 1, url: Carregando },
         { id: 2, url: Carregando },
@@ -24,6 +24,7 @@ export function DetalheProduto( { produto }) {
         { id: 4, url: Carregando },
         { id: 5, url: Carregando }]
     );
+    // const [caracteristicas, setCaracteristicas] = useState([]);
   
     // const getCategoria = async() => {
     //     if(produto.categoriasId) {
