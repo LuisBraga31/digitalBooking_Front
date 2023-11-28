@@ -24,10 +24,16 @@
 .botao {
     border: none;
     background-color: transparent;
-    color: var(--white-pure);
+    color: var(--black-pure);
     font-size: 34px;
     position: absolute;
     right: 20px;
     top: 20px;
     cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .interior {
+        width: 80%;
+    }
 }

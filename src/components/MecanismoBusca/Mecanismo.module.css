@@ -28,7 +28,8 @@
     background-image: url('../../assets/icons/map.png');
     background-repeat: no-repeat;
     background-size: 16px;
-    background-position: 5px center; 
+    background-position: 5px center;
+    cursor: pointer; 
 }
 
 .buscaSelect option {
@@ -36,17 +37,23 @@
     font-weight: 700;
 }
 
-.buscaInput {
+.buscaDatas {
     width: 28vw;
+    height: 36px;
+    font-size: 14px;
     font-weight: 500;
     padding: 10px 30px;
     border: none;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: var(--third-color);
+    background-color: var(--white-pure);
     background-image: url('../../assets/icons/calendar.png');
     background-repeat: no-repeat;
     background-size: 18px;
-    background-position: 5px center; 
+    background-position: 5px center;
+    cursor: pointer;
+    text-align: left; 
 }
 
 .buscaButton {
@@ -90,4 +97,47 @@
 
 .darkMode {
     background-color: var(--dark-color2);
+}
+
+.calendarioForm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.calendarModalMobile {
+    display: none;
+}
+
+.modalCalendarTitle {
+    color: var(--black-pure);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.okButton {
+    background-color: var(--primary-color);
+    color: var(--white-pure);
+    padding: 10px 60px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 15px;
+}
+
+@media (max-width: 900px) {
+    .calendarModalMobile {
+        display: block;
+    }
+    .calendarModal {
+        display: none;
+    }
+    .calendarioForm {
+        padding-top: 80px;
+    }
 }
