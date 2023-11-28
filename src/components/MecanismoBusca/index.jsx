@@ -1,6 +1,5 @@
-import { useEffect, useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { TemaContext } from "../../contexts/globalContext";
-import { api } from '../../services/api';
 import { Modal } from '../Modal';
 
 import styles from './Mecanismo.module.css';
@@ -9,7 +8,7 @@ import './calendarModal.css';
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
-export default function MecanismoBusca( { setFilterLocation } ) {
+export default function MecanismoBusca( { setFilterLocation, listaCidades } ) {
 
   const { tema } = useContext(TemaContext);
 
@@ -19,7 +18,6 @@ export default function MecanismoBusca( { setFilterLocation } ) {
   const [meses, setMeses] = useState([]);
   
   const [selectedValue, setSelectedValue] = useState('All');
-  const [listaCidades, setListaCidades] = useState([{'id': 1, 'nome': 'Santos-SP'}, {'id': 2, 'nome': 'São Paulo-SP'}, {'id': 3, 'nome': 'Rio de Janeiro-RJ'}]);
 
   const desabilitarDatas = ({ date }) => {
     const dataAtual = new Date();
@@ -49,15 +47,6 @@ export default function MecanismoBusca( { setFilterLocation } ) {
     setFilterLocation(selectedValue);
     console.log(selectedValue)
   }
-
-  // const getListaCidades = async() => {
-  //   const res = await api.get(`/v1/cidades?termo=`);
-  //   setListaCidades(res.data.cidades);
-  // }
-
-  // useEffect(() => {
-  //   getListaCidades();
-  // },[])
 
   return (
     <div className={`${styles.mecanismo} ${tema ? '' : styles.darkMode}`}>
