@@ -1,23 +1,23 @@
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
+import { useState, useContext, useEffect } from "react";
+import { useNavigate, useParams } from 'react-router-dom';
+import { TemaContext } from "../../contexts/globalContext";
+import { api } from "../../services/api";
 
 import styles from './ReservaPage.module.css';
 import elementos from '../../data/elements.json';
 
-import { useState, useContext, useEffect } from "react";
-import { useNavigate, useParams } from 'react-router-dom';
-import { TemaContext } from "../../contexts/globalContext";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 import { Reserva } from "../../components/Reserva";
 
 import Swal from 'sweetalert2';
-import { api } from "../../services/api";
 
 export function ReservaPage() {
 
     const { tema } = useContext(TemaContext);
-    const navigate = useNavigate();
     const [produto, setProduto] = useState([]);
     const produtoId = useParams();
+    const navigate = useNavigate();
 
     const estaLogado = !!localStorage.getItem("usuarioLogado");
     

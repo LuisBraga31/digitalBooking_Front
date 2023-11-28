@@ -1,0 +1,4 @@
+.react-calendar {
+    box-shadow: none !important;
+    border: 2px solid var(--lightgray-color) !important;
+}

@@ -8,7 +8,7 @@ export default function Categorias( {setFilterCategory, categorias}) {
     const { tema } = useContext(TemaContext);
     const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
     
-    const handleCategoriaClick = (categoria) => {
+    const handleCategoria = (categoria) => {
         setCategoriaSelecionada(categoria);
         setFilterCategory(categoria);
     };
@@ -23,10 +23,10 @@ export default function Categorias( {setFilterCategory, categorias}) {
         
         <h2> Selecione uma categoria </h2>
         
-        <div className={styles.blocos}>
+        <div className={styles.blocosCategorias}>
             {categorias
             .map(item => (
-                <div key={item.id} className={`${styles.categoriaItem} ${categoriaSelecionada === `${item.id}` && styles.selected}`} onClick={() => handleCategoriaClick(`${item.id}`)}> 
+                <div key={item.id} className={`${styles.categoriaItem} ${categoriaSelecionada === `${item.id}` && styles.selecionado}`} onClick={() => handleCategoria(`${item.id}`)}> 
                     <img src={item.urlImage} alt="" />
                     <div className={styles.categoriaItemDesc}>
                         <h4> {item.nome} </h4>
@@ -34,7 +34,6 @@ export default function Categorias( {setFilterCategory, categorias}) {
                     </div>
                 </div>
             ))}
-
         </div>
     
         <button className={styles.verTudoButton} onClick={verTudo}> Exibir todas </button>

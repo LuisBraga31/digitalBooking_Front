@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { TemaContext } from "../../contexts/globalContext";
 import Swal from 'sweetalert2';
 
 import styles from "./Formulario.module.css";
-import { TemaContext } from "../../contexts/globalContext";
 
 export default function Formulario() {
 

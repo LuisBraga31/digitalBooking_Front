@@ -1,11 +1,10 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TemaContext } from "../../contexts/globalContext";
+import { api } from "../../services/api";
 
 import styles from './ProdutoCard.module.css';
-
 import { IoIosStar } from "react-icons/io";
-import { api } from "../../services/api";
 
 export default function ProdutoCard( { id, nome, descricao, categoriasId, cidadesId, imagensId}) {
 

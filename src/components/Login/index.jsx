@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { TemaContext } from "../../contexts/globalContext";
 import Swal from 'sweetalert2';
 
 import styles from "./LoginForm.module.css";
-import { TemaContext } from "../../contexts/globalContext";
 
 export default function Login() {
 
@@ -17,7 +17,6 @@ export default function Login() {
     const navigate = useNavigate();
     const onChangeUserEmail = (e) => setUserEmail(e.target.value);
     const onChangePassword = (e) => setPassword(e.target.value);
-
 
     const onSubmitForm = (e) => {
         e.preventDefault();
@@ -87,7 +86,6 @@ export default function Login() {
 
     };  
 
-  
     return (
         <div className={styles.container}>
             <h1>Iniciar Sessão</h1>

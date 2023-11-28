@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { TemaContext } from "../../contexts/globalContext";
+import { api } from "../../services/api";
 
 import styles from './DetailProduct.module.css';
 import elementos from '../../data/elements.json';
@@ -8,13 +9,12 @@ import elementos from '../../data/elements.json';
 import Header from "../../components/Header";
 import { DetalheProduto } from "../../components/DetalheProduto";
 import Footer from "../../components/Footer";
-import { api } from "../../services/api";
 
 export function DetailProductPage() {
     
     const { tema } = useContext(TemaContext);
-    const [produto, setProduto] = useState([]);
     const produtoId = useParams();
+    const [produto, setProduto] = useState([]);
     
     const getProduto = () => {
         const produtoEncontrado = elementos.find(item => item.id === parseInt(produtoId.id));

@@ -1,11 +1,11 @@
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-import Login from "../../components/Login";
+import { useContext } from "react";
+import { TemaContext } from "../../contexts/globalContext";
 
 import styles from './LoginPage.module.css';
 
-import { useContext } from "react";
-import { TemaContext } from "../../contexts/globalContext";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import Login from "../../components/Login";
 
 export function LoginPage() {
 

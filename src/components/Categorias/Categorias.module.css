@@ -1,26 +1,9 @@
 .categorias {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     flex-basis: 100%;
     align-items: center;
-}
-
-.verTudoButton {
-    background-color: var(--primary-color);
-    color: var(--white-pure);
-    padding: 10px 60px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 700;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.verTudoButton:hover {
-    transition: 0.5s;
-    background-color: var(--green-hover);
 }
 
 .categorias h2 {
@@ -29,18 +12,7 @@
     width: 1300px;
 }
 
-@media (max-width: 1295px) {
-    .categorias h2 {
-        width: 960px;
-    }
-}
-@media (max-width: 970px) {
-    .categorias h2 {
-        width: 640px;
-    }
-}
-
-.blocos {
+.blocosCategorias {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,13 +53,30 @@
     opacity: 0.8;
 }
 
-.selected {
+.selecionado {
     border: 3px solid var(--primary-color);
     background-color: var(--lightgray-color);
 }
 
+.verTudoButton {
+    background-color: var(--primary-color);
+    color: var(--white-pure);
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.verTudoButton:hover {
+    transition: 0.5s;
+    background-color: var(--green-hover);
+}
+
 @media (max-width: 768px) {
-    .blocos {
+    .blocosCategorias {
         flex-wrap: wrap;
         
     }
@@ -103,6 +92,19 @@
     }
 }
 
+@media (max-width: 1295px) {
+    .categorias h2 {
+        width: 960px;
+    }
+}
+
+@media (max-width: 970px) {
+    .categorias h2 {
+        width: 640px;
+    }
+}
+
+/* Dark Mode */
 
 .darkMode h2 {
     color: var(--white-color);
@@ -113,4 +115,8 @@
 
 .darkMode .categoriaItem{
     background-color: var(--dark-color2);
+}
+
+.darkMode .selecionado {
+    background-color: var(--lightgray-color);
 }

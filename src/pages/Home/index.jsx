@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { TemaContext } from "../../contexts/globalContext";
+import { api } from "../../services/api";
 
 import styles from './Home.module.css';
 import produtos from '../../data/elements.json';
@@ -10,8 +11,6 @@ import Categorias from "../../components/Categorias";
 import Produtos from "../../components/Produtos";
 import MecanismoBusca from "../../components/MecanismoBusca";
 import Footer from "../../components/Footer";
-
-import { api } from "../../services/api";
 
 export function Home() {
     
