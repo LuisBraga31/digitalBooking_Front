@@ -14,7 +14,25 @@ import 'swiper/element/css/autoplay';
 export function DetalheProdutoImagens( { imagens } ) {
 
   const { tema } = useContext(TemaContext);
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
+  const [imagePosition, setImagePosition] = useState(0);
+
+  const [indiceInicial, setIndiceInicial] = useState(1);
+  
+  const exibirImagens = () => {
+    const indiceFinal = (indiceInicial + 3) % imagens.length;
+    
+    if (indiceFinal >= indiceInicial) {
+      return imagens.slice(indiceInicial, indiceFinal + 1);
+    } else {
+      return [...imagens.slice(indiceInicial), ...imagens.slice(0, indiceFinal + 1)];
+    }
+  };
+
+  const avancarGaleria = () => {
+    setImagePosition((imagePosition + 1) % 5);
+    setIndiceInicial((indiceInicial + 1) % imagens.length);
+  };
 
   return (
     <div className={`${styles.container} ${tema ? "" : styles.darkMode}`}>
@@ -58,10 +76,13 @@ export function DetalheProdutoImagens( { imagens } ) {
 
       <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}>
         <div className={styles.imagensModal}>
-          {imagens[0] && <img src={imagens[0].url} alt="" />}
-          <strong>1/15</strong>
+          <div className={styles.modalImagePrincipal}>
+            {imagens[imagePosition] && <img src={imagens[imagePosition].url} alt="" />}
+            <button className={styles.modalButton} onClick={() => avancarGaleria()}> &gt; </button>
+          </div>
+          <strong>  {imagePosition+1}/{imagens.length} </strong>
           <div className={styles.outrasImagens}>
-            {imagens.slice(1).map((image, index) => (
+            {exibirImagens().map((image, index) => (
               <img key={index} src={image.url} alt="" />
             ))}
           </div>
