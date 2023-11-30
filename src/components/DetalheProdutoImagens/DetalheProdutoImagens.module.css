@@ -93,11 +93,49 @@
     align-items: center;
     flex-direction: column;
     gap: 10px;
+    height: 75vh;
 }
 
-.imagensModal img {
+.modalImagePrincipal {
     width: 100%;
-    height: 40vh;
+    position: relative;
+}
+
+.modalImagePrincipal img {
+    width: 100%;
+    height: 50vh;
+}
+
+.modalButtonRight {
+    position: absolute;
+    bottom: 45%;
+    right: 1%;
+    background-color: var(--primary-color);
+    color: var(--white-pure);
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.modalButtonLeft {
+    position: absolute;
+    bottom: 43.8%;
+    left: 1%;
+    background-color: var(--primary-color);
+    color: var(--white-pure);
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;  
+}
+
+.imagensModal strong{
+    color: var(--black-pure);
 }
 
 .outrasImagens {
@@ -108,10 +146,15 @@
 
 .outrasImagens img {
     width: 10vw;
-    height: 12vh;
+    height: 13vh;
 }
 
 @media (max-width: 768px) {
+
+    .modalOrigin {
+        display: none;
+    }
+
     .images {
         display: none;
     }
@@ -119,15 +162,12 @@
         width: 100%;
         display: block;
     }
-
 }
 
 @media (max-width: 638px) {
-
     .container {
         padding: 30px 10px;
     }
-
 }
 
 
@@ -144,5 +184,13 @@
 }
 
 .darkMode .icons{
+    color: var(--white-pure);
+}
+
+.darkMode .imagensModal {
+    background-color: var(--dark-color);
+}
+
+.darkMode .imagensModal strong {
     color: var(--white-pure);
 }
