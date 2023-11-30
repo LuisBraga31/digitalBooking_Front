@@ -18,10 +18,16 @@ export default function Produtos( { filterCategory, filterLocation, produtos } )
           {produtos
           .filter((item) => filterLocation === "All" ? true : filterLocation == item.cidadesId ? true : false)
           .filter((item) => filterCategory === "All" ? true : filterCategory == item.categoriasId ? true : false)
-          .map(item => (
+          .map(item => ( 
               <ProdutoCard key={item.id} {... item }/>
           ))}
         </div>
+                  
+        {produtos
+            .filter((item) => filterLocation === "All" ? true : filterLocation == item.cidadesId ? true : false)
+            .filter((item) => filterCategory === "All" ? true : filterCategory == item.categoriasId ? true : false)
+            .map(item => ( <ProdutoCard key={item.id} {...item} />)
+            ).length === 0 && <p className={styles.avisoDisponibilidade}> Não foram encontradas acomodações disponíveis. </p>}
         
     </div>
   )

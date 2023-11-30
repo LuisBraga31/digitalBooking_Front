@@ -24,6 +24,13 @@
     align-self: center;
 }
 
+.avisoDisponibilidade {
+    font-size: 20px;
+    font-weight: 500;
+    width: 1300px;
+    color: var(--third-color);
+}
+
 @media (max-width: 1300px) {
     .blocoProdutos {
         grid-template-columns: 1fr;
@@ -57,5 +64,9 @@
 }
 
 .darkMode h2 {
+    color: var(--white-color);
+}
+
+.darkMode .avisoDisponibilidade {
     color: var(--white-color);
 }
