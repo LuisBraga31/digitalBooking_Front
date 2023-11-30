@@ -18,7 +18,12 @@ export function Home() {
     const [filterCategory, setFilterCategory] = useState("All");
     const [filterLocation, setFilterLocation] = useState("All");
 
-    const [listaCidades, setListaCidades] = useState([{'id': 1, 'nome': 'Santos-SP'}, {'id': 2, 'nome': 'São Paulo-SP'}, {'id': 3, 'nome': 'Rio de Janeiro-RJ'}]);
+    const [listaCidades, setListaCidades] = useState([
+        {'id': 1, 'nome': 'Santos-SP'},
+        {'id': 2, 'nome': 'São Paulo-SP'}, 
+        {'id': 3, 'nome': 'Rio de Janeiro-RJ'}, 
+        {'id': 4, 'nome': 'Fortaleza'}
+    ]);
 
     // const [categorias, setCategorias] = useState([]);
     // const [produtos, setProdutos] = useState([]);

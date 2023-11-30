@@ -1,12 +1,15 @@
 import { useState, useContext } from 'react';
 import { TemaContext } from "../../contexts/globalContext";
 import { Modal } from '../Modal';
+import Select from 'react-select'
 
 import styles from './Mecanismo.module.css';
 import './calendarModal.css';
 
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+
+import { SiGooglemaps } from "react-icons/si";
 
 export default function MecanismoBusca( { setFilterLocation, listaCidades } ) {
 
@@ -50,7 +53,7 @@ export default function MecanismoBusca( { setFilterLocation, listaCidades } ) {
 
   return (
     <div className={`${styles.mecanismo} ${tema ? '' : styles.darkMode}`}>
-        <h1> Veja hotéis, apartamentos e muito mais em nosso site </h1>
+        <h1> <SiGooglemaps /> Veja hotéis, apartamentos e muito mais em nosso site </h1>
         
         <form className={styles.formBusca} onSubmit={handleSearchForm}>
             
@@ -58,7 +61,7 @@ export default function MecanismoBusca( { setFilterLocation, listaCidades } ) {
               <option value="" disabled hidden> Onde Vamos ?</option>
               <option value="All"> Ver todas opções </option>
               {listaCidades.map(item => (
-                <option key={item.id} value={item.id}> {item.nome} </option>
+                <option key={item.id} value={item.id}> <SiGooglemaps /> {item.nome} </option>
               ))}
             </select>
 
