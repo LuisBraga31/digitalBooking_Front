@@ -15,7 +15,7 @@ export function DetalheProdutoImagens( { imagens } ) {
 
   const { tema } = useContext(TemaContext);
   const [openModal, setOpenModal] = useState(false);
-  const [imagePosition, setImagePosition] = useState(0);
+  const [imagePrincipal, setImagePrincipal] = useState(0);
 
   const [indiceInicial, setIndiceInicial] = useState(1);
   
@@ -30,8 +30,13 @@ export function DetalheProdutoImagens( { imagens } ) {
   };
 
   const avancarGaleria = () => {
-    setImagePosition((imagePosition + 1) % 5);
+    setImagePrincipal((imagePrincipal + 1) % 5);
     setIndiceInicial((indiceInicial + 1) % imagens.length);
+  };
+
+  const voltarGaleria = () => {
+    setImagePrincipal((imagePrincipal - 1 +5) % 5);
+    setIndiceInicial((indiceInicial - 1 + imagens.length) % imagens.length);
   };
 
   return (
@@ -74,13 +79,14 @@ export function DetalheProdutoImagens( { imagens } ) {
         </swiper-container>
       </div>
 
-      <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}>
+      <Modal className={styles.modalOrigin} isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}>
         <div className={styles.imagensModal}>
           <div className={styles.modalImagePrincipal}>
-            {imagens[imagePosition] && <img src={imagens[imagePosition].url} alt="" />}
-            <button className={styles.modalButton} onClick={() => avancarGaleria()}> &gt; </button>
+            {imagens[imagePrincipal] && <img src={imagens[imagePrincipal].url} alt="" />}
+            {imagePrincipal != imagens.length-1 && <button className={styles.modalButtonRight} onClick={() => avancarGaleria()}> &gt; </button>}
+            {imagePrincipal != 0 && <button className={styles.modalButtonLeft} onClick={() => voltarGaleria()}> &lt; </button>}
           </div>
-          <strong>  {imagePosition+1}/{imagens.length} </strong>
+          <strong>  {imagePrincipal+1}/{imagens.length} </strong>
           <div className={styles.outrasImagens}>
             {exibirImagens().map((image, index) => (
               <img key={index} src={image.url} alt="" />

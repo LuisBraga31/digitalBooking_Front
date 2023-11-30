@@ -106,7 +106,7 @@
     height: 50vh;
 }
 
-.modalButton {
+.modalButtonRight {
     position: absolute;
     bottom: 45%;
     right: 1%;
@@ -118,6 +118,20 @@
     padding: 5px 10px;
     font-size: 16px;
     font-weight: bold;
+}
+
+.modalButtonLeft {
+    position: absolute;
+    bottom: 43.8%;
+    left: 1%;
+    background-color: var(--primary-color);
+    color: var(--white-pure);
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;  
 }
 
 .imagensModal strong{
@@ -136,6 +150,11 @@
 }
 
 @media (max-width: 768px) {
+
+    .modalOrigin {
+        display: none;
+    }
+
     .images {
         display: none;
     }
