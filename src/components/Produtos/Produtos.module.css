@@ -39,6 +39,10 @@
         width: 635px !important;
         text-align: left;
     }
+    .avisoDisponibilidade {
+        width: 635px !important;
+        text-align: left;
+    }
 }
 
 @media (max-width: 768px) {
@@ -49,10 +53,18 @@
         width: 635px !important;
         text-align: left;
     }
+    .avisoDisponibilidade {
+        width: 635px !important;
+        text-align: left;
+    }
 }
 
 @media (max-width: 700px) {
     .produtos h2 {
+        width: 365px !important;
+        text-align: left;
+    }
+    .avisoDisponibilidade {
         width: 365px !important;
         text-align: left;
     }

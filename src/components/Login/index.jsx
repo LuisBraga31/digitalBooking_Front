@@ -4,6 +4,7 @@ import { TemaContext } from "../../contexts/globalContext";
 import Swal from 'sweetalert2';
 
 import styles from "./LoginForm.module.css";
+import { api } from "../../services/api";
 
 export default function Login() {
 
@@ -18,71 +19,93 @@ export default function Login() {
     const onChangeUserEmail = (e) => setUserEmail(e.target.value);
     const onChangePassword = (e) => setPassword(e.target.value);
 
-    const onSubmitForm = (e) => {
+    const onSubmitForm = async (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
-
-        const registros = JSON.parse(localStorage.getItem('registros'));
+        console.log(data)
+        //const registros = JSON.parse(localStorage.getItem('registros'));
+        //const existeRegistro = !!localStorage.getItem('registros');
         
-        const existeRegistro = !!localStorage.getItem('registros');
-        
-        if(existeRegistro) {
-            
-            const usuarioEncontrado = registros.find(
-                registro => registro.email === data.email && registro.senha === data.password
-            );
+        try {
+            const response = await api.post('/v1/authentication/login' , { email: data.email, senha: data.password }, 
+            {
+              headers: {
+                'Content-Type' : 'application/json',
+                'Accept': 'application/json',
+              },
+            });
+            console.log(response);
 
-            if(usuarioEncontrado) {
-                Swal.fire({
-                    title: "Login Efetuado com Sucesso!",
-                    background: `${tema ? '#F3F1ED' : '#1f242d'}`,
-                    color: `${tema ? '#000' : '#FFF'}`,
-                    confirmButtonColor: '#1DBEB4',
-                    icon: "success"
-                  }).then((result) => {
-                    if (result.isConfirmed) {
-                        localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
-                        navigate('/');
-                    } else {
-                        localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
-                        navigate('/');
-                    }
-                });
-
-            } else {
-                Swal.fire({
-                    text: "Por favor, tente novamente, suas credenciais são inválidas!",
-                    background: `${tema ? '#F3F1ED' : '#1f242d'}`,
-                    color: `${tema ? '#000' : '#FFF'}`,
-                    confirmButtonColor: '#1DBEB4',
-                    icon: "error"
-                  }).then((result) => {
-                    if (result.isConfirmed) {
-                        setErrorForm(true)
-                    } else {
-                        setErrorForm(true)
-                    }
-                  });
-                
-            }
-
-        } else {
-            Swal.fire({
-                text: "Por favor, tente novamente, suas credenciais são inválidas!",
-                background: `${tema ? '#F3F1ED' : '#1f242d'}`,
-                color: `${tema ? '#000' : '#FFF'}`,
-                confirmButtonColor: '#1DBEB4',
-                icon: "error"
-              }).then((result) => {
-                if (result.isConfirmed) {
-                    setErrorForm(true)
-                } else {
-                    setErrorForm(true)
-                }
-              });
+            if(response.status === 200) {
+              localStorage.setItem('token', response.data.jwt);
+              navigate('/');
+            } 
+       
+    
+          } catch (error) {
+            setErrorForm(true);
+      
         }
+    
+
+
+        // if(existeRegistro) {
+            
+        //     const usuarioEncontrado = registros.find(
+        //         registro => registro.email === data.email && registro.senha === data.password
+        //     );
+
+        //     if(usuarioEncontrado) {
+        //         Swal.fire({
+        //             title: "Login Efetuado com Sucesso!",
+        //             background: `${tema ? '#F3F1ED' : '#1f242d'}`,
+        //             color: `${tema ? '#000' : '#FFF'}`,
+        //             confirmButtonColor: '#1DBEB4',
+        //             icon: "success"
+        //           }).then((result) => {
+        //             if (result.isConfirmed) {
+        //                 localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
+        //                 navigate('/');
+        //             } else {
+        //                 localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
+        //                 navigate('/');
+        //             }
+        //         });
+
+        //     } else {
+        //         Swal.fire({
+        //             text: "Por favor, tente novamente, suas credenciais são inválidas!",
+        //             background: `${tema ? '#F3F1ED' : '#1f242d'}`,
+        //             color: `${tema ? '#000' : '#FFF'}`,
+        //             confirmButtonColor: '#1DBEB4',
+        //             icon: "error"
+        //           }).then((result) => {
+        //             if (result.isConfirmed) {
+        //                 setErrorForm(true)
+        //             } else {
+        //                 setErrorForm(true)
+        //             }
+        //           });
+                
+        //     }
+
+        // } else {
+        //     Swal.fire({
+        //         text: "Por favor, tente novamente, suas credenciais são inválidas!",
+        //         background: `${tema ? '#F3F1ED' : '#1f242d'}`,
+        //         color: `${tema ? '#000' : '#FFF'}`,
+        //         confirmButtonColor: '#1DBEB4',
+        //         icon: "error"
+        //       }).then((result) => {
+        //         if (result.isConfirmed) {
+        //             setErrorForm(true)
+        //         } else {
+        //             setErrorForm(true)
+        //         }
+        //       });
+        // }
 
     };  
 
