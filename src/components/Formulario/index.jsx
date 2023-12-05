@@ -4,6 +4,7 @@ import { TemaContext } from "../../contexts/globalContext";
 import Swal from 'sweetalert2';
 
 import styles from "./Formulario.module.css";
+import { api } from "../../services/api";
 
 export default function Formulario() {
 
@@ -23,28 +24,54 @@ export default function Formulario() {
     repetirSenha: '',
   });
 
-  const handleForm = (e) => {
+  const handleForm = async (e) => {
     e.preventDefault()
 
     if (validForm()) {
-      const novoRegistro = [...listaRegistro, formData];
-      setListaRegistro(novoRegistro);
+
+      console.log(formData);
       
-      localStorage.setItem('registros', JSON.stringify(novoRegistro));
+      try {
+        const response = await api.post('/v1/authentication/register' , { 
+          nome: formData.nome,
+          sobrenome: formData.sobrenome,
+          email: formData.email, 
+          senha: formData.senha, 
+          role: "USER" 
+        }, 
+        {
+          headers: {
+            'Content-Type' : 'application/json',
+            'Accept': 'application/json',
+          },
+        });
+
+        if(response.status === 201) {
+          localStorage.setItem('token', response.data.jwt);
+          navigate('/');
+        } 
+
+      } catch (error) {
+        setErrorForm(true);
+  
+    }
+
       
-      Swal.fire({
-        title: "Cadastro realizado com sucesso!",
-        background: `${tema ? '#F3F1ED' : '#1f242d'}`,
-        color: `${tema ? '#000' : '#FFF'}`,
-        confirmButtonColor: '#1DBEB4',
-        icon: "success"
-      }).then((result) => {
-        if (result.isConfirmed) {
-          navigate('/login');
-        } else {
-          navigate('/login');
-        }
-      });
+      // localStorage.setItem('registros', JSON.stringify(novoRegistro));
+      
+      // Swal.fire({
+      //   title: "Cadastro realizado com sucesso!",
+      //   background: `${tema ? '#F3F1ED' : '#1f242d'}`,
+      //   color: `${tema ? '#000' : '#FFF'}`,
+      //   confirmButtonColor: '#1DBEB4',
+      //   icon: "success"
+      // }).then((result) => {
+      //   if (result.isConfirmed) {
+      //     navigate('/login');
+      //   } else {
+      //     navigate('/login');
+      //   }
+      // });
 
     } else {
       return null
