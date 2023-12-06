@@ -24,9 +24,6 @@ export default function Login() {
 
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
-        console.log(data)
-        //const registros = JSON.parse(localStorage.getItem('registros'));
-        //const existeRegistro = !!localStorage.getItem('registros');
         
         try {
             const response = await api.post('/v1/authentication/login' , { email: data.email, senha: data.password }, 
@@ -36,77 +33,40 @@ export default function Login() {
                 'Accept': 'application/json',
               },
             });
-            console.log(response);
 
-            if(response.status === 200) {
-              localStorage.setItem('token', response.data.jwt);
-              navigate('/');
-            } 
-       
-    
+            if (response.status === 200) {
+              
+              Swal.fire({
+                title: "Login Efetuado com Sucesso!",
+                background: `${tema ? '#F3F1ED' : '#1f242d'}`,
+                color: `${tema ? '#000' : '#FFF'}`,
+                confirmButtonColor: '#1DBEB4',
+                icon: "success"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  localStorage.setItem('token', response.data.jwt);
+                  navigate('/');
+                } else {
+                  localStorage.setItem('token', response.data.jwt);
+                  navigate('/');
+                }
+               });
+            }    
           } catch (error) {
-            setErrorForm(true);
-      
+            Swal.fire({
+              text: "Por favor, tente novamente, suas credenciais são inválidas!",
+              background: `${tema ? '#F3F1ED' : '#1f242d'}`,
+              color: `${tema ? '#000' : '#FFF'}`,
+              confirmButtonColor: '#1DBEB4',
+              icon: "error"
+            }).then((result) => {
+              if (result.isConfirmed) {
+                  setErrorForm(true)
+              } else {
+                  setErrorForm(true)
+              }
+            });
         }
-    
-
-
-        // if(existeRegistro) {
-            
-        //     const usuarioEncontrado = registros.find(
-        //         registro => registro.email === data.email && registro.senha === data.password
-        //     );
-
-        //     if(usuarioEncontrado) {
-        //         Swal.fire({
-        //             title: "Login Efetuado com Sucesso!",
-        //             background: `${tema ? '#F3F1ED' : '#1f242d'}`,
-        //             color: `${tema ? '#000' : '#FFF'}`,
-        //             confirmButtonColor: '#1DBEB4',
-        //             icon: "success"
-        //           }).then((result) => {
-        //             if (result.isConfirmed) {
-        //                 localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
-        //                 navigate('/');
-        //             } else {
-        //                 localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
-        //                 navigate('/');
-        //             }
-        //         });
-
-        //     } else {
-        //         Swal.fire({
-        //             text: "Por favor, tente novamente, suas credenciais são inválidas!",
-        //             background: `${tema ? '#F3F1ED' : '#1f242d'}`,
-        //             color: `${tema ? '#000' : '#FFF'}`,
-        //             confirmButtonColor: '#1DBEB4',
-        //             icon: "error"
-        //           }).then((result) => {
-        //             if (result.isConfirmed) {
-        //                 setErrorForm(true)
-        //             } else {
-        //                 setErrorForm(true)
-        //             }
-        //           });
-                
-        //     }
-
-        // } else {
-        //     Swal.fire({
-        //         text: "Por favor, tente novamente, suas credenciais são inválidas!",
-        //         background: `${tema ? '#F3F1ED' : '#1f242d'}`,
-        //         color: `${tema ? '#000' : '#FFF'}`,
-        //         confirmButtonColor: '#1DBEB4',
-        //         icon: "error"
-        //       }).then((result) => {
-        //         if (result.isConfirmed) {
-        //             setErrorForm(true)
-        //         } else {
-        //             setErrorForm(true)
-        //         }
-        //       });
-        // }
-
     };  
 
     return (

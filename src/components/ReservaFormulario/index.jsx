@@ -8,6 +8,7 @@ import { IoIosStar } from "react-icons/io";
 import { FaRegCheckCircle } from "react-icons/fa";
 import map from '../../assets/icons/map.png';
 
+import { jwtDecode } from "jwt-decode";
 import Swal from 'sweetalert2';
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -21,8 +22,9 @@ export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens
     const [checkIn, setCheckIn] = useState('');
     const [checkOut, setCheckOut] = useState('');
 
-    const estaLogado = !!localStorage.getItem("usuarioLogado");
-    const usuarioData = estaLogado ? JSON.parse(localStorage.getItem("usuarioLogado")) : {'nome': '', 'sobrenome': '', 'email': ''};
+    const estaLogado = !!localStorage.getItem("token");
+    const token = estaLogado ? localStorage.getItem("token") : null;
+    const usuarioData = token ? jwtDecode(token) : null;
 
     const qtdEstrelas = new Array(5).fill(null);
     const [ horariosArray ] = useState(Array.from({ length: 24 }, (_, i) => `${i.toString().padStart(2, '0')}:00`));
@@ -86,17 +88,17 @@ export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens
                     
                     <div className={styles.inputItem}>
                         <label htmlFor="" >Nome</label>
-                        <input type="text" placeholder={usuarioData.nome} disabled/>
+                        <input type="text" placeholder={estaLogado ? usuarioData.nome : 'Nome'} disabled/>
                     </div>
 
                     <div className={styles.inputItem}>
                         <label htmlFor="">Sobrenome</label>
-                        <input type="text" placeholder={usuarioData.sobrenome} disabled/>
+                        <input type="text" placeholder={estaLogado ?  usuarioData.sobrenome : 'Sobrenome'} disabled/>
                     </div>
 
                     <div className={styles.inputItem}>
                         <label htmlFor="">E-mail</label>
-                        <input type="text" placeholder={usuarioData.email} disabled/>
+                        <input type="text" placeholder={estaLogado ? usuarioData.sub : 'Email'} disabled/>
                     </div>
 
                     <div className={styles.inputItem}>

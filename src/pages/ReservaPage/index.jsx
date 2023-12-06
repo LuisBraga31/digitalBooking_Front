@@ -19,7 +19,7 @@ export function ReservaPage() {
     const produtoId = useParams();
     const navigate = useNavigate();
 
-    const estaLogado = !!localStorage.getItem("usuarioLogado");
+    const estaLogado = !!localStorage.getItem("token");
     
     const verificarLogin = () => {
         console.log(estaLogado)

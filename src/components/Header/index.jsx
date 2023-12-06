@@ -1,12 +1,14 @@
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { IoMenu } from "react-icons/io5";
 import { GrClose } from "react-icons/gr";
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaSun } from "react-icons/fa";
 import { GiMoon } from "react-icons/gi";
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { useContext, useState } from "react";
 
 import styles from './Header.module.css';
 import { TemaContext } from "../../contexts/globalContext";
+
+import { jwtDecode } from "jwt-decode";
 
 export default function Header() {
 
@@ -14,16 +16,19 @@ export default function Header() {
     
     const location = useLocation();
     const navigate = useNavigate();
-    const usuarioData = JSON.parse(localStorage.getItem("usuarioLogado"));
 
-    const [login, setLogin] = useState(usuarioData ? false : true);
+    const userToken = localStorage.getItem("token");
+    const token = userToken;
+    const usuarioData = token ? jwtDecode(token) : null;
+
+    const [login, setLogin] = useState(userToken ? false : true);
     const [menuLateral, setMenuLateral] = useState(false);
 
     const showMenu = () => setMenuLateral(!menuLateral);
 
     const logout = () => {
         setLogin(true);
-        localStorage.removeItem('usuarioLogado');
+        localStorage.removeItem('token');
         navigate('/login');
     }
 

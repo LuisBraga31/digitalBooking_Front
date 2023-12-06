@@ -11,9 +11,6 @@ export default function Formulario() {
   const { tema } = useContext(TemaContext);
 
   const navigate = useNavigate();
-
-  const data = localStorage.getItem("registros");
-  const [listaRegistro, setListaRegistro] = useState(data ? JSON.parse(data) : []);
   
   const [formErrors, setFormErrors] = useState({});
   const [formData, setFormData] = useState({
@@ -28,54 +25,49 @@ export default function Formulario() {
     e.preventDefault()
 
     if (validForm()) {
-
-      console.log(formData);
       
-      try {
-        const response = await api.post('/v1/authentication/register' , { 
-          nome: formData.nome,
-          sobrenome: formData.sobrenome,
-          email: formData.email, 
-          senha: formData.senha, 
-          role: "USER" 
-        }, 
-        {
-          headers: {
-            'Content-Type' : 'application/json',
-            'Accept': 'application/json',
-          },
-        });
+        try {
+          const response = await api.post('/v1/authentication/register' , { 
+            nome: formData.nome,
+            sobrenome: formData.sobrenome,
+            email: formData.email, 
+            senha: formData.senha, 
+            role: "USER" 
+          }, 
+          {
+            headers: {
+              'Content-Type' : 'application/json',
+              'Accept': 'application/json',
+            },
+          });
 
-        if(response.status === 201) {
-          localStorage.setItem('token', response.data.jwt);
-          navigate('/');
+          if(response.status === 201) {
+            
+            localStorage.setItem('token', response.data.jwt);
+            
+            Swal.fire({
+              title: "Cadastro realizado com sucesso!",
+              background: `${tema ? '#F3F1ED' : '#1f242d'}`,
+              color: `${tema ? '#000' : '#FFF'}`,
+              confirmButtonColor: '#1DBEB4',
+              icon: "success"
+            }).then((result) => {
+              if (result.isConfirmed) {
+                navigate('/');
+              } else {
+                navigate('/');
+              }
+            });
+          } 
+
+        } catch (error) {
+          setErrorForm(true);
         } 
 
-      } catch (error) {
-        setErrorForm(true);
-  
-    }
-
-      
-      // localStorage.setItem('registros', JSON.stringify(novoRegistro));
-      
-      // Swal.fire({
-      //   title: "Cadastro realizado com sucesso!",
-      //   background: `${tema ? '#F3F1ED' : '#1f242d'}`,
-      //   color: `${tema ? '#000' : '#FFF'}`,
-      //   confirmButtonColor: '#1DBEB4',
-      //   icon: "success"
-      // }).then((result) => {
-      //   if (result.isConfirmed) {
-      //     navigate('/login');
-      //   } else {
-      //     navigate('/login');
-      //   }
-      // });
-
     } else {
-      return null
+      return null;
     }
+
   };
 
   const handleChange = (e) => {
