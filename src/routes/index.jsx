@@ -7,6 +7,7 @@ import { DetailProductPage } from "../pages/DetailProductPage";
 import { ReservaPage } from "../pages/ReservaPage";
 
 import TemaContextProvider from "../contexts/globalContext";
+import { AdminPage } from "../pages/AdminPage";
 
 export function RouteList() {
 
@@ -22,6 +23,7 @@ export function RouteList() {
                     <Route path="/login" element={<LoginPage/>} />
                     <Route path="/produto/:id" element={<DetailProductPage />} />
                     <Route path="/produto/:id/reserva" element={<ReservaPage />} />
+                    <Route path="/administracao" element={<AdminPage />} />
 
                 </Routes>
 
