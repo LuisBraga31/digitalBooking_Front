@@ -7,13 +7,13 @@
     color: var(--second-color);
 }
 
-h1 {
+.formAdminTitle {
     margin-top: 120px;
     font-size: 24px;
     font-weight: 700;
 }
 
-label {
+.input label {
     font-size: 12px;
     font-weight: 500;
 }

@@ -4,7 +4,7 @@ export function FormAdmin() {
     return (
         <>
             <div className={styles.main}>
-                <h1>Criar Propriedade</h1>
+                <h1 className={styles.formAdminTitle}>Criar Propriedade</h1>
 
                 <form className={styles.form}>
                     <div className={styles.sectionGrid}>
