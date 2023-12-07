@@ -38,27 +38,36 @@ export function FormAdmin() {
                         <h2>Adicionar Atributos</h2>
 
                         <div className={styles.atributosInputs}>
-                            <input type="text" />
+                            <div className={styles.teste}>
+                                <label htmlFor="">Nome</label>
+                                <input type="text" />
+                            </div>
 
-                            <input type="text" />
+                            <div className={styles.teste}>
+                                <label htmlFor="">Ícone</label>
+                                <input type="text" />
+                            </div>
 
-                            <button>+</button>
+                            <button className={styles.atributosBtn}>+</button>
                         </div>
                     </div>
 
                     <div className={styles.produto}>
                         <h2>Políticas do Produto</h2>
                         <div className={styles.polProduto}>
-                            <div>
+                            <div className={styles.test}>
                                 <h3>Regras da casa</h3>
+                                <label htmlFor="">Descrição</label>
                                 <textarea name="" id="" cols="30" rows="10"></textarea>
                             </div>
-                            <div>
+                            <div className={styles.test}>
                                 <h3>Saúde e segunrança</h3>
+                                <label htmlFor="">Descrição</label>
                                 <textarea name="" id="" cols="30" rows="10"></textarea>
                             </div>
-                            <div>
+                            <div className={styles.test}>
                                 <h3>Política de cancelamento</h3>
+                                <label htmlFor="">Descrição</label>
                                 <textarea name="" id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
