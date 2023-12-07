@@ -1,3 +1,30 @@
+.headerAdmin {
+    background-color: var( --third-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 45px;
+}
+
+.headerAdminTitle {
+    color: var(--white-pure);
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
+}
+
+.headerAdminTitle span{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.headerAdminButton {
+    display: flex;
+    align-items: center;
+    color: var(--white-pure);
+    border: none;
+    cursor: pointer;
+}
+
 .main {
     width: 100%;
     display: flex;
@@ -5,14 +32,15 @@
     align-items: center;
     background-color: var(--lightgray-color);
     color: var(--second-color);
+    padding-bottom: 80px;
 }
 
-label {
+.form label {
     font-size: 12px;
     font-weight: 500;
 }
 
-input {
+.form input {
     height: 40px;
     border-radius: 5px;
     border: none;
@@ -20,7 +48,7 @@ input {
 }
 
 .formAdminTitle {
-    margin-top: 120px;
+    margin-top: 40px;
     font-size: 24px;
     font-weight: 700;
 }
@@ -87,7 +115,7 @@ input {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
     border-radius: 5px;
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.15);
 }
 
 .test {
@@ -98,7 +126,31 @@ input {
 }
 
 .test textarea {
+    color: var(--black-pure);
     border-radius: 5px;
     border: none;
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.15);
+    resize: none;
+}
+
+.carregarImagens {
+    background-color: aquamarine;
+}
+
+.btnCriar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.btnCriar button {
+    background-color: var(--primary-color);
+    height: 50px;
+    border-radius: 5px;
+    border: none;   
+    width: 32%;
+    color: var(--white-pure);
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.15);
 }

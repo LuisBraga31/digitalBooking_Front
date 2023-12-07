@@ -1,8 +1,29 @@
+import { Link } from 'react-router-dom';
+import { AiOutlineArrowLeft } from "react-icons/ai";
+
 import styles from './FormAdmin.module.css'
+import { useContext } from 'react';
+import { TemaContext } from '../../contexts/globalContext';
 
 export function FormAdmin() {
+    
+    const { tema } = useContext(TemaContext); 
+    
     return (
         <>
+            
+            <div className={`${styles.headerAdmin} ${tema ? '' : styles.darkModeHeader}`}>
+                
+                <div className={styles.headerAdminTitle}>
+		            <span> Administração </span>
+                </div>
+
+                <Link to='/' className={styles.headerAdminButton}> 
+                    <AiOutlineArrowLeft size={32}/> 
+                </Link>
+                
+            </div>
+
             <div className={styles.main}>
                 <h1 className={styles.formAdminTitle}>Criar Propriedade</h1>
 
@@ -63,7 +84,7 @@ export function FormAdmin() {
                             <div className={styles.test}>
                                 <h3>Saúde e segunrança</h3>
                                 <label htmlFor="">Descrição</label>
-                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                                <textarea name="" id="" cols="30" rows="10" placeholder='Escreva aqui'></textarea>
                             </div>
                             <div className={styles.test}>
                                 <h3>Política de cancelamento</h3>
@@ -75,6 +96,10 @@ export function FormAdmin() {
 
                     <div className={styles.carregarImagens}>
                         <h3>Carregar imagens</h3>
+                    </div>
+
+                    <div className={styles.btnCriar}>
+                        <button>Criar</button>                        
                     </div>
                 </form>
             </div>
