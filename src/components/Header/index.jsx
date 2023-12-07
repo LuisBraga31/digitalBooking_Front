@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { IoMenu } from "react-icons/io5";
 import { GrClose } from "react-icons/gr";
@@ -23,6 +23,7 @@ export default function Header() {
 
     const [login, setLogin] = useState(userToken ? false : true);
     const [menuLateral, setMenuLateral] = useState(false);
+    const [tokenValid, setTokenValid] = useState(true);
     const [isAdmin] = useState(usuarioData? usuarioData.role : null);
 
     const showMenu = () => setMenuLateral(!menuLateral);
@@ -32,6 +33,25 @@ export default function Header() {
         localStorage.removeItem('token');
         navigate('/login');
     }
+
+    useEffect(() => {
+
+        if(usuarioData != null) {
+            const now = new Date().getTime() / 1000 / 3600;
+            const expiration = Math.floor(usuarioData.exp / 3600);
+            
+            if(expiration > now) {
+                setTokenValid(true);
+            } else {
+                setTokenValid(false);
+            }
+        }
+
+        if(!tokenValid) {
+            logout();
+        }
+
+    }, []);
 
     return (
         <header className={`${styles.header} ${tema ? '' : styles.darkMode}`}>
