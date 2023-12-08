@@ -22,7 +22,7 @@ export function ReservaPage() {
     const estaLogado = !!localStorage.getItem("token");
     
     const verificarLogin = () => {
-        console.log(estaLogado)
+
         if(!estaLogado) {
             navigate('/login');
             Swal.fire({

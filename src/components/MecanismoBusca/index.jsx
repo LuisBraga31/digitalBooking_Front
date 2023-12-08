@@ -61,7 +61,7 @@ export default function MecanismoBusca( { setFilterLocation, listaCidades } ) {
               <option value="" disabled hidden> Onde Vamos ?</option>
               <option value="All"> Ver todas opções </option>
               {listaCidades.map(item => (
-                <option key={item.id} value={item.id}> <SiGooglemaps /> {item.nome} </option>
+                <option key={item.id} value={item.id}> {item.nome} </option>
               ))}
             </select>
 

@@ -5,9 +5,9 @@ import { FormPage } from "../pages/FormPage";
 import { LoginPage } from "../pages/LoginPage";
 import { DetailProductPage } from "../pages/DetailProductPage";
 import { ReservaPage } from "../pages/ReservaPage";
+import { AdminPage } from "../pages/AdminPage";
 
 import TemaContextProvider from "../contexts/globalContext";
-import { AdminPage } from "../pages/AdminPage";
 
 export function RouteList() {
 
