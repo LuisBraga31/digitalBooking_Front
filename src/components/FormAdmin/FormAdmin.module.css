@@ -1,5 +1,5 @@
 .headerAdmin {
-    background-color: var( --third-color);
+    background-color: var(--third-color);
     display: flex;
     justify-content: space-between;
     padding: 20px 45px;
@@ -25,6 +25,10 @@
     cursor: pointer;
 }
 
+.darkModeHeader {
+    background-color: var(--dark-color2);
+}
+
 .main {
     width: 100%;
     display: flex;
@@ -44,7 +48,12 @@
     height: 40px;
     border-radius: 5px;
     border: none;
+    padding-left: 12px;
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.form textarea {
+    padding: 12px 0 0 12px;
 }
 
 .formAdminTitle {
@@ -58,12 +67,11 @@
     background-color: var(--white-pure);
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
-
     width: 90%;
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
-    gap: 5rem;
+    gap: 3rem;
 }
 
 .sectionGrid {
@@ -71,6 +79,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;   
     gap: 2rem;
+    padding: 1.5rem;
+    border-radius: 5px; 
 }
 
 .input {
@@ -82,18 +92,28 @@
 .descricao {
     display: flex;
     flex-direction: column;
-    gap: 6px
+    gap: 6px;
+    padding: 1.5rem;
+    border-radius: 5px;
 }
 
 .descricao textarea {
     border-radius: 5px;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.15);
     border: none;
+    resize: none;
+}
+
+.atributos {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .atributos h2 {
     font-size: 20px;
     font-weight: 700;
+    padding-left: 10px;
 }
 
 .atributosInputs {
@@ -101,7 +121,7 @@
     height: 120px;
     display: flex;
     align-items: center;
-    background: #f7f3f3;
+    background: var(--white-color);
     gap: 1rem;
     border-radius: 5px;
     padding: 1.5rem;
@@ -127,12 +147,24 @@
     font-size: 32px;
     color: var(--white-pure);
     margin-top: 18px;
+    cursor: pointer;
 }
 
 .atributoItem {
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.produto h2 {
+    font-size: 20px;
+    padding-left: 10px;
 }
 
 .polProduto {
@@ -150,6 +182,7 @@
     padding: 1.25rem;
     color: var(--third-color);
     font-weight: 700;
+    border-radius: 5px; 
 }
 
 .politicaItem textarea {
@@ -161,12 +194,23 @@
     padding: 12px 0 0 12px;
 }
 
+.carregarImagens {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.carregarImagens h3 {
+    font-size: 20px;
+    font-weight: 700;
+    padding-left: 10px;
+}
+
 .imagensInput {
     width: 100%;
-    height: 120px;
     display: flex;
     align-items: center;
-    background: #f7f3f3;
+    background: var(--white-color);
     gap: 1rem;
     border-radius: 5px;
     padding: 1.5rem;
@@ -183,6 +227,7 @@
     border-radius: 5px;
     font-size: 32px;
     color: var(--white-pure);
+    cursor: pointer;
 }
 
 .btnCriar {
@@ -198,7 +243,71 @@
     height: 50px;
     border-radius: 5px;
     border: none;   
-    width: 32%;
+    width: 25%;
+    font-size: 20px;
     color: var(--white-pure);
+    font-weight: 700;
     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+} 
+.btnCriar button:hover {
+    background-color: var(--green-hover);
+}
+
+.darkMode h1 {
+    color: var(--white-pure);
+}
+
+.darkMode h2 {
+    color: var(--white-pure);
+}
+
+.darkMode h3 {
+    color: var(--white-pure);
+}
+
+.darkMode .form {
+    background-color: var(--dark-color2);
+}
+
+.darkMode h2 {
+    color: var(--white-pure);
+}
+
+.darkMode label {
+    color: var(--white-pure);
+}
+
+.darkMode input {
+    background-color: var(--dark-color);
+    color: var(--white-pure);
+}
+
+.darkMode textarea {
+    background-color: var(--dark-color);
+    color: var(--white-pure);
+}
+
+.darkMode .atributosInputs {
+    background-color: var(--dark-color3);
+}
+
+.darkMode .imagensInput {
+    background-color: var(--dark-color3);
+}
+
+.darkMode .politicaItem {
+    background-color: var(--dark-color3); 
+}
+
+.darkMode .sectionGrid {
+    background-color: var(--dark-color3);
+}
+
+.darkMode .descricao {
+    background-color: var(--dark-color3);
+}
+
+.darkMode button {
+    color: var(--black-pure);
 }

@@ -15,7 +15,7 @@ export function FormAdmin() {
             <div className={`${styles.headerAdmin} ${tema ? '' : styles.darkModeHeader}`}>
                 
                 <div className={styles.headerAdminTitle}>
-		            <span> Administração </span>
+                    <span> Administração </span>
                 </div>
 
                 <Link to='/' className={styles.headerAdminButton}> 
@@ -24,7 +24,7 @@ export function FormAdmin() {
                 
             </div>
 
-            <div className={styles.main}>
+            <div className={`${styles.main} ${tema ? '' : styles.darkMode}`} >
                 <h1 className={styles.formAdminTitle}>Criar Propriedade</h1>
 
                 <form className={styles.form}>
