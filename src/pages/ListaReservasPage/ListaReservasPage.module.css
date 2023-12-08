@@ -1,0 +1,9 @@
+.main {
+    min-height: 100vh;
+    padding-top: 93px;
+    background-color: var(--lightgray-color);
+}
+
+.darkMode {
+    background-color: var(--dark-color);
+}

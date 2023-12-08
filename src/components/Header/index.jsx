@@ -25,6 +25,7 @@ export default function Header() {
     const [menuLateral, setMenuLateral] = useState(false);
     const [tokenValid, setTokenValid] = useState(true);
     const [isAdmin] = useState(usuarioData? usuarioData.role : null);
+    const [userId] = useState(usuarioData? usuarioData.id : null);
 
     const showMenu = () => setMenuLateral(!menuLateral);
 
@@ -72,7 +73,11 @@ export default function Header() {
 
             ) : (
             <div className={styles.loginArea}>
-                {isAdmin == 'ADMIN' && (<div className={styles.admin}> <Link className="adminButton" to='/administracao'> Administrar </Link> </div>)}
+                <div className={styles.admin}>
+                    {isAdmin == 'ADMIN' && ( <Link className="adminButton" to='/administracao'> Administrar </Link> )}
+                    {isAdmin == 'USER' && ( <Link className="adminButton" to={`/reservas/${userId}`}> Minhas Reservas </Link> )}
+                </div>
+
                 <div className={styles.loginAvatar}> {usuarioData.nome.charAt(0).toUpperCase()}{usuarioData.sobrenome.charAt(0).toUpperCase()} </div>
                 <div className={styles.loginText}> 
                     <p> Olá, </p>
