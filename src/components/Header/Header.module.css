@@ -107,12 +107,15 @@
     gap: 20px;
 }
 
-.loginArea a {
+.admin {
+    padding: 10px 20px;
+    border-right: 2px solid var(--primary-color);
+}
+
+.admin a {
     font-size: 16px;
     font-weight: 700;
     color: var(--third-color);
-    padding: 10px 20px;
-    border-right: 2px solid var(--primary-color);
     text-decoration: none;
     cursor: pointer;
 }

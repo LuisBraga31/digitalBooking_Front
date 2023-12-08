@@ -52,7 +52,7 @@ export default function Header() {
 
             ) : (
             <div className={styles.loginArea}>
-                {isAdmin == 'ADMIN' && (<Link className="adminButton" to='/administracao'> Administrar </Link>)}
+                {isAdmin == 'ADMIN' && (<div className={styles.admin}> <Link className="adminButton" to='/administracao'> Administrar </Link> </div>)}
                 <div className={styles.loginAvatar}> {usuarioData.nome.charAt(0).toUpperCase()}{usuarioData.sobrenome.charAt(0).toUpperCase()} </div>
                 <div className={styles.loginText}> 
                     <p> Olá, </p>

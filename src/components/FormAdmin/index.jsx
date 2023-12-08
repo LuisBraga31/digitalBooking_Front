@@ -59,14 +59,14 @@ export function FormAdmin() {
                         <h2>Adicionar Atributos</h2>
 
                         <div className={styles.atributosInputs}>
-                            <div className={styles.teste}>
+                            <div className={`${styles.atributoItem} ${styles.atributoNome}`}>
                                 <label htmlFor="">Nome</label>
                                 <input type="text" />
                             </div>
 
-                            <div className={styles.teste}>
+                            <div className={`${styles.atributoItem} ${styles.atributoIcone}`}>
                                 <label htmlFor="">Ícone</label>
-                                <input type="text" />
+                                <input type="url" />
                             </div>
 
                             <button className={styles.atributosBtn}>+</button>
@@ -76,26 +76,31 @@ export function FormAdmin() {
                     <div className={styles.produto}>
                         <h2>Políticas do Produto</h2>
                         <div className={styles.polProduto}>
-                            <div className={styles.test}>
+                            <div className={styles.politicaItem}>
                                 <h3>Regras da casa</h3>
                                 <label htmlFor="">Descrição</label>
-                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                                <textarea name="" id="" cols="30" rows="10" placeholder='Escreva aqui'></textarea>
                             </div>
-                            <div className={styles.test}>
+                            <div className={styles.politicaItem}>
                                 <h3>Saúde e segunrança</h3>
                                 <label htmlFor="">Descrição</label>
                                 <textarea name="" id="" cols="30" rows="10" placeholder='Escreva aqui'></textarea>
                             </div>
-                            <div className={styles.test}>
+                            <div className={styles.politicaItem}>
                                 <h3>Política de cancelamento</h3>
                                 <label htmlFor="">Descrição</label>
-                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                                <textarea name="" id="" cols="30" rows="10" placeholder='Escreva aqui'></textarea>
                             </div>
                         </div>
                     </div>
 
                     <div className={styles.carregarImagens}>
                         <h3>Carregar imagens</h3>
+
+                        <div className={styles.imagensInput}>
+                            <input type="text" />
+                            <button>+</button>
+                        </div>
                     </div>
 
                     <div className={styles.btnCriar}>
