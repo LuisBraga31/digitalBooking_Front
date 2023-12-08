@@ -1,3 +1,7 @@
+.minhasReservas {
+    padding-bottom: 80px;
+}
+
 .headerListaReservas {
     background-color: var( --third-color);
     display: flex;
@@ -33,26 +37,29 @@
     align-items: center;
     background-color: var(--white-pure);
     margin: 25px 30px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .reservaProduto {
-    width: 50%;
+    width: 60%;
     height: 180px;
     display: flex;
-    gap: 25px;
     flex-direction: row;
-    background-color: lightgreen;
+    gap: 25px;
     border-radius: 10px;
     padding: 15px;
     margin: 25px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .reservaProdutoImg {
     display: flex;
 }
 
-.reservaInfostoImg img {
+.reservaProdutoImg img {
     height: 150px;
+    border: 1px solid var(--second-color);
 }
 
 .reservaProdutoInfos {
@@ -60,27 +67,120 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    background-color: yellow;
-    padding-top: 8px;
+    gap: 15px;
+    padding-top: 5px;
+}
+
+.reservaProdutoInfos > span{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--third-color-op3);
+}
+
+.reservaProdutoInfos h3{
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--second-color);
+    text-align: center;   
+}
+
+.reservaProdutoInfos .reservaProdutoLocal{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--third-color);
+    padding-top: 10px;
+}
+
+.reservaProdutoInfos .reservaProdutoLocal img{
+    width: 12px;
 }
 
 .reservaInfos {
-    width: 50%;
+    width: 35%;
     height: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: lightblue;
+    gap: 15px;
     border-radius: 10px;
     padding: 15px;
     margin: 25px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.reservaInfos h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--second-color);
+    text-align: center;   
+}
 
+.reservaInfosDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5px;
+}
 
+.reservaInfosDetail span{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--third-color-op3);
+}
 
+.reservaInfos strong{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--second-color);
+}
 
 .darkModeHeader {
     background-color: var(--dark-color2);
+}
+
+.darkMode {
+    background-color: var(--dark-color2);
+}
+
+.darkMode .reservaProduto{
+    background-color: var(--dark-color);
+}
+
+.darkMode .reservaInfos { 
+    background-color: var(--dark-color);
+}
+
+.darkMode span {
+    color: var(--trace-gray-color);
+}
+
+.darkMode h2 {
+    color: var(--white-color);
+}
+
+.darkMode h3 {
+    color: var(--white-color);
+}
+
+.darkMode strong {
+    color: var(--white-pure);
+}
+
+@media(max-width:855px) {
+    .reservasList {
+        flex-direction: column;
+        gap: 1px;
+        margin: 25px 30px 0px 30px;
+    }
+    .reservaProduto {
+        width: 95%;
+        margin: 10px 25px 5px 25px;
+    }
+    .reservaInfos {
+        width: 95%;
+        margin: 10px 25px 25px 25px;
+    }
 }
