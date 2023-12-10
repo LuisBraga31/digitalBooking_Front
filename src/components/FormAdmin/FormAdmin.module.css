@@ -140,6 +140,7 @@
 }
 
 .atributosBtn {
+    width: 38px;
     padding: 0px 10px;
     background-color: var(--primary-color);
     border: none;
@@ -312,6 +313,25 @@
     color: var(--black-pure);
 }
 
+@media (max-width: 768px) {
+    .polProduto {
+        grid-template-columns: 1fr; 
+    }
+
+    .atributosInputs {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .atributoItem {
+        width: 100%;
+    }
+
+    .atributosBtn {
+        width: 40%;
+    }
+}
+
 @media (max-width: 425px) {
     .sectionGrid {
         display: grid;
@@ -319,16 +339,26 @@
         width: 100%;
     }
 
-    /* .atributosInputs {
-        flex-direction: column;
-    }
-
-    .atributosInputs input {
+    .atributosBtn {
         width: 100%;
-    } */
+    }
 
     .polProduto {
         grid-template-columns: 1fr; 
+    }
+
+    .imagensInput {
+        width: 100%;
+        /* background: green; */
+        flex-direction: column;
+    }
+
+    .imagensInput input {
+        width: 100%;
+    }
+
+    .imagensInput button {
+        width: 100%;
     }
 
     .btnCriar button {
