@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
 import styles from './ListaReserva.module.css'
-import { useContext } from 'react';
+import reservas from '../../data/reservas.json';
+
+import { useContext, useEffect, useState } from 'react';
 import { TemaContext } from '../../contexts/globalContext';
 
 import map from '../../assets/icons/map.png';
@@ -11,8 +13,20 @@ export default function ListaReservas() {
     
     const { tema } = useContext(TemaContext); 
 
+    const produtoId = useParams();
+    // const [produto, setProduto] = useState([]);
+
+    // const getProduto = () => {
+    //     const produtoEncontrado = reservas.find(item => item.id === parseInt(produtoId.id));
+    //     setProduto(produtoEncontrado);
+    // }
+
+    // useEffect(() => {
+    //     getProduto();
+    // }, []);
+
     return (
-        <>
+        <div className={styles.minhasReservas}>
             <div className={`${styles.headerListaReservas} ${tema ? '' : styles.darkModeHeader}`}>
                 <div className={styles.headerListaReservasTitle}>
                     <span> Minhas Reservas </span>
@@ -23,7 +37,7 @@ export default function ListaReservas() {
                 </Link>
             </div>
 
-            <div className={styles.reservasList}>
+            <div className={`${styles.reservasList} ${tema ? '' : styles.darkMode}`}>
                 
                 <div className={styles.reservaProduto}>
                     
@@ -32,9 +46,9 @@ export default function ListaReservas() {
                     </div>
                     
                     <div className={styles.reservaProdutoInfos}>
-                        <span> Hotel </span>
+                        <span> HOTEL </span>
                         <h3> Hermitage Hotel </h3>
-                        <div>
+                        <div className={styles.reservaProdutoLocal}>
                             <img src={map} alt="" />
                             <span> Rio de Janeiro-RJ, Brasil </span>
                         </div>
@@ -44,18 +58,18 @@ export default function ListaReservas() {
 
                 <div className={styles.reservaInfos}>
                     <h2> Detalhes da Reserva </h2>
-                    <div>
+                    <div className={styles.reservaInfosDetail}>
                         <span> Check In: 26-11-2023 </span>
                         <span> Check Out: 05-12-2023 </span>
                         <span> Hora de Chegada: 14:00 </span>
                     </div>
-                    <span> Status: Pendente </span>
+                    <strong> Status: Pendente </strong>
                 </div>
 
             </div>
             
 
-        </> 
+        </div> 
 
     )
 
