@@ -311,3 +311,27 @@
 .darkMode button {
     color: var(--black-pure);
 }
+
+@media (max-width: 425px) {
+    .sectionGrid {
+        display: grid;
+        grid-template-columns: 1fr;   
+        width: 100%;
+    }
+
+    /* .atributosInputs {
+        flex-direction: column;
+    }
+
+    .atributosInputs input {
+        width: 100%;
+    } */
+
+    .polProduto {
+        grid-template-columns: 1fr; 
+    }
+
+    .btnCriar button {
+        width: 100%;
+    }
+}
