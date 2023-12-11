@@ -12,6 +12,7 @@ import { jwtDecode } from "jwt-decode";
 import Swal from 'sweetalert2';
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import { api } from '../../services/api';
 
 export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens}) {
 
@@ -44,36 +45,52 @@ export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens
         setCheckOut(date[1]);
     };
 
-    const handleReservaForm = (e) => {
+    const handleReservaForm = async (e) => {
         e.preventDefault();
         
-        const formInfoPost = [ {
-            horaInicioReserva: selectedHour,
-            dataInicialReserva: checkIn,
-            dataFinalReseva: checkOut,
-            produtoId: id,
-            usuarioId: usuarioData.email
-        }];
-
         if (!checkIn && !checkOut) {
             alert('Selecione um intervalo de datas válido.');
             return;
-        } else {
-            console.log(formInfoPost);
-            Swal.fire({
-                icon: 'success',
-                title: 'Muito Obrigado!',
-                background: `${tema ? '#F3F1ED' : '#112'}`,
-                color: `#1DBEB4`,
-                html: `<span style='color: ${tema ? '#000' : '#FFF'} ;'>Sua reserva foi feita com sucesso!</span>`,
-                confirmButtonColor: '#1DBEB4',
-              }).then((result) => {
-                if (result.isConfirmed) {
-                    navigate('/');
-                } else {
-                    navigate('/');
-                }
-            })  
+        } 
+
+        const formInfoPost = {
+            horaInicio: selectedHour+":00",
+            dataInicio: checkIn.getFullYear() + "-" +  (checkIn.getMonth()+1) + "-" + checkIn.getDate(),
+            dataFinal: checkOut.getFullYear() + "-" +  (checkOut.getMonth()+1) + "-" + checkOut.getDate(),
+            status: "VAIVIAJAR",
+            produtosId: id,
+            usuariosId: usuarioData.id
+        };
+        
+        try {        
+            const response = await api.post('/v1/reservas' , formInfoPost, 
+            {
+              headers: {
+                'Content-Type' : 'application/json',
+                'Authorization': `Bearer ${token}`,
+              },
+            });
+
+
+            if (response.status === 201) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Muito Obrigado!',
+                    background: `${tema ? '#F3F1ED' : '#112'}`,
+                    color: `#1DBEB4`,
+                    html: `<span style='color: ${tema ? '#000' : '#FFF'} ;'>Sua reserva foi feita com sucesso!</span>`,
+                    confirmButtonColor: '#1DBEB4',
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                        navigate('/');
+                    } else {
+                        navigate('/');
+                    }
+                })  
+            }    
+          
+        } catch (error) {
+            console.log(error);
         }
 
       }
