@@ -2,7 +2,6 @@ import { Link, useParams } from 'react-router-dom';
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
 import styles from './ListaReserva.module.css'
-import reservas from '../../data/reservas.json';
 
 import { useContext, useEffect, useState } from 'react';
 import { TemaContext } from '../../contexts/globalContext';
@@ -14,16 +13,6 @@ export default function ListaReservas() {
     const { tema } = useContext(TemaContext); 
 
     const produtoId = useParams();
-    // const [produto, setProduto] = useState([]);
-
-    // const getProduto = () => {
-    //     const produtoEncontrado = reservas.find(item => item.id === parseInt(produtoId.id));
-    //     setProduto(produtoEncontrado);
-    // }
-
-    // useEffect(() => {
-    //     getProduto();
-    // }, []);
 
     return (
         <div className={styles.minhasReservas}>
