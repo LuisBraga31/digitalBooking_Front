@@ -110,6 +110,7 @@
 .admin {
     padding: 10px 20px;
     border-right: 2px solid var(--primary-color);
+    text-align: center;
 }
 
 .admin a {
@@ -165,6 +166,18 @@
 
 .darkMode .menu {
     color: var(--white-color);
+}
+
+.adminMenu a{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+    background-color: var(--second-color);
+    padding: 1px 5px;
+    text-align: center;
+    border-radius: 5px;
 }
 
 nav {

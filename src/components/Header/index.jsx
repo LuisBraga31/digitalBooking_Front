@@ -23,7 +23,6 @@ export default function Header() {
 
     const [login, setLogin] = useState(userToken ? false : true);
     const [menuLateral, setMenuLateral] = useState(false);
-    const [tokenValid, setTokenValid] = useState(true);
     const [isAdmin] = useState(usuarioData? usuarioData.role : null);
     const [userId] = useState(usuarioData? usuarioData.id : null);
 
@@ -38,18 +37,12 @@ export default function Header() {
     useEffect(() => {
 
         if(usuarioData != null) {
-            const now = new Date().getTime() / 1000 / 3600;
-            const expiration = Math.floor(usuarioData.exp / 3600);
-            
-            if(expiration > now) {
-                setTokenValid(true);
-            } else {
-                setTokenValid(false);
-            }
-        }
+            const now = new Date().getTime() / 3600;
+            const expiration = Math.floor(usuarioData.exp /3600 /3600);
 
-        if(!tokenValid) {
-            logout();
+            if(expiration > now) {
+                logout();
+            }
         }
 
     }, []);
@@ -110,7 +103,10 @@ export default function Header() {
                                 <p> Olá, </p>
                                 <strong> {usuarioData.nome} {usuarioData.sobrenome} </strong>
                             </div>
-                            {isAdmin == 'ADMIN' && (<Link className="adminButton" to='/administracao'> Administrar </Link>)}  
+                            <div className={styles.adminMenu}>
+                                {isAdmin == 'ADMIN' && (<Link className="adminButton" to='/administracao'> Administrar </Link>)}
+                                {isAdmin == 'USER' && ( <Link className="adminButton" to={`/reservas/${userId}`}> Minhas Reservas </Link> )}  
+                            </div>
                         </div>
                     )}
                     
