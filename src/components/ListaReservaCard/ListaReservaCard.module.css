@@ -1,0 +1,149 @@
+.reservaProduto {
+    width: 60%;
+    height: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 25px;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 25px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.reservaProdutoImg {
+    display: flex;
+}
+
+.reservaProdutoImg img {
+    height: 150px;
+    border-radius: 12px;
+    border: 1px solid var(--second-color);
+}
+
+.reservaProdutoInfos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-top: 5px;
+}
+
+.reservaProdutoInfos > span{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--third-color-op3);
+}
+
+.reservaProdutoInfos h3{
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--second-color);
+    text-align: center;   
+}
+
+.reservaProdutoInfos .reservaProdutoLocal{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--third-color);
+    padding-top: 10px;
+}
+
+.reservaProdutoInfos .reservaProdutoLocal img{
+    width: 12px;
+}
+
+.reservaInfos {
+    width: 35%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 25px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.reservaInfos h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--second-color);
+    text-align: center;   
+}
+
+.reservaInfosDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5px;
+}
+
+.reservaInfosDetail span{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--third-color-op3);
+}
+
+.reservaInfos strong{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--second-color);
+}
+
+.reservaNumber {
+    margin-left: 25px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+
+.darkMode {
+    background-color: var(--dark-color);
+}
+
+.darkMode span {
+    color: var(--trace-gray-color);
+}
+
+.darkMode h2 {
+    color: var(--white-color);
+}
+
+.darkMode h3 {
+    color: var(--white-color);
+}
+
+.darkMode strong {
+    color: var(--white-pure);
+}
+
+@media(max-width:855px) {
+    .reservaProduto {
+        width: 95%;
+        margin: 15px 25px 5px 25px;
+    }
+    .reservaInfos {
+        width: 95%;
+        margin: 10px 25px 25px 25px;
+    }
+    .reservaNumber {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+}
+
+@media(max-width:550px) {
+    .reservaProduto {
+        flex-direction: column;
+        align-items: center;
+        height: 320px;
+    }
+
+}

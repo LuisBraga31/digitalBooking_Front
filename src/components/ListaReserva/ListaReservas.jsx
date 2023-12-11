@@ -7,6 +7,7 @@ import { useContext, useEffect, useState } from 'react';
 import { TemaContext } from '../../contexts/globalContext';
 
 import map from '../../assets/icons/map.png';
+import ListaReservaCard from '../ListaReservaCard/ListaReservaCard';
 
 export default function ListaReservas() {
     
@@ -27,35 +28,13 @@ export default function ListaReservas() {
             </div>
 
             <div className={`${styles.reservasList} ${tema ? '' : styles.darkMode}`}>
-                
-                <div className={styles.reservaProduto}>
-                    
-                    <div className={styles.reservaProdutoImg}>
-                        <img src="/produtos/carregando.gif" alt="" />
-                    </div>
-                    
-                    <div className={styles.reservaProdutoInfos}>
-                        <span> HOTEL </span>
-                        <h3> Hermitage Hotel </h3>
-                        <div className={styles.reservaProdutoLocal}>
-                            <img src={map} alt="" />
-                            <span> Rio de Janeiro-RJ, Brasil </span>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div className={styles.reservaInfos}>
-                    <h2> Detalhes da Reserva </h2>
-                    <div className={styles.reservaInfosDetail}>
-                        <span> Check In: 26-11-2023 </span>
-                        <span> Check Out: 05-12-2023 </span>
-                        <span> Hora de Chegada: 14:00 </span>
-                    </div>
-                    <strong> Status: Pendente </strong>
-                </div>
+            
+                <ListaReservaCard/>
 
             </div>
+
+            
+            
             
 
         </div> 
