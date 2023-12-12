@@ -8,6 +8,7 @@ import { FormAdmin } from '../../components/FormAdmin';
 
 import styles from './AdminPage.module.css';
 import { TemaContext } from '../../contexts/globalContext';
+import { api } from '../../services/api';
 
 export function AdminPage() {
 
@@ -18,19 +19,41 @@ export function AdminPage() {
     const usuarioData = userToken ? jwtDecode(userToken) : null;
     const [isAdmin] = useState(usuarioData? usuarioData.role : null);
 
-    useEffect(() => {
-        if(isAdmin != 'ADMIN') {
-            navigate('/');
-        }
-    }, []);
+    const [listaCidades, setListaCidades] = useState([
+        {'id': 1, 'nome': 'Santos-SP'},
+        {'id': 2, 'nome': 'São Paulo-SP'}, 
+        {'id': 3, 'nome': 'Rio de Janeiro-RJ'}, 
+        {'id': 4, 'nome': 'Fortaleza'}
+    ]);
+
+    const [listaCategorias, setListaCategorias] = useState([]);
+
+    // const getCategorias = async() => {
+    //     const res = await api.get('/v1/categorias?termo=');
+    //     setListaCategorias(res.data.categorias);
+    // }
+
+    // const getListaCidades = async() => {
+    //   const res = await api.get(`/v1/cidades?termo=`);
+    //   setListaCidades(res.data.cidades);
+    // }
+
+    // useEffect(() => {
+    //     getCategorias();
+    //     getListaCidades();
+    //     if(isAdmin != 'ADMIN') {
+    //         navigate('/');
+    //     }
+    // }, []);
 
     return (
         <>
             <Header />
             <main className={`${styles.main} ${tema ? '' : styles.darkMode}`}>
-                { isAdmin != null && ( <FormAdmin /> ) }
+                { isAdmin != null && ( <FormAdmin listaCidades={listaCidades} listaCategorias={listaCategorias} /> ) }
             </main>
             <Footer />
         </>
     )
+
 }

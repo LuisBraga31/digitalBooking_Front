@@ -6,9 +6,12 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 
 import styles from './FormAdmin.module.css'
 
-export function FormAdmin() {
+export function FormAdmin( {listaCidades, listaCategorias} ) {
     
     const { tema } = useContext(TemaContext); 
+
+    const [selectedCategory, setSelectedCategory] = useState('Default');
+    const [selectedCity, setSelectedCity] = useState('Default');
 
     const [atributoQtd, setAtributoQtd] = useState(1);
     const [imagemQtd, setImagemQtd] = useState(5);
@@ -32,6 +35,13 @@ export function FormAdmin() {
             alert("Limite de imagens atingido");
         }
     }
+    const handleChangeCategory = (event) => {
+        setSelectedCategory(event.target.value); 
+      };
+
+    const handleChangeCity = (event) => {
+        setSelectedCity(event.target.value); 
+    };
 
     const handleForm = (e) => {
         e.preventDefault()
@@ -59,22 +69,42 @@ export function FormAdmin() {
                     <div className={styles.sectionGrid}>
                         <div className={styles.input}>
                             <label htmlFor="">Nome da Propriedade</label>
-                            <input type="text" />
+                            <input type="text" placeholder='Nome'/>
                         </div>
 
                         <div className={styles.input}>
                             <label htmlFor="">Categoria</label>
-                            <input type="text" />
+                            <select value={selectedCategory} onChange={handleChangeCategory} type="text"> 
+                                <option value="Default" disabled hidden> Categorias </option>
+                                {listaCategorias.map(item => (
+                                    <option key={item.id} value={item.id}> {item.nome} </option>
+                                ))}
+                            </select>
                         </div>
 
                         <div className={styles.input}>
                             <label htmlFor="">Endereço</label>
-                            <input type="text" />
+                            <input type="text" placeholder='Endereço'/>
                         </div>
 
                         <div className={styles.input}>
                             <label htmlFor="">Cidade</label>
-                            <input type="text" />
+                            <select value={selectedCity} onChange={handleChangeCity} type="text"> 
+                                <option value="Default" disabled hidden> Cidades </option>
+                                {listaCidades.map(item => (
+                                    <option key={item.id} value={item.id}> {item.nome} </option>
+                                ))}
+                            </select>
+                        </div>
+
+                        <div className={styles.input}>
+                            <label htmlFor="">Latitude</label>
+                            <input type="text" placeholder='Latitude'/>
+                        </div>
+
+                        <div className={styles.input}>
+                            <label htmlFor="">Longitude</label>
+                            <input type="text" placeholder='Longitude'/>
                         </div>
                     </div>
 
@@ -88,7 +118,7 @@ export function FormAdmin() {
                         
                         {atributos.map((_, index) => ( 
                         
-                        <div className={styles.atributosInputs}>
+                        <div className={styles.atributosInputs} key={index}>
 
                             
                             <div className={`${styles.atributoItem} ${styles.atributoNome}`}>
@@ -136,7 +166,7 @@ export function FormAdmin() {
 
                     {imagens.map((_, index) => (
                     
-                        <div className={styles.imagensInput}>
+                        <div className={styles.imagensInput} key={index}>
                             <input type="text" placeholder='Url da Imagem'/>
                             
                             {index == imagemQtd-1 && <button onClick={addImagens}>+</button>}
