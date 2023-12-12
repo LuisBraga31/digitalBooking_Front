@@ -351,6 +351,9 @@
     .atributosBtn {
         width: 40%;
     }
+    .imagensInput input {
+        width: 100%;
+    }
 }
 
 @media (max-width: 425px) {
@@ -370,7 +373,6 @@
 
     .imagensInput {
         width: 100%;
-        /* background: green; */
         flex-direction: column;
     }
 
