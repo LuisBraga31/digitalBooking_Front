@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { TemaContext } from '../../contexts/globalContext';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
@@ -10,7 +10,8 @@ import { api } from '../../services/api';
 
 export function FormAdmin( {listaCidades, listaCategorias} ) {
     
-    const { tema } = useContext(TemaContext); 
+    const { tema } = useContext(TemaContext);
+    const navigate = useNavigate(); 
 
     const [selectedCategory, setSelectedCategory] = useState('Default');
     const [selectedCity, setSelectedCity] = useState('Default');
