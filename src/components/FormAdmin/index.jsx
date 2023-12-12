@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { TemaContext } from '../../contexts/globalContext';
 
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
 import styles from './FormAdmin.module.css'
@@ -15,8 +16,6 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
     const [selectedCity, setSelectedCity] = useState('Default');
     const [listaImagens, setListaImagens] = useState([]);
     const [listaAtributos, setListaAtributos] = useState([]);
-
-    const [listaAtributosIds, setListaAtributosIds] = useState([]);
 
     const [formData, setFormData] = useState({
         nome: '',
@@ -64,7 +63,7 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
         const { value } = e.target;
         setListaImagens((prevLista) => {
           const novaLista = [...prevLista];
-          novaLista[index] = { nome: `Imagem ${index + 1}`, url: value };
+          novaLista[index] = { titulo: `Imagem ${index + 1}`, url: value };
           return novaLista;
         });
     };
@@ -80,23 +79,81 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
 
     const handleForm = async (e) => {
         e.preventDefault();
-        console.log(formData)
-        for(let i = 0; i < listaAtributos.length; i++) {
-            
-            // const response = await api.post('/v1/caracteristicas' , listaAtributos[i], 
-            // {
-            //   headers: {
-            //     'Content-Type' : 'application/json',
-            //     'Accept': 'application/json',
-            //   },
-            // });
-
-            // console.log(response.data);
-            
-        }
-
-    }
     
+        try {
+            const caracteristicasPromises = listaAtributos.map(async (atributo) => {
+                const response = await api.post('/v1/caracteristicas', atributo, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                    },
+                });
+                return response.data.id;
+            });
+    
+            const listaAtributosIds = await Promise.all(caracteristicasPromises);
+    
+            const imagensPromises = listaImagens.map(async (imagem) => {
+                const response = await api.post('/v1/imagens', imagem, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                    },
+                });
+                return response.data.id;
+            });
+
+            const listaImagensIds = await Promise.all(imagensPromises);
+            
+            const formProdutoAdmin = {
+                nome: formData.nome,
+                descricao: formData.descricao,
+                latitude: formData.latitude,
+                longitude: formData.longitude,
+                cidadesId: selectedCity,
+                categoriasId: selectedCategory,
+                imagensId: listaImagensIds,
+                caracteristicasProdutoId: listaAtributosIds,
+            };
+    
+            await postProduto(formProdutoAdmin);
+    
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const postProduto = async (formProdutoAdmin) => {
+        try {
+            const response = await api.post('/v1/produtos', formProdutoAdmin, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+            });
+    
+            if (response.status === 201) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Novo Produto Criado!',
+                    background: `${tema ? '#F3F1ED' : '#112'}`,
+                    color: `#1DBEB4`,
+                    html: `<span style='color: ${tema ? '#000' : '#FFF'} ;'>A nova propriedade foi criada com sucesso!</span>`,
+                    confirmButtonColor: '#1DBEB4',
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                        navigate('/');
+                    } else {
+                        navigate('/');
+                    }
+                }) 
+            }
+    
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
         <>
             
@@ -119,12 +176,12 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
                     <div className={styles.sectionGrid}>
                         <div className={styles.input}>
                             <label htmlFor="">Nome da Propriedade</label>
-                            <input name='nome' type="text" placeholder='Nome' onChange={handleChange}/>
+                            <input name='nome' type="text" placeholder='Nome' onChange={handleChange} required/>
                         </div>
 
                         <div className={styles.input}>
                             <label htmlFor="">Categoria</label>
-                            <select value={selectedCategory} onChange={handleChangeCategory} type="text"> 
+                            <select value={selectedCategory} onChange={handleChangeCategory} type="text" required> 
                                 <option value="Default" disabled hidden> Categorias </option>
                                 {listaCategorias.map(item => (
                                     <option key={item.id} value={item.id}> {item.nome} </option>
@@ -134,12 +191,12 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
 
                         <div className={styles.input}>
                             <label htmlFor="">Endereço</label>
-                            <input type="text" placeholder='Endereço'/>
+                            <input type="text" placeholder='Endereço' required/>
                         </div>
 
                         <div className={styles.input}>
                             <label htmlFor="">Cidade</label>
-                            <select value={selectedCity} onChange={handleChangeCity} type="text"> 
+                            <select value={selectedCity} onChange={handleChangeCity} type="text" required> 
                                 <option value="Default" disabled hidden> Cidades </option>
                                 {listaCidades.map(item => (
                                     <option key={item.id} value={item.id}> {item.nome} </option>
@@ -149,18 +206,18 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
 
                         <div className={styles.input}>
                             <label htmlFor="">Latitude</label>
-                            <input name='latitude' type="text" placeholder='Latitude' onChange={handleChange}/>
+                            <input name='latitude' type="text" placeholder='Latitude' onChange={handleChange} required/>
                         </div>
 
                         <div className={styles.input}>
                             <label htmlFor="">Longitude</label>
-                            <input name='longitude' type="text" placeholder='Longitude' onChange={handleChange}/>
+                            <input name='longitude' type="text" placeholder='Longitude' onChange={handleChange} required/>
                         </div>
                     </div>
 
                     <div className={styles.descricao}>
                         <label htmlFor="">Descrição</label>
-                        <textarea name="descricao" id="" cols="30" rows="10" placeholder='Descrição' onChange={handleChange}></textarea>
+                        <textarea name="descricao" id="" cols="30" rows="10" placeholder='Descrição' onChange={handleChange} required></textarea>
                     </div>
 
                     <div className={styles.atributos}>
@@ -227,7 +284,7 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
                     </div>
 
                     <div className={styles.btnCriar}>
-                        <button onClick={handleForm}>Criar</button>                        
+                        <button >Criar</button>                        
                     </div>
                 </form>
             </div>
