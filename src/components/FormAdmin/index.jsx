@@ -25,9 +25,11 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
         longitude: '',
     });
 
+    const estaLogado = !!localStorage.getItem("token");
+    const token = estaLogado ? localStorage.getItem("token") : null;
+
     const [atributoQtd, setAtributoQtd] = useState(1);
     const [imagemQtd, setImagemQtd] = useState(5);
-
     const atributos = new Array(atributoQtd).fill(null);
     const imagens = new Array(imagemQtd).fill(null);
     
@@ -86,7 +88,7 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
                 const response = await api.post('/v1/caracteristicas', atributo, {
                     headers: {
                         'Content-Type': 'application/json',
-                        'Accept': 'application/json',
+                        'Authorization': `Bearer ${token}`,
                     },
                 });
                 return response.data.id;
@@ -98,7 +100,7 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
                 const response = await api.post('/v1/imagens', imagem, {
                     headers: {
                         'Content-Type': 'application/json',
-                        'Accept': 'application/json',
+                        'Authorization': `Bearer ${token}`,
                     },
                 });
                 return response.data.id;
@@ -130,6 +132,7 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
+                    'Authorization': `Bearer ${token}`,
                 },
             });
     
