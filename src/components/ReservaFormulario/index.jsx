@@ -55,8 +55,8 @@ export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens
 
         const formInfoPost = {
             horaInicio: selectedHour+":00",
-            dataInicio: checkIn.getFullYear() + "-" +  (checkIn.getMonth()+1) + "-" + checkIn.getDate(),
-            dataFinal: checkOut.getFullYear() + "-" +  (checkOut.getMonth()+1) + "-" + checkOut.getDate(),
+            dataInicio: checkIn.getFullYear() + "-" +  (checkIn.getMonth()+1).toString().padStart(2, "0") + "-" + checkIn.getDate().toString().padStart(2, "0"),
+            dataFinal: checkOut.getFullYear() + "-" +  (checkOut.getMonth()+1).toString().padStart(2, "0") + "-" + checkOut.getDate().toString().padStart(2, "0"),
             status: "VAIVIAJAR",
             produtosId: id,
             usuariosId: usuarioData.id
@@ -197,14 +197,14 @@ export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens
                             <div className={`${styles.check} ${styles.checkTop}`}>
                                 <p>Check in</p>
                                 <span>
-                                    {checkIn ? checkIn.getDate() : '__'} / {checkIn ? checkIn.getMonth()+1 : '__'} / {checkIn ? checkIn.getFullYear() : '__'}
+                                    {checkIn ? checkIn.getDate().toString().padStart(2, "0") : '__'} / {checkIn ? (checkIn.getMonth() + 1).toString().padStart(2, "0") : '__'} / {checkIn ? checkIn.getFullYear() : '__'}
                                 </span>   
                             </div>
 
                             <div className={styles.check}>
                                 <p>Check out</p>
                                 <span>
-                                    {checkOut ? checkOut.getDate() : '__'} / {checkOut ? checkOut.getMonth()+1 : '__'} / {checkOut ? checkOut.getFullYear() : '__'}
+                                    {checkOut ? checkOut.getDate().toString().padStart(2, "0") : '__'} / {checkOut ? (checkOut.getMonth() + 1).toString().padStart(2, "0") : '__'} / {checkOut ? checkOut.getFullYear() : '__'}
                                 </span>   
                             </div>
 
