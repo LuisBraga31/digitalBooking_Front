@@ -6,17 +6,28 @@ import styles from './ListaReserva.module.css'
 import { useContext, useEffect, useState } from 'react';
 import { TemaContext } from '../../contexts/globalContext';
 
-import map from '../../assets/icons/map.png';
 import ListaReservaCard from '../ListaReservaCard/ListaReservaCard';
+import { api } from '../../services/api';
 
 export default function ListaReservas() {
     
     const { tema } = useContext(TemaContext); 
+    const [reservas, setReservas] = useState([]);
 
-    const produtoId = useParams();
+    const usuarioId = useParams();
+
+    // const getReservas = async() => {
+    //     const res = await api.get(`/v1/reservas/porusuario/${usuarioId.id}`);
+    //     setReservas(res.data.reservas);
+    // }
+
+    // useEffect( () => {
+    //     getReservas();
+    // }, [])
 
     return (
-        <div className={styles.minhasReservas}>
+        <div className={`${styles.minhasReservas} ${tema ? '' : styles.darkMode}`}>
+            
             <div className={`${styles.headerListaReservas} ${tema ? '' : styles.darkModeHeader}`}>
                 <div className={styles.headerListaReservasTitle}>
                     <span> Minhas Reservas </span>
@@ -27,15 +38,13 @@ export default function ListaReservas() {
                 </Link>
             </div>
 
-            <div className={`${styles.reservasList} ${tema ? '' : styles.darkMode}`}>
-            
-                <ListaReservaCard/>
+            {reservas.map((item, index)=> (
+                    <ListaReservaCard key={item.id} {... item} position={index}/>
+            ))}
 
-            </div>
-
-            
-            
-            
+            {reservas.map((item, index)=> (
+                <ListaReservaCard key={item.id} {... item} position={index}/>
+            )).length === 0 && <p className={styles.avisoReservas}> Você não possui reservas no momento! </p>}      
 
         </div> 
 
