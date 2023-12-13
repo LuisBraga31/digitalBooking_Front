@@ -68,6 +68,8 @@
 
 .form textarea {
     padding: 12px 0 0 12px;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
     border: none;
     resize: none;
 }
@@ -96,7 +98,8 @@
     grid-template-columns: 1fr 1fr;   
     gap: 2rem;
     padding: 1.5rem;
-    border-radius: 5px; 
+    border-radius: 5px;
+    background: var(--lightgray-color); 
 }
 
 .input {
@@ -104,7 +107,6 @@
     flex-direction: column;
     gap: 6px;
 }
-
 
 .error input {
     border: 1px solid var( --red-pure);
@@ -124,6 +126,12 @@
 .error span {
     color: var(--red-pure);
     font-size: 10px;
+}
+
+.inputDescricao {
+    padding: 1.5rem;
+    border-radius: 5px;
+    background: var(--lightgray-color); 
 }
 
 .descricao {
@@ -159,7 +167,7 @@
     height: 120px;
     display: flex;
     align-items: center;
-    background: var(--white-color);
+    background: var(--lightgray-color);
     gap: 1rem;
 
     padding: 1.5rem ;
@@ -189,6 +197,18 @@
     cursor: pointer;
 }
 
+.atributosBtnNo {
+    width: 38px;
+    padding: 0px 10px;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    font-size: 32px;
+    color: var(--white-pure);
+    margin-top: 18px;
+
+}
+
 .atributoItem {
     display: flex;
     flex-direction: column;
@@ -206,6 +226,7 @@
     padding-left: 10px;
 }
 
+/*
 .polProduto {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -233,6 +254,7 @@
     resize: none;
     padding: 12px 0 0 12px;
 }
+*/
 
 .carregarImagens {
     display: flex;
@@ -250,7 +272,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    background: var(--white-color);
+    background: var(--lightgray-color);
     gap: 1rem;
     border-radius: 5px;
     padding: 1.5rem;
@@ -347,6 +369,10 @@
 
 .darkMode .sectionGrid {
     background-color: var(--dark-color3);
+}
+
+.darkMode .inputDescricao {
+    background-color: var(--dark-color3); 
 }
 
 .darkMode .descricao {

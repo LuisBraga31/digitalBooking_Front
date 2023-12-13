@@ -301,7 +301,7 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
                         </div>
                     </div>
 
-                    <div className={formErrors.descricao ? `${styles.input} ${styles.error}` : `${styles.input}`}>
+                    <div className={formErrors.descricao ? `${styles.inputDescricao} ${styles.input} ${styles.error}` : `${styles.input} ${styles.inputDescricao}`}>
                         <label htmlFor="">Descrição</label>
                         <textarea name="descricao" id="" cols="30" rows="10" placeholder='Descrição' onChange={handleChange} ></textarea>
                         {formErrors.descricao && <span>{formErrors.descricao}</span>}
@@ -325,7 +325,7 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
                                 <input type="url" placeholder='Url do Icone' onChange={(e) => handleAtributosChange(e, index, 'icone')}/>
                             </div>
                                
-                            {index == atributoQtd-1 && <button className={styles.atributosBtn} onClick={addInput}>+</button> }
+                            {index == atributoQtd-1 ? <button className={styles.atributosBtn} onClick={addInput}>+</button> :  <button className={styles.atributosBtnNo} disabled> </button>}
 
                         </div>
                         
@@ -333,27 +333,6 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
                         {formErrors.atributos && <span>{formErrors.atributos}</span>}
                         {formErrors.nomeAtributoVazio && <span>{formErrors.nomeAtributoVazio}</span>}
                         {formErrors.urlAtributoVazio && <span>{formErrors.urlAtributoVazio}</span>}
-                    </div>
-
-                    <div className={styles.produto}>
-                        <h2>Políticas do Produto</h2>
-                        <div className={styles.polProduto}>
-                            <div className={styles.politicaItem}>
-                                <h3>Regras da casa</h3>
-                                <label htmlFor="">Descrição</label>
-                                <textarea name="" id="" cols="30" rows="10" placeholder='Escreva aqui'></textarea>
-                            </div>
-                            <div className={styles.politicaItem}>
-                                <h3>Saúde e segunrança</h3>
-                                <label htmlFor="">Descrição</label>
-                                <textarea name="" id="" cols="30" rows="10" placeholder='Escreva aqui'></textarea>
-                            </div>
-                            <div className={styles.politicaItem}>
-                                <h3>Política de cancelamento</h3>
-                                <label htmlFor="">Descrição</label>
-                                <textarea name="" id="" cols="30" rows="10" placeholder='Escreva aqui'></textarea>
-                            </div>
-                        </div>
                     </div>
 
                     <div className={formErrors.imagens || formErrors.imagensVazio ? `${styles.carregarImagens} ${styles.error}` : `${styles.carregarImagens}`}>
@@ -364,7 +343,7 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
                     
                         <div className={styles.imagensInput} key={index}>
                             <input type="url" placeholder='Url da Imagem' onChange={(e) => handleImagensChange(e, index)}/>     
-                            {index == imagemQtd-1 && <button onClick={addImagens}>+</button>}
+                            {index == imagemQtd-1 ? <button onClick={addImagens}>+</button> :  <button className={styles.atributosBtnNo} disabled> </button>}
                             
                         </div>
                     
