@@ -16,21 +16,24 @@ export function DetalheProdutoInfo() {
                 
                 <div className={styles.blocoInfo}>
                     <h3>Regras da casa</h3>
-                    <p>Check-out: 10:00</p>
-                    <p>Não é permitido festas</p>
-                    <p>Não fumar</p>
+                    <p> É proibido festas após 21hrs. </p>
+                    <p> É proibido fumar na propriedade. </p>
+                    <p> Informe sobre qualquer dano.</p>
+                    <p> Respeite os vizinhos </p>
                 </div>
 
                 <div className={styles.blocoInfo}>
-                    <h3 >Saúde e segurança</h3>
-                    <p>Diretrizes de distanciamento social e outras regulamentações relacionadas ao coronavírus se aplicam</p>
-                    <p>Detector de fumaça</p>
-                    <p>Depósito de segurança</p>
+                    <h3>Saúde e segurança</h3>
+                    <p>Diretrizes de distanciamento social relacionadas ao coronavírus se aplicam.</p>
+                    <p>Detector de fumaça disponível em todas as áreas.</p>
+                    <p>Reporte qualquer problema de segurança.</p>
                 </div>
 
                 <div className={styles.blocoInfo}>
-                    <h3 >Política de cancelamento</h3>
-                    <p>Adicione as datas da viagem para obter detalhes de cancelamento para esta estadia</p>
+                    <h3>Política de cancelamento</h3>
+                    <p>Cancelamentos feitos até 7 dias antes da chegada recebem reembolso. </p>
+                    <p>Cancelamentos feitos após esse prazo não são elegíveis para reembolso.</p>
+                    <p>Entre em contato para saber mais sobre a política de cancelamento.</p>
                 </div>
 
             </div>
