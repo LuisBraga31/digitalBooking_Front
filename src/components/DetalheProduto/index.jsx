@@ -25,66 +25,66 @@ export function DetalheProduto( { produto }) {
         { id: 5, url: Carregando }]
     );
     const [reservas, setReservas] = useState([]);
-    // const [caracteristicas, setCaracteristicas] = useState([]);
+    const [caracteristicas, setCaracteristicas] = useState([]);
 
   
-    // const getCategoria = async() => {
-    //     if(produto.categoriasId) {
-    //         const res = await api.get(`/v1/categorias/${produto.categoriasId}`);
-    //         setCategoria(res.data); 
-    //     }
-    // }
+    const getCategoria = async() => {
+        if(produto.categoriasId) {
+            const res = await api.get(`/v1/categorias/${produto.categoriasId}`);
+            setCategoria(res.data); 
+        }
+    }
     
-    // const getCidade = async() => {
-    //     if(produto.cidadesId) {
-    //     const res = await api.get(`/v1/cidades/${produto.cidadesId}`);
-    //     setCidade(res.data);
-    //     }
-    // }
+    const getCidade = async() => {
+        if(produto.cidadesId) {
+        const res = await api.get(`/v1/cidades/${produto.cidadesId}`);
+        setCidade(res.data);
+        }
+    }
 
-    // const getCaracteristicas = async () => {
-    //     if (produto.caracteristicasProdutoId) {
-    //         const caracteristicasList = [];
-    //         for (let i = 0; i < produto.caracteristicasProdutoId.length; i++) {
-    //             const res = await api.get(`/v1/caracteristicas/${produto.caracteristicasProdutoId[i]}`);
-    //             caracteristicasList.push(res.data);
-    //         }
-    //         setCaracteristicas(caracteristicasList);
-    //     }
-    //   };
+    const getCaracteristicas = async () => {
+        if (produto.caracteristicasProdutoId) {
+            const caracteristicasList = [];
+            for (let i = 0; i < produto.caracteristicasProdutoId.length; i++) {
+                const res = await api.get(`/v1/caracteristicas/${produto.caracteristicasProdutoId[i]}`);
+                caracteristicasList.push(res.data);
+            }
+            setCaracteristicas(caracteristicasList);
+        }
+      };
 
-    // const getImagens = async () => {
-    //     if (produto.imagensId) {
-    //         const imagensList = [];
-    //         for (let i = 0; i < produto.imagensId.length; i++) {
-    //             const res = await api.get(`/v1/imagens/${produto.imagensId[i]}`);
-    //             imagensList.push(res.data);
-    //         }
-    //         setImagens(imagensList);
-    //     }
-    // };
+    const getImagens = async () => {
+        if (produto.imagensId) {
+            const imagensList = [];
+            for (let i = 0; i < produto.imagensId.length; i++) {
+                const res = await api.get(`/v1/imagens/${produto.imagensId[i]}`);
+                imagensList.push(res.data);
+            }
+            setImagens(imagensList);
+        }
+    };
 
-    // const getReservas = async() => {
-    //     if(produto.id) {
-    //     const res = await api.get(`/v1/reservas/porproduto/${produto.id}`);
-    //     setReservas(res.data.reservas);
-    //     }
-    // }
+    const getReservas = async() => {
+        if(produto.id) {
+        const res = await api.get(`/v1/reservas/porproduto/${produto.id}`);
+        setReservas(res.data.reservas);
+        }
+    }
     
-    // useEffect(() => {
-    //     getCaracteristicas();
-    // }, [produto.caracteristicasProdutoId]);
+    useEffect(() => {
+        getCaracteristicas();
+    }, [produto.caracteristicasProdutoId]);
 
-    // useEffect(() => {
-    //     getImagens();
-    //     getReservas();
-    // }, [produto.imagensId]);
+    useEffect(() => {
+        getImagens();
+        getReservas();
+    }, [produto.imagensId]);
     
-    // useEffect(() => {
-    //     getCategoria();
-    //     getCidade();
+    useEffect(() => {
+        getCategoria();
+        getCidade();
         
-    // }, [produto]);
+    }, [produto]);
 
     return(
         <div className={styles.detalheProduto}>

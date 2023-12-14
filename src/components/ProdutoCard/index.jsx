@@ -15,26 +15,26 @@ export default function ProdutoCard( { id, nome, descricao, categoriasId, cidade
   const [tipoCidade, setTipoCidade] = useState({'nome': 'CidadeNome - Brasil'});
   const [imagem, setImagem] = useState({'url': '/produtos/carregando.gif'});
 
-  // const getCategoria = async() => {
-  //   const res = await api.get(`/v1/categorias/${categoriasId}`);
-  //   setTipoCategoria(res.data);
-  // }
+  const getCategoria = async() => {
+    const res = await api.get(`/v1/categorias/${categoriasId}`);
+    setTipoCategoria(res.data);
+  }
 
-  // const getCidade = async() => {
-  //   const res = await api.get(`/v1/cidades/${cidadesId}`);
-  //   setTipoCidade(res.data);
-  // }
+  const getCidade = async() => {
+    const res = await api.get(`/v1/cidades/${cidadesId}`);
+    setTipoCidade(res.data);
+  }
 
-  // const getImagem = async() => {
-  //   const res = await api.get(`/v1/imagens/${imagensId[0]}`);
-  //   setImagem(res.data);
-  // }
+  const getImagem = async() => {
+    const res = await api.get(`/v1/imagens/${imagensId[0]}`);
+    setImagem(res.data);
+  }
 
-  // useEffect(() => {
-  //     getCategoria();
-  //     getCidade();
-  //     getImagem();
-  // }, []);
+  useEffect(() => {
+      getCategoria();
+      getCidade();
+      getImagem();
+  }, []);
 
   return (
     <div className={`${styles.card} ${tema ? '' : styles.darkMode}`}>

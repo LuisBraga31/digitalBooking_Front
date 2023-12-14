@@ -18,20 +18,20 @@ export default function ListaReservas() {
     const estaLogado = !!localStorage.getItem("token");
     const token = estaLogado ? localStorage.getItem("token") : null;
 
-    // const getReservas = async() => {
-    //     const res = await api.get(`/v1/reservas/porusuario/${usuarioId.id}`, 
-    //         {
-    //           headers: {
-    //             'Content-Type' : 'application/json',
-    //             'Authorization': `Bearer ${token}`,
-    //           },
-    //         });
-    //     setReservas(res.data.reservas);
-    // }
+    const getReservas = async() => {
+        const res = await api.get(`/v1/reservas/porusuario/${usuarioId.id}`, 
+            {
+              headers: {
+                'Content-Type' : 'application/json',
+                'Authorization': `Bearer ${token}`,
+              },
+            });
+        setReservas(res.data.reservas);
+    }
 
-    // useEffect( () => {
-    //     getReservas();
-    // }, [])
+    useEffect( () => {
+        getReservas();
+    }, [])
 
     return (
         <div className={`${styles.minhasReservas} ${tema ? '' : styles.darkMode}`}>

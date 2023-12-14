@@ -42,15 +42,15 @@ export function ReservaPage() {
         }
       }
 
-    const getProduto = () => {
-        const produtoEncontrado = elementos.find(item => item.id === parseInt(produtoId.id));
-        setProduto(produtoEncontrado);
-    }
-
-    // const getProduto = async() => {
-    //     const res = await api.get(`/v1/produtos/${produtoId.id}`);
-    //     setProduto(res.data);
+    // const getProduto = () => {
+    //     const produtoEncontrado = elementos.find(item => item.id === parseInt(produtoId.id));
+    //     setProduto(produtoEncontrado);
     // }
+
+    const getProduto = async() => {
+        const res = await api.get(`/v1/produtos/${produtoId.id}`);
+        setProduto(res.data);
+    }
 
     useEffect(() => {
         getProduto();

@@ -25,29 +25,29 @@ export function Home() {
         {'id': 4, 'nome': 'Fortaleza'}
     ]);
 
-    // const [categorias, setCategorias] = useState([]);
-    // const [produtos, setProdutos] = useState([]);
+    const [categorias, setCategorias] = useState([]);
+    const [produtos, setProdutos] = useState([]);
 
-    // const getCategorias = async() => {
-    //     const res = await api.get('/v1/categorias?termo=');
-    //     setCategorias(res.data.categorias);
-    // }
+    const getCategorias = async() => {
+        const res = await api.get('/v1/categorias?termo=');
+        setCategorias(res.data.categorias);
+    }
 
-    // const getProdutos = async() => {
-    //     const res = await api.get('/v1/produtos?termo=');
-    //     setProdutos(res.data.produtos);
-    // }
+    const getProdutos = async() => {
+        const res = await api.get('/v1/produtos?termo=');
+        setProdutos(res.data.produtos);
+    }
     
-    // const getListaCidades = async() => {
-    //   const res = await api.get(`/v1/cidades?termo=`);
-    //   setListaCidades(res.data.cidades);
-    // }
+    const getListaCidades = async() => {
+      const res = await api.get(`/v1/cidades?termo=`);
+      setListaCidades(res.data.cidades);
+    }
 
-    // useEffect(() => {
-    //     getCategorias();
-    //     getProdutos();
-    //     getListaCidades();
-    // }, []);
+    useEffect(() => {
+        getCategorias();
+        getProdutos();
+        getListaCidades();
+    }, []);
 
 
     return (

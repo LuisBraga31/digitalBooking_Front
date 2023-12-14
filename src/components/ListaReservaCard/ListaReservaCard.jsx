@@ -13,26 +13,26 @@ export default function ListaReservaCard( {id, horaInicio, dataInicio, dataFinal
     const [cidade, setCidade] = useState({'nome': 'CidadeNome - Brasil'});
     const [imagem, setImagem] = useState({'url': '/produtos/carregando.gif'});
     
-    // const getProduto = async() => {
-    //     const res = await api.get(`/v1/produtos/${produtosId}`);
-    //     setProduto(res.data);
+    const getProduto = async() => {
+        const res = await api.get(`/v1/produtos/${produtosId}`);
+        setProduto(res.data);
         
-    //     if(res.status === 200) {
-    //         const resCategoria = await api.get(`/v1/categorias/${res.data.categoriasId}`);
-    //         setCategoria(resCategoria.data);
+        if(res.status === 200) {
+            const resCategoria = await api.get(`/v1/categorias/${res.data.categoriasId}`);
+            setCategoria(resCategoria.data);
             
-    //         const resCidade = await api.get(`/v1/cidades/${res.data.cidadesId}`);
-    //         setCidade(resCidade.data);
+            const resCidade = await api.get(`/v1/cidades/${res.data.cidadesId}`);
+            setCidade(resCidade.data);
         
-    //         const resImagem = await api.get(`/v1/imagens/${res.data.imagensId[0]}`);
-    //         setImagem(resImagem.data);
-    //     }
+            const resImagem = await api.get(`/v1/imagens/${res.data.imagensId[0]}`);
+            setImagem(resImagem.data);
+        }
     
-    // }
+    }
 
-    // useEffect(() => {
-    //     getProduto();
-    // }, []);
+    useEffect(() => {
+        getProduto();
+    }, []);
 
 
     return (

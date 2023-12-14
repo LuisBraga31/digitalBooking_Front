@@ -28,23 +28,23 @@ export function AdminPage() {
 
     const [listaCategorias, setListaCategorias] = useState([]);
 
-    // const getCategorias = async() => {
-    //     const res = await api.get('/v1/categorias?termo=');
-    //     setListaCategorias(res.data.categorias);
-    // }
+    const getCategorias = async() => {
+        const res = await api.get('/v1/categorias?termo=');
+        setListaCategorias(res.data.categorias);
+    }
 
-    // const getListaCidades = async() => {
-    //   const res = await api.get(`/v1/cidades?termo=`);
-    //   setListaCidades(res.data.cidades);
-    // }
+    const getListaCidades = async() => {
+      const res = await api.get(`/v1/cidades?termo=`);
+      setListaCidades(res.data.cidades);
+    }
 
-    // useEffect(() => {
-    //     getCategorias();
-    //     getListaCidades();
-    //     if(isAdmin != 'ADMIN') {
-    //         navigate('/');
-    //     }
-    // }, []);
+    useEffect(() => {
+        getCategorias();
+        getListaCidades();
+        if(isAdmin != 'ADMIN') {
+            navigate('/');
+        }
+    }, []);
 
     return (
         <>

@@ -20,47 +20,47 @@ export function Reserva( { produto } ) {
     );
     const [reservas, setReservas] = useState([]);
   
-    // const getCategoria = async() => {
-    //     if(produto.categoriasId) {
-    //         const res = await api.get(`/v1/categorias/${produto.categoriasId}`);
-    //         setCategoria(res.data); 
-    //     }
-    // }
+    const getCategoria = async() => {
+        if(produto.categoriasId) {
+            const res = await api.get(`/v1/categorias/${produto.categoriasId}`);
+            setCategoria(res.data); 
+        }
+    }
     
-    // const getCidade = async() => {
-    //     if(produto.cidadesId) {
-    //     const res = await api.get(`/v1/cidades/${produto.cidadesId}`);
-    //     setCidade(res.data);
-    //     }
-    // }
+    const getCidade = async() => {
+        if(produto.cidadesId) {
+        const res = await api.get(`/v1/cidades/${produto.cidadesId}`);
+        setCidade(res.data);
+        }
+    }
 
-    // const getImagens = async () => {
-    //     if (produto.imagensId) {
-    //         const imagensList = [];
-    //         for (let i = 0; i < produto.imagensId.length; i++) {
-    //             const res = await api.get(`/v1/imagens/${produto.imagensId[i]}`);
-    //             imagensList.push(res.data);
-    //         }
-    //         setImagens(imagensList);
-    //     }
-    // };
+    const getImagens = async () => {
+        if (produto.imagensId) {
+            const imagensList = [];
+            for (let i = 0; i < produto.imagensId.length; i++) {
+                const res = await api.get(`/v1/imagens/${produto.imagensId[i]}`);
+                imagensList.push(res.data);
+            }
+            setImagens(imagensList);
+        }
+    };
 
-    // const getReservas = async() => {
-    //     if(produto.id) {
-    //     const res = await api.get(`/v1/reservas/porproduto/${produto.id}`);
-    //     setReservas(res.data.reservas);
-    //     }
-    // }
+    const getReservas = async() => {
+        if(produto.id) {
+        const res = await api.get(`/v1/reservas/porproduto/${produto.id}`);
+        setReservas(res.data.reservas);
+        }
+    }
 
-    // useEffect(() => {
-    //     getImagens();
-    // }, [produto.imagensId]);
+    useEffect(() => {
+        getImagens();
+    }, [produto.imagensId]);
     
-    // useEffect(() => {
-    //     getCategoria();
-    //     getCidade();
-    //     getReservas();
-    // }, [produto]);
+    useEffect(() => {
+        getCategoria();
+        getCidade();
+        getReservas();
+    }, [produto]);
 
     return (
         <>
