@@ -15,9 +15,17 @@ export default function ListaReservas() {
     const [reservas, setReservas] = useState([]);
 
     const usuarioId = useParams();
+    const estaLogado = !!localStorage.getItem("token");
+    const token = estaLogado ? localStorage.getItem("token") : null;
 
     // const getReservas = async() => {
-    //     const res = await api.get(`/v1/reservas/porusuario/${usuarioId.id}`);
+    //     const res = await api.get(`/v1/reservas/porusuario/${usuarioId.id}`, 
+    //         {
+    //           headers: {
+    //             'Content-Type' : 'application/json',
+    //             'Authorization': `Bearer ${token}`,
+    //           },
+    //         });
     //     setReservas(res.data.reservas);
     // }
 

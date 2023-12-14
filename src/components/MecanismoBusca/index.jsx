@@ -1,7 +1,6 @@
 import { useState, useContext } from 'react';
 import { TemaContext } from "../../contexts/globalContext";
 import { Modal } from '../Modal';
-import Select from 'react-select'
 
 import styles from './Mecanismo.module.css';
 import './calendarModal.css';
@@ -48,7 +47,6 @@ export default function MecanismoBusca( { setFilterLocation, listaCidades } ) {
   const handleSearchForm = (e) => {
     e.preventDefault();
     setFilterLocation(selectedValue);
-    console.log(selectedValue)
   }
 
   return (
@@ -58,7 +56,7 @@ export default function MecanismoBusca( { setFilterLocation, listaCidades } ) {
         <form className={styles.formBusca} onSubmit={handleSearchForm}>
             
             <select value={selectedValue} onChange={handleSelectChange} className={styles.buscaSelect} type="text">
-              <option value="" disabled hidden> Onde Vamos ?</option>
+              <option value="All" disabled hidden> Onde Vamos ?</option>
               <option value="All"> Ver todas opções </option>
               {listaCidades.map(item => (
                 <option key={item.id} value={item.id}> {item.nome} </option>

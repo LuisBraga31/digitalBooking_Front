@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TemaContext } from '../../contexts/globalContext';
 
@@ -14,8 +14,8 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { api } from '../../services/api';
 
-export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens}) {
-
+export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens, reservas}) {
+    
     const { tema } = useContext(TemaContext);
     const navigate = useNavigate();
 
@@ -29,12 +29,34 @@ export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens
 
     const qtdEstrelas = new Array(5).fill(null);
     const [ horariosArray ] = useState(Array.from({ length: 24 }, (_, i) => `${i.toString().padStart(2, '0')}:00`));
+    
+    const [datasindisponiveis, setDatasIndisponiveis] = useState([]);
+
+    const getDiasEntreDatas = (dataInicial, dataFinal) => {
+      const datas = [];
+    
+      const dataAtual = new Date(dataInicial);
+      const dataFim = new Date(dataFinal);
+
+      dataAtual.setDate(dataAtual.getDate() + 1);
+      dataFim.setDate(dataFim.getDate() + 1);
+
+      while (dataAtual <= dataFim ) {
+        if (!datas.includes(dataAtual.toDateString())) {
+          datas.push(dataAtual.toDateString());
+        }
+        dataAtual.setDate(dataAtual.getDate() + 1);
+      }
+    
+      return datas;
+    };
 
     const desabilitarDatas = ({ date }) => {
         const dataAtual = new Date();
         const dataAnterior = date < dataAtual;
-        return dataAnterior;
-    }
+        const dataEspecifica = datasindisponiveis.some(dataEspecifica => dataEspecifica === date.toDateString());
+        return dataAnterior || dataEspecifica;
+      };
 
     const selectHour = (event) => {
         setSelectedHour(event.target.value); 
@@ -93,7 +115,16 @@ export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens
             console.log(error);
         }
 
-      }
+    }
+
+    useEffect(() => {
+        const datasReservas = [];
+        for(let i = 0; i < reservas.length; i++) {
+          const testes = getDiasEntreDatas(reservas[i].dataInicio, reservas[i].dataFinal);
+          datasReservas.push(testes)
+        }
+        setDatasIndisponiveis(datasReservas.flat(1))
+    }, [reservas]);
 
     return (
         <form className={`${styles.reservaForm} ${tema ? '' : styles.darkMode}`} onSubmit={handleReservaForm}>

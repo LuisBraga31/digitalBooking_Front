@@ -18,6 +18,7 @@ export function Reserva( { produto } ) {
         { id: 4, url: Carregando },
         { id: 5, url: Carregando }]
     );
+    const [reservas, setReservas] = useState([]);
   
     // const getCategoria = async() => {
     //     if(produto.categoriasId) {
@@ -44,6 +45,13 @@ export function Reserva( { produto } ) {
     //     }
     // };
 
+    // const getReservas = async() => {
+    //     if(produto.id) {
+    //     const res = await api.get(`/v1/reservas/porproduto/${produto.id}`);
+    //     setReservas(res.data.reservas);
+    //     }
+    // }
+
     // useEffect(() => {
     //     getImagens();
     // }, [produto.imagensId]);
@@ -51,13 +59,13 @@ export function Reserva( { produto } ) {
     // useEffect(() => {
     //     getCategoria();
     //     getCidade();
-        
+    //     getReservas();
     // }, [produto]);
 
     return (
         <>
             <DetalheProdutoHeader {... produto } tipoCategoria={categoria} tipoCidade={cidade} reservaPage={false}/>
-            <ReservaFormulario {... produto } tipoCategoria={categoria} tipoCidade={cidade} imagens={imagens}/>
+            <ReservaFormulario {... produto } tipoCategoria={categoria} tipoCidade={cidade} imagens={imagens} reservas={reservas}/>
             <DetalheProdutoInfo/>       
         </>
     )

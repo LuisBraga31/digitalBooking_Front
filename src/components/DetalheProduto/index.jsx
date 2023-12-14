@@ -24,7 +24,9 @@ export function DetalheProduto( { produto }) {
         { id: 4, url: Carregando },
         { id: 5, url: Carregando }]
     );
+    const [reservas, setReservas] = useState([]);
     // const [caracteristicas, setCaracteristicas] = useState([]);
+
   
     // const getCategoria = async() => {
     //     if(produto.categoriasId) {
@@ -61,6 +63,13 @@ export function DetalheProduto( { produto }) {
     //         setImagens(imagensList);
     //     }
     // };
+
+    // const getReservas = async() => {
+    //     if(produto.id) {
+    //     const res = await api.get(`/v1/reservas/porproduto/${produto.id}`);
+    //     setReservas(res.data.reservas);
+    //     }
+    // }
     
     // useEffect(() => {
     //     getCaracteristicas();
@@ -68,6 +77,7 @@ export function DetalheProduto( { produto }) {
 
     // useEffect(() => {
     //     getImagens();
+    //     getReservas();
     // }, [produto.imagensId]);
     
     // useEffect(() => {
@@ -81,7 +91,7 @@ export function DetalheProduto( { produto }) {
             <DetalheProdutoHeader {... produto} tipoCategoria={categoria} tipoCidade={cidade} reservaPage={true}/>
             <DetalheProdutoImagens {... produto} imagens={imagens}/>
             <DetalheProdutoDescricao {... produto} caracteristicas={caracteristicas}/>
-            <DetalheProdutoCalendario />
+            <DetalheProdutoCalendario reservas={reservas}/>
             <DetalheProdutoLocalizacao {... produto} tipoCidade={cidade}/>
             <DetalheProdutoInfo/>
         </div>
