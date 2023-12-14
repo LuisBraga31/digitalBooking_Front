@@ -37,10 +37,9 @@ export default function Header() {
     useEffect(() => {
 
         if(usuarioData != null) {
-            const now = new Date().getTime() / 3600;
-            const expiration = Math.floor(usuarioData.exp /3600 /3600);
-
-            if(expiration > now) {
+            const now = new Date().getTime() / 1000;
+            const expiration = Math.floor(usuarioData.exp  );
+            if(now > expiration) {
                 logout();
             }
         }
