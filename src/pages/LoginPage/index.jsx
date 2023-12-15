@@ -14,9 +14,9 @@ export function LoginPage() {
     return (
         <>
             <Header />
-            <main className={`${styles.main} ${tema ? '' : styles.darkMode}`}>
-                <Login/>
-            </main>
+                <main className={`${styles.main} ${tema ? '' : styles.darkMode}`}>
+                    <Login/>
+                </main>
             <Footer />
         </>
     )

@@ -4,20 +4,19 @@ import { TemaContext } from "../../contexts/globalContext";
 import { api } from "../../services/api";
 
 import styles from './ReservaPage.module.css';
-import elementos from '../../data/elements.json';
+import Swal from 'sweetalert2';
 
 import Footer from "../../components/Footer";
-import Header from "../../components/Header";
 import { Reserva } from "../../components/Reserva";
-
-import Swal from 'sweetalert2';
+import Header from "../../components/Header";
 
 export function ReservaPage() {
 
     const { tema } = useContext(TemaContext);
-    const [produto, setProduto] = useState([]);
     const produtoId = useParams();
     const navigate = useNavigate();
+
+    const [produto, setProduto] = useState([]);
 
     const estaLogado = !!localStorage.getItem("token");
     
@@ -30,22 +29,10 @@ export function ReservaPage() {
               title: 'Atenção:',
               text: "Faça login na aplicação para acessar página de reserva",
               confirmButtonColor: '#1DBEB4',
-            }).then((result) => {
-              if (result.isConfirmed) {
-                  navigate('/login');
-              } else {
-                  navigate('/login');
-              }
-          })
-  
-            
+            })
         }
-      }
 
-    // const getProduto = () => {
-    //     const produtoEncontrado = elementos.find(item => item.id === parseInt(produtoId.id));
-    //     setProduto(produtoEncontrado);
-    // }
+    }
 
     const getProduto = async() => {
         const res = await api.get(`/v1/produtos/${produtoId.id}`);
@@ -55,22 +42,19 @@ export function ReservaPage() {
     useEffect(() => {
         getProduto();
         verificarLogin();
-    }, []);
-
-    useEffect(() => {
         window.scrollTo({
-          top: 0,
-          transitionDelay: 300,
-          behavior: "smooth"
-        });
+            top: 0,
+            transitionDelay: 300,
+            behavior: "smooth"
+          });
     }, []);
 
     return (
         <>
             <Header />
-            <main className={`${styles.main} ${tema ? '' : styles.darkMode}`}>
-                <Reserva produto={produto}/>       
-            </main>
+                <main className={`${styles.main} ${tema ? '' : styles.darkMode}`}>
+                    <Reserva produto={produto}/>       
+                </main>
             <Footer />
         </>
     )

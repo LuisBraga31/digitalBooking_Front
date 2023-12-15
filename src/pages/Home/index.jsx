@@ -15,16 +15,11 @@ import Footer from "../../components/Footer";
 export function Home() {
     
     const { tema } = useContext(TemaContext);
+    
     const [filterCategory, setFilterCategory] = useState("All");
     const [filterLocation, setFilterLocation] = useState("All");
 
-    const [listaCidades, setListaCidades] = useState([
-        {'id': 1, 'nome': 'Santos-SP'},
-        {'id': 2, 'nome': 'São Paulo-SP'}, 
-        {'id': 3, 'nome': 'Rio de Janeiro-RJ'}, 
-        {'id': 4, 'nome': 'Fortaleza'}
-    ]);
-
+    const [listaCidades, setListaCidades] = useState([]);
     const [categorias, setCategorias] = useState([]);
     const [produtos, setProdutos] = useState([]);
 
@@ -53,11 +48,11 @@ export function Home() {
     return (
         <>
             <Header />
-            <main className={`${styles.main} ${tema ? '' : styles.darkMode}`}>
-                <MecanismoBusca setFilterLocation={setFilterLocation} listaCidades={listaCidades}/>
-                <Categorias setFilterCategory={setFilterCategory} categorias={categorias}/> 
-                <Produtos filterCategory={filterCategory} filterLocation={filterLocation} produtos={produtos}/> 
-            </main>
+                <main className={`${styles.main} ${tema ? '' : styles.darkMode}`}>
+                    <MecanismoBusca setFilterLocation={setFilterLocation} listaCidades={listaCidades}/>
+                    <Categorias setFilterCategory={setFilterCategory} categorias={categorias}/> 
+                    <Produtos filterCategory={filterCategory} filterLocation={filterLocation} produtos={produtos}/> 
+                </main>
             <Footer />
         </>
     )
