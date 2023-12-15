@@ -39,7 +39,14 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
         if(atributoQtd <= 9) {
             setAtributoQtd(atributoQtd + 1)
         } else {
-            alert('Limite de atributos atingido');
+            Swal.fire({
+                icon: 'warning',
+                title: 'Atenção:',
+                color: `#1DBEB4`,
+                background: `${tema ? '#F3F1ED' : '#112'}`,
+                html: `<span style='color: ${tema ? '#000' : '#FFF'} ;'>Limite de atributos atingido!</span>`,
+                confirmButtonColor: '#1DBEB4',
+              })
         }
     }
 
@@ -47,7 +54,14 @@ export function FormAdmin( {listaCidades, listaCategorias} ) {
         if(imagemQtd <= 14) {
             setImagemQtd(imagemQtd + 1)
         } else {
-            alert("Limite de imagens atingido");
+            Swal.fire({
+                icon: 'warning',
+                title: 'Atenção:',
+                color: `#1DBEB4`,
+                background: `${tema ? '#F3F1ED' : '#112'}`,
+                html: `<span style='color: ${tema ? '#000' : '#FFF'} ;'>Limite de imagens atingido!</span>`,
+                confirmButtonColor: '#1DBEB4',
+              })
         }
     }
     

@@ -130,7 +130,7 @@ export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens
         <form className={`${styles.reservaForm} ${tema ? '' : styles.darkMode}`} onSubmit={handleReservaForm}>
 
             <div className={`${styles.reservaFormLeft} ${tema ? '' : styles.darkMode}`}>
-                <h1 className={styles.titleReserva}>Complete seus dados</h1>
+                <h1 className={styles.titleReserva}> Seus dados </h1>
                 
                 <div className={styles.input}>
                     
@@ -150,8 +150,8 @@ export function ReservaFormulario( {id, nome, tipoCategoria, tipoCidade, imagens
                     </div>
 
                     <div className={styles.inputItem}>
-                        <label htmlFor="">Cidade</label>
-                        <input type="text" className={styles.inputCidade} placeholder='Cidade' required/>
+                        <label htmlFor=""> Função </label>
+                        <input type="text" placeholder={estaLogado ? usuarioData.role : 'Função'} disabled/>
                     </div>
 
                 </div>

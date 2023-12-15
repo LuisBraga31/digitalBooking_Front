@@ -52,10 +52,6 @@
     color: var(--second-color);
 }
 
-.inputCidade {
-    background-color: var(--white-pure) !important;
-}
-
 /* CALENDARIO */
 
 .calendarioForm {
@@ -262,10 +258,6 @@
 .darkMode .input input {
     background-color: var(--dark-color3);
     color: var(--white-pure);
-}
-
-.darkMode .input .inputCidade {
-    background-color: var(--dark-color) !important;
 }
 
 .darkMode .horaFormBody {

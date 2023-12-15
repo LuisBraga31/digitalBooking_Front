@@ -9,8 +9,8 @@ export default function ListaReservaCard( {id, horaInicio, dataInicio, dataFinal
 
     const { tema } = useContext(TemaContext);
     const [produto, setProduto] = useState([]);
-    const [categoria, setCategoria] = useState({'nome': 'CategoriaNome'});
-    const [cidade, setCidade] = useState({'nome': 'CidadeNome - Brasil'});
+    const [categoria, setCategoria] = useState({'nome': '...'});
+    const [cidade, setCidade] = useState({'nome': '...'});
     const [imagem, setImagem] = useState({'url': '/produtos/carregando.gif'});
     
     const getProduto = async() => {

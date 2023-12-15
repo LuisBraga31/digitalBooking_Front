@@ -9,15 +9,31 @@ import { IoIosStar } from "react-icons/io";
 export default function ProdutoCard( { id, nome, descricao, categoriasId, cidadesId, imagensId}) {
 
   const { tema } = useContext(TemaContext);
-  const qtdEstrelas = new Array(5).fill(null);
+  const [starNumbers, setStarNumbers] = useState(0);
+  const qtdEstrelas = new Array(starNumbers).fill(null);   
 
-  const [tipoCategoria, setTipoCategoria] = useState({'nome': 'CategoriaNome'});
-  const [tipoCidade, setTipoCidade] = useState({'nome': 'CidadeNome - Brasil'});
+  const [tipoCategoria, setTipoCategoria] = useState({'nome': '...'});
+  const [tipoCidade, setTipoCidade] = useState({'nome': '...'});
   const [imagem, setImagem] = useState({'url': '/produtos/carregando.gif'});
 
   const getCategoria = async() => {
     const res = await api.get(`/v1/categorias/${categoriasId}`);
     setTipoCategoria(res.data);
+      if(res.data.qualificacao === 'UM') {
+        setStarNumbers(1)
+      }
+      if(res.data.qualificacao === 'DOIS') {
+          setStarNumbers(2)
+      }
+      if(res.data.qualificacao === 'TRES') {
+          setStarNumbers(3)
+      }
+      if(res.data.qualificacao === 'QUATRO') {
+          setStarNumbers(4)
+      }
+      if(res.data.qualificacao === 'CINCO') {
+          setStarNumbers(5)
+      }
   }
 
   const getCidade = async() => {

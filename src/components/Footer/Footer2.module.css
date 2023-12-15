@@ -26,7 +26,8 @@
 .lista li {
     list-style: none;
     width: 26px;
-    height: 24px; 
+    height: 24px;
+    cursor: pointer; 
 }
 
 @media (max-width: 580px) {

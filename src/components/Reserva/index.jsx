@@ -9,8 +9,8 @@ import { api } from "../../services/api";
 
 export function Reserva( { produto } ) {
 
-    const [categoria, setCategoria] = useState({'nome': 'Hotel'});
-    const [cidade, setCidade] = useState({'nome': ' Cidade ', 'pais': 'Brasil'});
+    const [categoria, setCategoria] = useState({'nome': '...'});
+    const [cidade, setCidade] = useState({'nome': ' ... ', 'pais': '...'});
     const [imagens, setImagens] = useState([  
         { id: 1, url: Carregando },
         { id: 2, url: Carregando },

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { api } from '../../services/api';
 
 import styles from './DetalheProduto.module.css'
 
@@ -8,14 +9,13 @@ import { DetalheProdutoDescricao } from '../DetalheProdutoDescricao';
 import { DetalheProdutoCalendario } from '../DetalheProdutoCalendario';
 import { DetalheProdutoLocalizacao } from '../DetalheProdutoLocalizacao';
 import { DetalheProdutoInfo } from '../DetalheProdutoInfo';
-import { api } from '../../services/api';
 
 import Carregando from '../../assets/imagens/carregando.gif';
 
 export function DetalheProduto( { produto }) {
     
-    const [categoria, setCategoria] = useState({'nome': 'Hotel'});
-    const [cidade, setCidade] = useState({'nome': ' Cidade ', 'pais': 'Brasil'});
+    const [categoria, setCategoria] = useState({'nome': '...'});
+    const [cidade, setCidade] = useState({'nome': ' ... ', 'pais': '...'});
     const [imagens, setImagens] = useState([  
         { id: 1, url: Carregando },
         { id: 2, url: Carregando },
@@ -26,7 +26,6 @@ export function DetalheProduto( { produto }) {
     const [reservas, setReservas] = useState([]);
     const [caracteristicas, setCaracteristicas] = useState([]);
 
-  
     const getCategoria = async() => {
         if(produto.categoriasId) {
             const res = await api.get(`/v1/categorias/${produto.categoriasId}`);
@@ -36,8 +35,8 @@ export function DetalheProduto( { produto }) {
     
     const getCidade = async() => {
         if(produto.cidadesId) {
-        const res = await api.get(`/v1/cidades/${produto.cidadesId}`);
-        setCidade(res.data);
+            const res = await api.get(`/v1/cidades/${produto.cidadesId}`);
+            setCidade(res.data);
         }
     }
 
@@ -76,13 +75,12 @@ export function DetalheProduto( { produto }) {
 
     useEffect(() => {
         getImagens();
-        getReservas();
     }, [produto.imagensId]);
     
     useEffect(() => {
         getCategoria();
         getCidade();
-        
+        getReservas();
     }, [produto]);
 
     return(
