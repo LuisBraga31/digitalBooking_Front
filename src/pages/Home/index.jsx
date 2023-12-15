@@ -3,8 +3,6 @@ import { TemaContext } from "../../contexts/globalContext";
 import { api } from "../../services/api";
 
 import styles from './Home.module.css';
-import produtos from '../../data/elements.json';
-import categorias from '../../data/categorias.json';
 
 import Header from "../../components/Header";
 import Categorias from "../../components/Categorias";
