@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
 import styles from './DetalheProduto.module.css'
-import caracteristicas from '../../data/caracteristicas.json';
 
 import { DetalheProdutoHeader } from '../DetalheProdutoHeader';
 import { DetalheProdutoImagens } from '../DetalheProdutoImagens';
