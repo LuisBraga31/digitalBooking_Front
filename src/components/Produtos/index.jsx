@@ -5,12 +5,12 @@ import styles from './Produtos.module.css';
 
 import ProdutoCard from '../ProdutoCard';
 
-export default function Produtos( { filterCategory, filterLocation, produtos } ) {
+export default function Produtos( { filterCategory, filterLocation, produtos, produtoRef } ) {
 
   const { tema } = useContext(TemaContext);
 
   return (
-    <div className={`${styles.produtos} ${tema ? '' : styles.darkMode}`}>
+    <div ref={produtoRef} className={`${styles.produtos} ${tema ? '' : styles.darkMode}`}>
         
         <h2> Acomodações </h2>
         

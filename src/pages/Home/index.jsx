@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { TemaContext } from "../../contexts/globalContext";
 import { api } from "../../services/api";
 
@@ -13,6 +13,7 @@ import Footer from "../../components/Footer";
 export function Home() {
     
     const { tema } = useContext(TemaContext);
+    const produtoRef = useRef(null);
     
     const [filterCategory, setFilterCategory] = useState("All");
     const [filterLocation, setFilterLocation] = useState("All");
@@ -48,8 +49,8 @@ export function Home() {
             <Header />
                 <main className={`${styles.main} ${tema ? '' : styles.darkMode}`}>
                     <MecanismoBusca setFilterLocation={setFilterLocation} listaCidades={listaCidades}/>
-                    <Categorias setFilterCategory={setFilterCategory} categorias={categorias}/> 
-                    <Produtos filterCategory={filterCategory} filterLocation={filterLocation} produtos={produtos}/> 
+                    <Categorias setFilterCategory={setFilterCategory} categorias={categorias} produtoRef={produtoRef}/> 
+                    <Produtos filterCategory={filterCategory} filterLocation={filterLocation} produtos={produtos} produtoRef={produtoRef}/> 
                 </main>
             <Footer />
         </>

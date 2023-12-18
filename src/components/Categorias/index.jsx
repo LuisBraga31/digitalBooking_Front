@@ -3,7 +3,7 @@ import { TemaContext } from "../../contexts/globalContext";
 
 import styles from './Categorias.module.css';
 
-export default function Categorias( {setFilterCategory, categorias}) {
+export default function Categorias( {setFilterCategory, categorias, produtoRef}) {
 
     const { tema } = useContext(TemaContext);
     const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
@@ -11,6 +11,10 @@ export default function Categorias( {setFilterCategory, categorias}) {
     const handleCategoria = (categoria) => {
         setCategoriaSelecionada(categoria);
         setFilterCategory(categoria);
+        console.log(produtoRef)
+        if (produtoRef.current) {
+            produtoRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     const verTudo = () => {
