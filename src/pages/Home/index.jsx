@@ -3,6 +3,8 @@ import { TemaContext } from "../../contexts/globalContext";
 import { api } from "../../services/api";
 
 import styles from './Home.module.css';
+import produtos from '../../data/elements.json';
+import categorias from '../../data/categorias.json';
 
 import Header from "../../components/Header";
 import Categorias from "../../components/Categorias";
@@ -18,7 +20,14 @@ export function Home() {
     const [filterCategory, setFilterCategory] = useState("All");
     const [filterLocation, setFilterLocation] = useState("All");
 
-    const [listaCidades, setListaCidades] = useState([]);
+    const [listaCidades, setListaCidades] = useState([
+        {'id': 1, 'nome': 'Santos-SP'},
+        {'id': 2, 'nome': 'São Paulo-SP'}, 
+        {'id': 3, 'nome': 'Rio de Janeiro-RJ'}, 
+        {'id': 4, 'nome': 'Fortaleza'}
+    ]);
+    
+/*
     const [categorias, setCategorias] = useState([]);
     const [produtos, setProdutos] = useState([]);
 
@@ -42,7 +51,7 @@ export function Home() {
         getProdutos();
         getListaCidades();
     }, []);
-
+*/
 
     return (
         <>

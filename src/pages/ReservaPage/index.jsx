@@ -4,6 +4,7 @@ import { TemaContext } from "../../contexts/globalContext";
 import { api } from "../../services/api";
 
 import styles from './ReservaPage.module.css';
+import elementos from '../../data/elements.json';
 import Swal from 'sweetalert2';
 
 import Footer from "../../components/Footer";
@@ -34,14 +35,18 @@ export function ReservaPage() {
 
     }
 
-    const getProduto = async() => {
-        const res = await api.get(`/v1/produtos/${produtoId.id}`);
-        setProduto(res.data);
+    const getProduto = () => {
+        const produtoEncontrado = elementos.find(item => item.id === parseInt(produtoId.id));
+        setProduto(produtoEncontrado);
     }
+    // const getProduto = async() => {
+    //     const res = await api.get(`/v1/produtos/${produtoId.id}`);
+    //     setProduto(res.data);
+    // }
 
     useEffect(() => {
         getProduto();
-        verificarLogin();
+        //verificarLogin();
         window.scrollTo({
             top: 0,
             transitionDelay: 300,

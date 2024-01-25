@@ -19,7 +19,12 @@ export function AdminPage() {
     const usuarioData = userToken ? jwtDecode(userToken) : null;
     const [isAdmin] = useState(usuarioData? usuarioData.role : null);
 
-    const [listaCidades, setListaCidades] = useState([]);
+    const [listaCidades, setListaCidades] = useState([
+        {'id': 1, 'nome': 'Santos-SP'},
+        {'id': 2, 'nome': 'São Paulo-SP'}, 
+        {'id': 3, 'nome': 'Rio de Janeiro-RJ'}, 
+        {'id': 4, 'nome': 'Fortaleza'}
+    ]);
     const [listaCategorias, setListaCategorias] = useState([]);
 
     const getCategorias = async() => {

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { TemaContext } from "../../contexts/globalContext";
 import { api } from "../../services/api";
 
+import elementos from '../../data/elements.json';
 import styles from './DetailProduct.module.css';
 
 import Header from "../../components/Header";
@@ -16,10 +17,15 @@ export function DetailProductPage() {
 
     const [produto, setProduto] = useState([]);
     
-    const getProduto = async() => {
-        const res = await api.get(`/v1/produtos/${produtoId.id}`);
-        setProduto(res.data);
+    const getProduto = () => {
+        const produtoEncontrado = elementos.find(item => item.id === parseInt(produtoId.id));
+        setProduto(produtoEncontrado);
     }
+
+    // const getProduto = async() => {
+    //     const res = await api.get(`/v1/produtos/${produtoId.id}`);
+    //     setProduto(res.data);
+    // }
 
     useEffect(() => {
         getProduto();
